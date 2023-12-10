@@ -2,15 +2,17 @@
 outline: deep
 ---
 
-# HttpClient
+# HTTP Client
 
 ## Configurarción
 
 ### Proyecto basado en Módulos (Imports)
 
-::: tip app.module.ts
 ```ts
-import { HttpClientModule } from '@angular/common/http';
+/**
+ * app.module.ts  
+*/
+import { HttpClientModule } from '@angular/common/http';// [!code ++]
 
 @NgModule({
   declarations: [
@@ -18,65 +20,63 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   imports: [
     BrowserModule
-    HttpClientModule,
+    HttpClientModule,// [!code ++]
   ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
 ```
-:::
 
 
 
 ### Proyecto basado en Módulos (Providers)
-::: tip app.module.ts
 ```ts
-import { provideHttpClient } from '@angular/common/http';
+/**
+ * app.module.ts  
+*/
+import { provideHttpClient } from '@angular/common/http';// [!code ++]
 
 @NgModule({
   providers: [
-    provideHttpClient(),
+    provideHttpClient(),// [!code ++]
   ],
 })
 export class AppModule {}
 ```
-:::
 
 ### Proyecto basado en standalone components (importProvidersFrom)
-::: tip app.config.ts
+
 ```ts
+/**
+ * app.config.ts
+*/
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';// [!code ++]
 
 export const appConfig: ApplicationConfig = {
 
   providers: [
-    importProvidersFrom(
-      HttpClientModule
-    )
+    importProvidersFrom(// [!code ++]
+      HttpClientModule// [!code ++]
+    )// [!code ++]
   ]
 };
 
 ```
-:::
 
 ### Proyecto basado en standalone components (Providers)
-::: tip app.config.ts
+
 ```ts
+/**
+ * app.config.ts
+*/
 import { ApplicationConfig } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient } from '@angular/common/http';// [!code ++]
 
 export const appConfig: ApplicationConfig = {
 
   providers: [
-    provideHttpClient(),
+    provideHttpClient(),// [!code ++]
   ]
 };
 ```
-:::
-
-## Peticiones Http
-
-
-
-

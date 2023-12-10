@@ -25,13 +25,15 @@ export function sidebarDocker(): DefaultTheme.SidebarItem[] {
 export function sidebarAngular(): DefaultTheme.SidebarItem[] {
     return [
         {
-            text: 'Angular',
+            text: 'Angular Core',
             collapsed: false,
             items: [
                 { text: 'Instalación', link: '/angular/instalacion-angular' },
                 { text: 'Angular CLI', link: '/angular/angular-cli' },
                 {
                     text: 'Directivas Estructurales',
+                    collapsed: true,
+
                     items: [
                         { text: 'ngIf', link: '/angular/ng-if' },
                         { text: 'ngFor', link: '/angular/ng-for' },
@@ -41,12 +43,20 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                 { text: 'Estilos', link: '/angular/angular-styles' },
                 {
                     text: 'Decoradores',
+                    collapsed: true,
                     items: [
                         { text: '@Input()', link: '/angular/input' },
                         { text: '@output()', link: '/angular/output' },
                     ]
                 },
-                { text: 'HttpClientModule', link: '/angular/http' },
+                {
+                    text: 'HTTP',
+                    collapsed: true,
+                    items: [
+                        { text: 'HTTP Client', link: '/angular/http' },
+
+                    ]
+                }
             ]
         },
         {
