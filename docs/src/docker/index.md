@@ -2,7 +2,7 @@
 <h1>Apuntes de Docker</h1>
 </div>
 
-**Comandos para creación de imagenes, contenedores, volúmenes y redes**
+
 <p align="center">
-  <a href="http://docker.com/" target="blank"><img src="/logo_docker.png" width="250" alt="Docker Logo" /></a>
+  <a href="http://docker.com/" target="blank"><img src="/logo_docker.png" width="250" height="auto" alt="Docker Logo" /></a>
 </p>
