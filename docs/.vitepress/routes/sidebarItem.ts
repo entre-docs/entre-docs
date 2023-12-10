@@ -49,14 +49,14 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                         { text: '@output()', link: '/angular/output' },
                     ]
                 },
-                {
-                    text: 'HTTP',
-                    collapsed: true,
-                    items: [
-                        { text: 'HTTP Client', link: '/angular/http' },
-
-                    ]
-                }
+            ]
+        },
+        {
+            text: 'HTTP',
+            collapsed: true,
+            items: [
+                { text: 'HTTP Client', link: '/angular//http/http' },
+                { text: 'Peticiones', link: '/angular/http/http-requests'}
             ]
         },
         {
