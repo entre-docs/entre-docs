@@ -136,7 +136,7 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
     return [
         {
             text: 'PostgreSQL',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: 'Conceptos', link: 'postgresql/conceptos' },
                 { text: 'Buenas Prácticas', link: 'postgresql/buenas_practicas' },
@@ -153,6 +153,13 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
                 { text: 'Vistas', link: 'postgresql/vistas' },
                 { text: 'Common Table Expression', link: 'postgresql/common_table_expression' },
                 { text: 'Pistas Importantes', link: 'postgresql/pistas' },
+            ]
+        },
+        {
+            text: 'Estructuras de Control',
+            collapsed: true,
+            items: [
+                { text: 'IF, THEN, ELSE, END IF', link: 'postgresql/estructuras_control' },
             ]
         }
     ]
