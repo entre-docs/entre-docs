@@ -161,6 +161,13 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'IF, THEN, ELSE, END IF', link: 'postgresql/estructuras_control' },
             ]
+        },
+        {
+            text: 'Procedimientos Almacenados',
+            collapsed: true,
+            items: [
+                { text: 'Procedimientos Almacenados', link: 'postgresql/procedimientos_almacenados' },
+            ]
         }
     ]
 }

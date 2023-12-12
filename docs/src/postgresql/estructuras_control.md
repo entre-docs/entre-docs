@@ -67,7 +67,7 @@ FROM employees
 WHERE employee_id = 206;
 ```
 
-* Este es el resutado esperado por consola
+* Este es el resultado esperado por consola
 
 ```sql
 SQL Error [P0001]: ERROR: Persona con salario mayor max_salary: id:206, William /*[!code ++]*/
