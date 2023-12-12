@@ -30,7 +30,28 @@ export default defineConfig({
             '/postgresql/': sidebarPostgresql(),
             '/node/': sidebarNode()
 
-          },
+        },
+
+        search: {
+            provider: 'local',
+            options: {
+                translations: {
+                    button: {
+                        buttonText: 'Buscar'
+                    },
+                    modal: {
+                        displayDetails: "Ver detalles",
+                        noResultsText: 'No se encontraron coincidencias para: ',
+                        resetButtonTitle: 'Borrar',
+                        footer: {
+                            closeText: 'Cerrar',
+                            navigateText: 'Navegar',
+                            selectText: 'Seleccionar',
+                        }
+                    }
+                }
+            }
+          }
     }
 
 })
