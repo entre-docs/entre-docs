@@ -33,7 +33,7 @@ INNER JOIN regions r ON c.region_id = r.region_id;
 
 ```sql
 CREATE OR REPLACE FUNCTION country_region()
-	RETURNS TABLE( id CHARACTER(2), name VARCHAR(40), region VARCHAR(25) )
+	RETURNS TABLE( id CHARACTER(2), "name" VARCHAR(40), region VARCHAR(25) )
 	AS $$
 	BEGIN
 		RETURN QUERY
@@ -99,7 +99,7 @@ SELECT * FROM regions;
 
 ## Ejemplo 2
 
-Crear un procedimiento almacenado que cree el historico y que actualice la tabla de empleados.
+Crear un procedimiento almacenado que cree el histórico y que actualice la tabla de empleados.
 
 ```sql
 CREATE OR REPLACE FUNCTION max_raise( empl_id int )

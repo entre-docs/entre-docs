@@ -123,10 +123,10 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             text: 'Oracle',
             collapsed: false,
             items: [
-                { text: 'Creación de Tablas', link: 'oracle/tablas' },
-                { text: 'Insertar datos', link: 'oracle/insert' },
-                { text: 'Consultas a la bbdd', link: 'oracle/consultas' },
-                { text: 'Funciones de grupo', link: 'oracle/funciones_grupo' },
+                { text: 'Creación de Tablas', link: '/oracle/tablas' },
+                { text: 'Insertar datos', link: '/oracle/insert' },
+                { text: 'Consultas a la bbdd', link: '/oracle/consultas' },
+                { text: 'Funciones de grupo', link: '/oracle/funciones_grupo' },
             ]
         }
     ]
@@ -138,35 +138,52 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
             text: 'PostgreSQL',
             collapsed: true,
             items: [
-                { text: 'Conceptos', link: 'postgresql/conceptos' },
-                { text: 'Buenas Prácticas', link: 'postgresql/buenas_practicas' },
-                { text: 'Tablas y Registros', link: 'postgresql/tablas_y_registros' },
-                { text: 'Operadores String y Funciones', link: 'postgresql/operadores_string_funciones' },
-                { text: 'Funciones de grupo y Ordenamiento', link: 'postgresql/funciones_grupo' },
-                { text: 'Llaves', link: 'postgresql/llaves' },
-                { text: 'Secuencias', link: 'postgresql/secuencias' },
-                { text: 'Índices', link: 'postgresql/indices' },
-                { text: 'Join-Uniones', link: 'postgresql/join_uniones' },
-                { text: 'Fechas', link: 'postgresql/fechas' },
-                { text: 'Funciones de PostgreSQL', link: 'postgresql/funciones_unicas' },
-                { text: 'Funciones personalizadas', link: 'postgresql/funciones_personalizadas' },
-                { text: 'Vistas', link: 'postgresql/vistas' },
-                { text: 'Common Table Expression', link: 'postgresql/common_table_expression' },
-                { text: 'Pistas Importantes', link: 'postgresql/pistas' },
+                { text: 'Conceptos', link: '/postgresql/conceptos' },
+                { text: 'Buenas Prácticas', link: '/postgresql/buenas_practicas' },
+                { text: 'Tablas y Registros', link: '/postgresql/tablas_y_registros' },
+                { text: 'Operadores String y Funciones', link: '/postgresql/operadores_string_funciones' },
+                { text: 'Funciones de grupo', link: '/postgresql/funciones_grupo' },
+                { text: 'Llaves', link: '/postgresql/llaves' },
+                { text: 'Secuencias', link: '/postgresql/secuencias' },
+                { text: 'Índices', link: '/postgresql/indices' },
+                { text: 'Join-Uniones', link: '/postgresql/join_uniones' },
+                { text: 'Fechas', link: '/postgresql/fechas' },
+                { text: 'Funciones de PostgreSQL', link: '/postgresql/funciones_unicas' },
+                { text: 'Funciones personalizadas', link: '/postgresql/funciones_personalizadas' },
+                
+                { text: 'Pistas Importantes', link: '/postgresql/pistas' },
             ]
         },
         {
             text: 'Estructuras de Control',
             collapsed: true,
             items: [
-                { text: 'IF, THEN, ELSE, END IF', link: 'postgresql/estructuras_control' },
+                { text: 'IF, THEN, ELSE, END IF', link: '/postgresql/estructuras_control' },
+            ]
+        },
+        {
+            text: 'Vistas y Common Table Expression',
+            collapsed: true,
+            items: [
+                { text: 'Vistas', link: '/postgresql/vistas_cte/vistas' },
+                { text: 'Common Table Expression', link: '/postgresql/vistas_cte/common_table_expression' },
             ]
         },
         {
             text: 'Procedimientos Almacenados',
             collapsed: true,
             items: [
-                { text: 'Procedimientos Almacenados', link: 'postgresql/procedimientos_almacenados' },
+                { text: 'Procedimientos Almacenados', link: '/postgresql/procedimientos_almacenados' },
+            ]
+        },
+        {
+            text: 'Encriptar contraseñas y Triggers',
+            collapsed: true,
+            items: [
+                { text: 'Encriptar Contraseñas', link: '/postgresql/triggers/encriptar_contrasena' },
+                { text: 'Proc.Almac. User Login', link: '/postgresql/triggers/proc_almac_user_login' },
+                { text: 'Triggers', link: '/postgresql/triggers/triggers' },
+                { text: 'Trigger When', link: '/postgresql/triggers/triggers_when' },
             ]
         }
     ]
@@ -179,7 +196,7 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
             text: 'Node',
             collapsed: false,
             items: [
-                { text: 'Configurar Node-TS', link: 'node/configuracion_ts' },
+                { text: 'Configurar Node-TS', link: '/node/configuracion_ts' },
             ]
         }
     ]

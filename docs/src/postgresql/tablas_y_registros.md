@@ -50,7 +50,15 @@ SELECT * FROM USERS WHERE NAME LIKE '%a'; -- que termine con la letra a
 ```
 
 
-## Seleccionar usando LIMIT - OFFSET
+## Ordenar los registros
+
+```sql
+SELECT * FROM USERS ORDER BY id DESC;
+SELECT * FROM USERS ORDER BY id ASC;
+```
+
+
+## Seleccionar con LIMIT/OFFSET
 
 :::tip
 - **LIMIT**: cuantos elementos quiero mostrar (Ejemplo: 3 elementos)

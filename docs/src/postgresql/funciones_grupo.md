@@ -1,4 +1,4 @@
-# Comandos para las funciones de grupo y ordenamiento
+# Comandos para las funciones de grupo
 
 ## BETWEEN
 
