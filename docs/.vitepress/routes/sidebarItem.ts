@@ -104,6 +104,7 @@ export function sidebarGit(): DefaultTheme.SidebarItem[] {
                 { text: 'Ramas', link: '/git/ramas' },
                 { text: 'Stash', link: '/git/stash' },
                 { text: 'Tags', link: '/git/tags' },
+                { text: 'Conventional Commit', link: '/git/conventional_commit' }
 
             ]
         },
