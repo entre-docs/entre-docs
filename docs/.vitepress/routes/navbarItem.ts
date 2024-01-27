@@ -3,11 +3,15 @@ import { type DefaultTheme } from 'vitepress';
 
 export function navbar(): DefaultTheme.NavItem[] {
     return [
-
+        {
+            text: 'Lenguajes',
+            items: [
+                { text: 'Javascript', link: '/javascript/' }
+            ]
+        },
         { text: 'Git/Github', link: '/git/' },
         { text: 'Docker', link: '/docker/' },
         { text: 'Node', link: '/node/' },
-
         {
             text: 'Frameworks',
             items: [

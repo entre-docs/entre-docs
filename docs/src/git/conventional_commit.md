@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Conventional Commits
 
 El formato típico de un commit convecional consta de 3 partes: tipo, alcance y descripción.

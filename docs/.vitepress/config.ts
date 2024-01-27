@@ -1,7 +1,7 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import {
     navbar, sidebarNode ,sidebarDocker, sidebarAngular, sidebarGit, sidebarOracle,
-    sidebarPostgresql,
+    sidebarPostgresql, sidebarJavascript
 } from './routes'
 
 
@@ -28,7 +28,8 @@ export default defineConfig({
             '/git/': sidebarGit(),
             '/oracle/': sidebarOracle(),
             '/postgresql/': sidebarPostgresql(),
-            '/node/': sidebarNode()
+            '/node/': sidebarNode(),
+            '/javascript/': sidebarJavascript()
 
         },
 

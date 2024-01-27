@@ -1,5 +1,5 @@
 <div align="center">
-    <h1>Angular</h1>
+    <h1>Apuntes de Angular</h1>
 </div>
 
 

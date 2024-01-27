@@ -202,3 +202,16 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
         }
     ]
 }
+
+
+export function sidebarJavascript(): DefaultTheme.SidebarItem[] {
+    return [
+        {
+            text: 'Array',
+            collapsed: false,
+            items: [
+                { text: 'Métodos', link: '/javascript/array' },
+            ]
+        }
+    ]
+}

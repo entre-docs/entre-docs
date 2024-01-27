@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Base de datos SQL</h1>
+<h1>Apuntes de Base de datos Oracle SQL</h1>
 </div>
 
 <p align="center">

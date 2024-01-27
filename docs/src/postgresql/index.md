@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Base de datos PostgreSQL</h1>
+<h1>Apuntes de Base de datos PostgreSQL</h1>
 </div>
 
 
