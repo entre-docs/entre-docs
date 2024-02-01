@@ -46,7 +46,9 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                     collapsed: true,
                     items: [
                         { text: '@Input()', link: '/angular/input' },
-                        { text: '@output()', link: '/angular/output' },
+                        { text: '@Output()', link: '/angular/output' },
+                        { text: '@ViewChild()', link: '/angular/viewChild' },
+
                     ]
                 },
             ]

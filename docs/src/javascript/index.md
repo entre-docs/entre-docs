@@ -5,6 +5,6 @@
 
 <p align="center">
     <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="blank">
-        <img src="../public/logo_javascript.png" width="250" alt="Javascript logo"/>
+        <img src="/logo_javascript.png" width="250" alt="Javascript logo"/>
     </a>
 </p>

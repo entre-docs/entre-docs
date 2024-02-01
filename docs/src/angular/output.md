@@ -8,15 +8,16 @@ El Decorador @Output se utiliza para exponer eventos desde un componente hijo, p
 
 ## Ejemplo 1: Enviar datos desde el componente hijo al padre
 
-### Componente hijo: ts
+### Componente hijo
 
-```ts
+::: code-group
+```ts [child.component.ts]
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
-  selector: 'shared-search-box',
-  templateUrl: './search-box.component.html',
-  styleUrl: './search-box.component.scss'
+  selector: 'shared-child',
+  templateUrl: './child.component.html',
+  styleUrl: './child.component.scss'
 })
 export class SearchBoxComponent {
 
@@ -29,22 +30,24 @@ export class SearchBoxComponent {
 }
 ```
 
-### Componente hijo: html
-```html
+```html [child.component.html]
 <input
     #searchInput
     type="text"
     (keyup.enter)="emitSearchValue(searchInput.value)">
 ```
+:::
+
+
 
 ### Componente padre: ts
-
-```ts
+::: code-group
+```ts [parent.component.ts]
 
 @Component({
   selector: 'app-parent',
-  templateUrl: './app-parent.component.html',
-  styleUrl: './app-parent.component.scss'
+  templateUrl: './parent.component.html',
+  styleUrl: './parent.component.scss'
 })
 export class ParentComponent {
 
@@ -58,18 +61,23 @@ export class ParentComponent {
 }
 ```
 
-### Componente padre: html
-```html
+```html [parent.component.html]
 <div>
     <shared-search-box (valueSearchBox)="search($event)"></shared-search-box>// [!code ++]
 </div>
 ```
+:::
+
+
+
+
 
 ## Ejemplo 2: Emitir evento sin datos desde componente hijo hacia el padre
 
-### Componente hijo: ts
-```ts
-// child.component.ts
+### Componente hijo
+::: code-group
+```ts [child.component.ts]
+
 import { Component, EventEmitter, Output } from '@angular/core';
 
 @Component({
@@ -89,11 +97,14 @@ export class ChildComponent {
   }
 }
 ```
+:::
 
-### Componente padre: ts
 
-```ts
-// parent.component.ts
+### Componente padre
+::: code-group
+
+```ts [parent.component.ts]
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -110,3 +121,4 @@ export class ParentComponent {
 }
 
 ```
+:::
