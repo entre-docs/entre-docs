@@ -57,3 +57,30 @@ ng g s <nombre-servicio>
 ```bash
 ng g environments
 ```
+
+## Scripts Angular CLI + commit-and-tag-version
+
+```bash
+npm i --save-dev commit-and-tag-version
+```
+```json
+"scripts": {
+    "ng": "ng",
+    "gm": "ng g module",
+    "gmr": "ng g module --routing",
+    "gc": "ng g component --skip-tests",
+    "gcs": "ng g component --skip-tests --standalone",
+    "gs": "ng g service --skip-tests",
+    "gp": "ng g pipe --skip-tests",
+    "gi": "ng g interface",
+    "ge": "ng g environments",
+    "gg": "ng g guard --skip-tests",
+    "start": "ng serve -o",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "envs": "node ./scripts/set-env.js",
+    "release": "commit-and-tag-version",
+    "release:version": "commit-and-tag-version --release-as"
+},
+```
