@@ -51,6 +51,7 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
 
                     ]
                 },
+                { text: 'Inyección de Dependencias', link: '/angular/di' }
             ]
         },
         {
