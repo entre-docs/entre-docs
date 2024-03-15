@@ -95,6 +95,16 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
     ]
 }
 
+export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
+    return [{
+        text: 'Vite Config',
+        collapsed: false,
+        items: [
+            { text: 'Crear Proyecto', link: '/react/vite-instalacion' }
+        ]
+    }]
+}
+
 
 export function sidebarGit(): DefaultTheme.SidebarItem[] {
     return [

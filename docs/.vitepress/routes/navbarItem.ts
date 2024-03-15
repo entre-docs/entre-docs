@@ -16,6 +16,8 @@ export function navbar(): DefaultTheme.NavItem[] {
             text: 'Frameworks',
             items: [
                 { text: 'Angular', link: '/angular/' },
+                { text: 'React', link: '/react/' },
+
             ]
         },
 
