@@ -100,7 +100,9 @@ export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
         text: 'Vite Config',
         collapsed: false,
         items: [
-            { text: 'Crear Proyecto', link: '/react/vite-instalacion' }
+            { text: 'Crear Proyecto', link: '/react/vite-instalacion' },
+            { text: 'Variables de entorno', link: '/react/vite-env' }
+
         ]
     }]
 }

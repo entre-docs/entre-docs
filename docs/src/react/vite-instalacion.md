@@ -4,7 +4,7 @@ outline: deep
 
 # Crear Proyecto
 
-## Vite: : React + TypeScript
+## Vite: React + TypeScript
 
 ::: code-group
 
@@ -17,7 +17,7 @@ $ yarn create vite
 ```
 :::
 
-## Package.json
+## package.json
 ```json
 {
   "scripts": {
