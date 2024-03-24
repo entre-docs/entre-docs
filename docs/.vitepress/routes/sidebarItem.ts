@@ -59,7 +59,7 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 { text: 'HTTP Client', link: '/angular//http/http' },
-                { text: 'Peticiones', link: '/angular/http/http-requests'}
+                { text: 'Peticiones', link: '/angular/http/http-requests' }
             ]
         },
         {
@@ -96,15 +96,26 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
 }
 
 export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
-    return [{
-        text: 'Vite Config',
-        collapsed: false,
-        items: [
-            { text: 'Crear Proyecto', link: '/react/vite-instalacion' },
-            { text: 'Variables de entorno', link: '/react/vite-env' }
+    return [
+        {
+            text: 'Vite Config',
+            collapsed: false,
+            items: [
+                { text: 'Crear Proyecto', link: '/react/vite-instalacion' },
+                { text: 'Variables de entorno', link: '/react/vite-env' }
 
-        ]
-    }]
+            ]
+        },
+        {
+            text: 'React Core',
+            collapsed: true,
+            items : [
+               { text: 'interpolación de cadenas', link: '/react/string-interpolation'}
+               
+
+            ]
+        }
+    ]
 }
 
 
@@ -166,7 +177,7 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
                 { text: 'Fechas', link: '/postgresql/fechas' },
                 { text: 'Funciones de PostgreSQL', link: '/postgresql/funciones_unicas' },
                 { text: 'Funciones personalizadas', link: '/postgresql/funciones_personalizadas' },
-                
+
                 { text: 'Pistas Importantes', link: '/postgresql/pistas' },
             ]
         },
