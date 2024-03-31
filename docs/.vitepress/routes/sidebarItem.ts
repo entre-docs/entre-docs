@@ -110,9 +110,8 @@ export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
             text: 'React Core',
             collapsed: true,
             items : [
-               { text: 'Interpolación de cadenas', link: '/react/string-interpolation'}
-               
-
+               { text: 'Interpolación de cadenas', link: '/react/string-interpolation'},
+               { text: 'Properties', link: '/react/props'}
             ]
         },
         {
