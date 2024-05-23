@@ -228,10 +228,21 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
 export function sidebarNode(): DefaultTheme.SidebarItem[] {
     return [
         {
-            text: 'Node',
+            text: 'Node Config',
             collapsed: false,
             items: [
-                { text: 'Configurar Node-TS', link: '/node/configuracion_ts' },
+                { text: 'Configurar TS-Nodemon', link: '/node/config/configuracion_ts' },
+                { text: 'Configurar ts-node-dev', link: '/node/config/ts-node-dev' },
+
+            ]
+        },
+        {
+            text: 'REST API',
+            collapsed: false,
+            items: [
+                { text: 'Configurar servidor', link: '/node/rest-api/server' },
+                { text: 'Rutas', link: '/node/rest-api/routes' },
+
             ]
         }
     ]

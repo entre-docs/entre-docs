@@ -13,7 +13,7 @@
   "author": "Albania Musabeli",
   "license": "ISC",
   "devDependencies": {
-    "vitepress": "^1.0.0-rc.10"
+    "vitepress": "^1.2.2"
   },
   "dependencies": {
     "minisearch": "^6.3.0"
