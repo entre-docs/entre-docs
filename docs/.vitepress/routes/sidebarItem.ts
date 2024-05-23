@@ -237,6 +237,13 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'DTO - Entity',
+            collapsed: false,
+            items: [
+               {text: 'DTO', link: '/node/dto/dto'}
+            ]
+        },
+        {
             text: 'REST API',
             collapsed: false,
             items: [
@@ -244,7 +251,8 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
                 { text: 'Rutas', link: '/node/rest-api/routes' },
 
             ]
-        }
+        },
+        
     ]
 }
 
