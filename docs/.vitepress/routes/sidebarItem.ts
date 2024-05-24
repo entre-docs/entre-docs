@@ -240,7 +240,9 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
             text: 'DTO - Entity',
             collapsed: false,
             items: [
-               {text: 'DTO', link: '/node/dto/dto'}
+               {text: 'DTO', link: '/node/dto/dto'},
+               {text: 'DTO Class Validator', link: '/node/dto/dto-classValidator'},
+
             ]
         },
         {

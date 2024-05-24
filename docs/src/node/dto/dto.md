@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# DTO
+# Data Transfer Object
 
 ## DTO Class
 Las clases `CreateUserDto` y `UpdateUserDto` representan los datos necesarios para registrar y actualizar un usuario. Proporcionan un método estático para crear instancias de la clase a partir de un objeto, validando los campos necesarios.
@@ -79,7 +79,7 @@ export class UpdateUserDto {
 ```
 :::
 
-## Crear DTO
+## Obtener errores u objecto DTO
 ```ts
 const [error, registerUserDto] = RegisterUserDto.create(body);
 ```
