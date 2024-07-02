@@ -4,7 +4,7 @@
 
 
 <p align="center">
-    <a href="https://angular.io/" target="blank">
+    <a href="https://react.dev/" target="blank">
         <img src="/react.png" width="250" alt="react_logo" />
     </a>
 </p>

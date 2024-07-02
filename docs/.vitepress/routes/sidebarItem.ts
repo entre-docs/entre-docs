@@ -115,6 +115,16 @@ export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
             ]
         },
         {
+            text: 'React Redux',
+            collapsed: true,
+            items : [
+               { text: 'Redux', link: '/react/redux/redux'},
+               { text: 'Redux Toolkit', link: '/react/redux/redux-toolkit'},
+
+
+            ]
+        },
+        {
             text: 'Testing',
             collapsed: true,
             items : [
