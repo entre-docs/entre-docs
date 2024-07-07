@@ -127,6 +127,28 @@ console.log(removedElement); // 1
 console.log(array); // [2, 3]
 ```
 
+## Slice
+
+Extrae una porción de elementos o caracteres de un array y los devuelve.
+
+:::tip
+```js
+array.slice(inicio, fin)
+```
+
+- inicio: Es el índice donde comienza la extracción (incluido).
+- fin (opcional): Es el índice donde termina la extracción (no incluido). Si no se especifica, se extraen todos los elementos desde inicio hasta el final del array.
+:::
+
+```js
+let array = [A, B, C, D, E];
+
+let subArray = array.slice(1, 4);
+console.log(subArray); // Output: [B, C, D]
+```
+
+
+
 
 ## Some
 

@@ -27,7 +27,53 @@ ADD CHECK(surfacearea >= 0);
 
 ## Llave Foránea (FK)
 
-### Crear llaves foraneas 
+:::tip
+Existen 2 maneras para hacer una llave foránea: se puede incluir en el script de creación de tablas o se puede actualizar la tabla para agregar la llave foránea.
+:::
+
+### Crear con la llave foránea
+
+Supongamos que queremos crear dos tablas: **usuarios** y **pedidos**. Cada pedido está asociado a un usuario a través de una clave foránea que referencia el ID del usuario.
+
+```sql
+-- Crear tabla usuarios
+CREATE TABLE usuarios (
+    usuario_id SERIAL PRIMARY KEY,
+    nombre VARCHAR(100),
+    email VARCHAR(100)
+);
+
+-- Crear tabla pedidos
+CREATE TABLE pedidos (
+    pedido_id SERIAL PRIMARY KEY,
+    descripcion VARCHAR(255),
+    fecha_pedido DATE,
+    usuario_id INT REFERENCES usuarios(usuario_id)
+);
+
+```
+
+Explicación del script:
+
+1. Tabla usuarios:
+    - usuario_id SERIAL PRIMARY KEY: Define un campo usuario_id que es una clave primaria autoincremental.
+    - nombre VARCHAR(100): Campo para el nombre del usuario.
+    - email VARCHAR(100): Campo para el correo electrónico del usuario.
+
+2. Tabla pedidos:
+    - pedido_id SERIAL PRIMARY KEY: Define un campo pedido_id que es una clave primaria autoincremental.
+    - descripcion VARCHAR(255): Campo para la descripción del pedido.
+    - fecha_pedido DATE: Campo para la fecha en que se realizó el pedido.
+    - usuario_id INT REFERENCES usuarios(usuario_id): Define usuario_id como una clave foránea que referencia el usuario_id en la tabla usuarios.
+
+3. Notas adicionales:
+
+    - SERIAL: Es un tipo de datos en PostgreSQL que se utiliza para crear una columna autoincremental.
+
+    - REFERENCES usuarios(usuario_id): Especifica que el campo usuario_id en la tabla pedidos hace referencia al campo usuario_id en la tabla usuarios.
+
+
+### Alterando la tabla
 
 Modificando la tabla para agregar un Foreign Key a un campo.
 
@@ -39,6 +85,8 @@ ALTER TABLE city
 	FOREIGN KEY (countrycode) -- campo con el que se relaciona
 	REFERENCES country (code); -- a que tabla y campo hace referencia
 ```
+
+
 
 
 ## SERIAL vs IDENTITY
@@ -81,23 +129,34 @@ CREATE TABLE users4 (
 
 La combinación de estas llaves es **ÚNICA**. Jamás se va a repetir.
 
-Ejemplo: un usuario con los post de Tweeter:
+Supongamos que queremos crear una tabla **usuarios** con una llave primaria compuesta usando las columnas *id_departamento* y *id_empleado*.
+
+Esto asegura que cada empleado tenga una identificación única dentro de cada departamento.
 
 
 ```sql
-CREATE TABLE usersDual (
-	id1 int,
-	id2 int,
-	PRIMARY KEY (id1, id2)
+CREATE TABLE usuarios (
+    id_departamento INT,
+    id_empleado INT,
+    nombre VARCHAR(100),
+    PRIMARY KEY (id_departamento, id_empleado)
 );
+
+INSERT INTO usuarios (id_departamento, id_empleado, nombre) VALUES
+(1, 101, 'Juan Pérez'),
+(1, 102, 'María García'),
+(2, 201, 'Pedro López'),
+(2, 202, 'Lorena Díaz');
+
 ```
 
-|id1	|id2	|
-|-------|-------|
-|1		|1		|
-|1		|2		|
-|2		|1		|
-|2		|2		|
+
+|id_departamento| id_empleado |   nombre	|
+|---------------|-------------|-------------|
+|             1 |         101 | Juan Pérez	|
+|             1 |         102 | María García|
+|             2 |         201 | Pedro López	|
+|             2 |         202 | Lorena Díaz	|
 
 
 ## UUID
