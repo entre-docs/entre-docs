@@ -6,7 +6,9 @@ export function navbar(): DefaultTheme.NavItem[] {
         {
             text: 'Lenguajes',
             items: [
-                { text: 'Javascript', link: '/javascript/' }
+                { text: 'JavaScript', link: '/javascript/' },
+                { text: 'TypeScript', link: '/typescript/' },
+
             ]
         },
         { text: 'Git/Github', link: '/git/' },

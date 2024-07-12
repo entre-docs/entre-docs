@@ -281,3 +281,24 @@ export function sidebarJavascript(): DefaultTheme.SidebarItem[] {
         }
     ]
 }
+
+export const  sidebarTypeScript = () : DefaultTheme.SidebarItem[] => {
+    return [
+        {
+            text: 'Interfaces',
+            collapsed: true,
+            items: [
+                { text: 'Interfaces básicas', link: '/typescript/interfaces' },
+                { text: 'Interfaces con funciones', link: '/typescript/interfaces-func' },
+                { text: 'Interfaces con herencia', link: '/typescript/interfaces-herencia' },
+            ]
+        },
+        {
+            text: 'Enum', 
+            collapsed: true,
+            items: [
+                { text: 'Enum', link: '/typescript/enum' },
+            ]
+        }
+    ]
+}

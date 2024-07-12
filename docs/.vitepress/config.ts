@@ -3,7 +3,7 @@ import {
     navbar, sidebarNode ,sidebarDocker, sidebarAngular, sidebarGit, sidebarOracle,
     sidebarPostgresql, sidebarJavascript
 } from './routes'
-import { sidebarReact } from './routes/sidebarItem'
+import { sidebarReact, sidebarTypeScript } from './routes/sidebarItem'
 
 
 export default defineConfig({
@@ -31,7 +31,8 @@ export default defineConfig({
             '/oracle/': sidebarOracle(),
             '/postgresql/': sidebarPostgresql(),
             '/node/': sidebarNode(),
-            '/javascript/': sidebarJavascript()
+            '/javascript/': sidebarJavascript(),
+            '/typescript/': sidebarTypeScript(),
 
         },
 
