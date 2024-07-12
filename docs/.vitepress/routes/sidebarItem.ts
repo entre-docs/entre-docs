@@ -301,6 +301,15 @@ export const  sidebarTypeScript = () : DefaultTheme.SidebarItem[] => {
             ]
         },
         {
+            text: 'Genéricos',
+            collapsed: true,
+            items: [
+                { text: 'Definicion', link: '/typescript/generics' },
+                { text: 'Record', link: '/typescript/record-ts' },
+
+            ]
+        },
+        {
             items: [
                 { text: 'Enum', link: '/typescript/enum' },
             ]
