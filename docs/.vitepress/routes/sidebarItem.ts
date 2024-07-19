@@ -278,6 +278,13 @@ export function sidebarJavascript(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'Métodos', link: '/javascript/array' },
             ]
+        },
+        {
+            text: 'Objectos',
+            collapsed: false,
+            items: [
+                { text: 'Iteración de objetos', link: '/javascript/obj-iterator' },
+            ]
         }
     ]
 }
