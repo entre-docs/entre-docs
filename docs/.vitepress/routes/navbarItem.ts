@@ -8,6 +8,8 @@ export function navbar(): DefaultTheme.NavItem[] {
             items: [
                 { text: 'JavaScript', link: '/javascript/' },
                 { text: 'TypeScript', link: '/typescript/' },
+                { text: 'Python', link: '/python/' },
+
 
             ]
         },
