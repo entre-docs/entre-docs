@@ -83,13 +83,23 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                 { text: 'Instalación', link: '/angular/material/instalacion-material' },
                 {
                     text: 'Tablas',
+                    collapsed: true,
                     items: [
                         { text: 'Tabla básica', link: '/angular/material/tabla-material' },
                         { text: 'Paginación', link: '/angular/material/tabla-paginacion' },
                         { text: 'Paginación (Server side)', link: '/angular/material/tabla-server-paginacion' },
                         { text: 'Select checkbox', link: '/angular/material/tabla-select' },
                     ]
-                }
+                },
+                {
+                    text: 'DatePicker',
+                    collapsed: true,
+                    items: [
+                        { text: 'mat-calendar', link: '/angular/material/mat-calendar' },
+                    ]
+
+                },
+
             ]
         },
     ]
