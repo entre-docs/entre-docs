@@ -14,7 +14,11 @@ export function navbar(): DefaultTheme.NavItem[] {
             ]
         },
         { text: 'Git/Github', link: '/git/' },
-        { text: 'Docker', link: '/docker/' },
+        { text: 'DevOps',
+            items: [
+                { text: 'Docker', link: '/docker/' },
+            ]
+        },
         { text: 'Node', link: '/node/' },
         {
             text: 'Frameworks',
@@ -32,7 +36,14 @@ export function navbar(): DefaultTheme.NavItem[] {
                 { text: 'PostgreSQL', link: '/postgresql/' },
             ]
         },
+        {
+            text: 'OS',
+            items: [
+                { text: 'Linux', link: '/os/linux/' },
+                { text: 'Windows', link: '/os/windows/' },
 
+            ]
+        },
         { text: 'Nosotros', link: '/team' },
     ]
   }

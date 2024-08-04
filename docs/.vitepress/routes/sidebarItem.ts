@@ -347,3 +347,29 @@ export const sidebarPython = () : DefaultTheme.SidebarItem[] => {
        
     ]
 }
+
+
+export const sidebarLinux = (): DefaultTheme.SidebarItem[] => {
+    return [
+        {
+            text: 'Bash',
+            collapsed: false,
+            items: [
+                { text: 'Comandos', link: '/os/linux/bash-comandos' },
+            ]
+        }
+    ]
+}
+
+
+export const sidebarWindows = (): DefaultTheme.SidebarItem[] => {
+    return [
+        {
+            text: 'PowerShell',
+            collapsed: false,
+            items: [
+                { text: 'Comandos', link: '/os/windows/powershell-comandos' },
+            ]
+        }
+    ]
+}
