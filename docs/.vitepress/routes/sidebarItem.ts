@@ -168,6 +168,14 @@ export function sidebarGit(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'Versionamiento Remoto', link: '/git/github' }
             ]
+        },
+        {
+            text: 'Múltiples Cuentas',
+            collapsed: false,
+            items: [
+                { text: 'SSH Windows', link: '/git/windows-ssh.md' },
+                { text: 'SSH Ubuntu', link: '/git/ubuntu-ssh.md' },
+            ]
         }
     ]
 }
