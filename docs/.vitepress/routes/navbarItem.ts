@@ -24,6 +24,7 @@ export function navbar(): DefaultTheme.NavItem[] {
             text: 'Frameworks',
             items: [
                 { text: 'Angular', link: '/angular/' },
+                { text: 'Next.js', link: '/next/' },
                 { text: 'React', link: '/react/' },
 
             ]

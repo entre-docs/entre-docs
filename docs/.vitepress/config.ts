@@ -3,7 +3,7 @@ import {
     navbar, sidebarNode ,sidebarDocker, sidebarAngular, sidebarGit, sidebarOracle,
     sidebarPostgresql, sidebarJavascript
 } from './routes'
-import { sidebarLinux, sidebarPython, sidebarReact, sidebarTypeScript, sidebarWindows } from './routes/sidebarItem'
+import { sidebarLinux, sidebarNext, sidebarPython, sidebarReact, sidebarTypeScript, sidebarWindows } from './routes/sidebarItem'
 
 
 export default defineConfig({
@@ -36,6 +36,8 @@ export default defineConfig({
             '/python/': sidebarPython(),
             '/os/linux/': sidebarLinux(),
             '/os/windows/': sidebarWindows(),
+            '/next/': sidebarNext(),
+            
 
         },
 
