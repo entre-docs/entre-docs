@@ -298,10 +298,19 @@ export function sidebarJavascript(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
-            text: 'Objectos',
+            text: 'Objetos',
             collapsed: false,
             items: [
                 { text: 'Iteración de objetos', link: '/javascript/obj-iterator' },
+            ]
+        },
+        {
+            text: 'Date',
+            collapsed: false,
+            items: [
+                { text: 'Métodos', link: '/javascript/date/methods' },
+                { text: 'Luxon', link: '/javascript/date/luxon' },
+
             ]
         }
     ]
