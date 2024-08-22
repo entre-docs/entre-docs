@@ -373,6 +373,8 @@ export const sidebarLinux = (): DefaultTheme.SidebarItem[] => {
             collapsed: false,
             items: [
                 { text: 'Comandos', link: '/os/linux/bash-comandos' },
+                { text: 'Permisos', link: '/os/linux/permisos' },
+
             ]
         }
     ]
