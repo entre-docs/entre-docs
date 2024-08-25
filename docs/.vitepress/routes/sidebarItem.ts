@@ -257,6 +257,15 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
 export function sidebarNode(): DefaultTheme.SidebarItem[] {
     return [
         {
+            text: 'Instalación',
+            collapsed: false,
+            items: [
+                { text: 'NVM Windows', link: '/node/installation/installation-windows' },
+                { text: 'NVM Linux', link: '/node/installation/installation-linux' },
+
+            ]
+        },
+        {
             text: 'Node Config',
             collapsed: false,
             items: [
