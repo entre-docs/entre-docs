@@ -321,6 +321,13 @@ export function sidebarJavascript(): DefaultTheme.SidebarItem[] {
                 { text: 'Luxon', link: '/javascript/date/luxon' },
 
             ]
+        },
+        {
+            text: 'Storage',
+            collapsed: false,
+            items: [
+                { text: 'LocalStorage', link: '/javascript/storage/localStorage' },
+            ]
         }
     ]
 }
