@@ -102,6 +102,13 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
 
             ]
         },
+        {
+            text: 'Tailwind CSS',
+            collapsed: true,
+            items: [
+                { text: 'Instalación', link: '/angular/tailwindcss/instalacion' },
+            ]
+        },
     ]
 }
 
