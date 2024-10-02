@@ -28,30 +28,45 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             text: 'Angular Core',
             collapsed: false,
             items: [
-                { text: 'Instalación', link: '/angular/instalacion-angular' },
-                { text: 'Angular CLI', link: '/angular/angular-cli' },
+                { text: 'Instalación', link: '/angular/core/instalacion-angular' },
+                { text: 'Angular CLI', link: '/angular/core/angular-cli' },
                 {
                     text: 'Directivas Estructurales',
                     collapsed: true,
 
                     items: [
-                        { text: 'ngIf', link: '/angular/ng-if' },
-                        { text: 'ngFor', link: '/angular/ng-for' },
-                        { text: 'ngSwitch', link: '/angular/ng-switch' },
+                        { text: 'ngIf', link: '/angular/core/ng-if' },
+                        { text: 'ngFor', link: '/angular/core/ng-for' },
+                        { text: 'ngSwitch', link: '/angular/core/ng-switch' },
+                        { text: '@if', link: '/angular/core/@if' },
+                        { text: '@for', link: '/angular/core/@for' },
+                        { text: '@switch', link: '/angular/core/@switch' },
                     ]
                 },
-                { text: 'Estilos', link: '/angular/angular-styles' },
+                { text: 'Estilos', link: '/angular/core/angular-styles' },
                 {
                     text: 'Decoradores',
                     collapsed: true,
                     items: [
-                        { text: '@Input()', link: '/angular/input' },
-                        { text: '@Output()', link: '/angular/output' },
-                        { text: '@ViewChild()', link: '/angular/viewChild' },
+                        { text: '@Input()', link: '/angular/core/input' },
+                        { text: '@Output()', link: '/angular/core/output' },
+                        { text: '@ViewChild()', link: '/angular/core/viewChild' },
 
                     ]
                 },
-                { text: 'Inyección de Dependencias', link: '/angular/di' }
+                { text: 'Inyección de Dependencias', link: '/angular/core/di' },
+                { text: 'Signals',
+                    collapsed: true,
+                    items: [
+                        { text: 'Operaciones basicas', link: '/angular/core/signals/' },
+                        { text: 'Effect', link: '/angular/core/signals/effect' },
+                        { text: 'Signal Inputs', link: '/angular/core/signals/signal-inputs' },
+
+
+                    ]
+                }
+
+
             ]
         },
         {
@@ -60,20 +75,6 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'HTTP Client', link: '/angular//http/http' },
                 { text: 'Peticiones', link: '/angular/http/http-requests' }
-            ]
-        },
-        {
-            text: 'Angular 17+',
-            collapsed: true,
-            items: [
-                {
-                    text: 'Directivas Estructurales',
-                    items: [
-                        { text: '@if', link: '/angular/angular17/@if' },
-                        { text: '@for', link: '/angular/angular17/@for' },
-                        { text: '@switch', link: '/angular/angular17/@switch' },
-                    ]
-                },
             ]
         },
         {
