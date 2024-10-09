@@ -64,7 +64,8 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
 
 
                     ]
-                }
+                },
+                { text: 'output()', link: '/angular/core/output-func/' }
 
 
             ]
