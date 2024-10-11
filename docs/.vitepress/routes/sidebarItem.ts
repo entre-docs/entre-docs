@@ -54,7 +54,15 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
 
                     ]
                 },
-                { text: 'Inyección de Dependencias', link: '/angular/core/di' },
+                {
+                    text: 'Inyección de Dependencias',
+                    collapsed: true,
+                    items: [
+                        {text: 'Global', link: '/angular/core/di/di'},
+                        {text: 'Módulos', link: '/angular/core/di/di-modules'}
+
+                    ]
+                },
                 { text: 'Signals',
                     collapsed: true,
                     items: [
