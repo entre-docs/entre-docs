@@ -71,6 +71,31 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Routing',
+            collapsed: true,
+            items: [
+                {
+                    text: 'Simple routes',
+                    collapsed: true,
+                    items: [
+                        { text: 'Modules', link: '/angular/routing/simple-module-routing'},
+                        { text: 'Standalone', link: '/angular/routing/simple-salone-routing'},
+
+                    ]
+                },
+                {
+                    text: 'Lazy Loading routes',
+                    collapsed: true,
+                    items: [
+                        { text: 'Modules', link: '/angular/routing/lazyloading-m-routing' },
+                        { text: 'Standalone', link: '/angular/routing/lazyloading-s-routing' },
+
+                        
+                    ]
+                },
+            ]
+        },
+        {
             text: 'HTTP',
             collapsed: true,
             items: [
