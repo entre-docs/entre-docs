@@ -1,12 +1,41 @@
-# Comandos para crear tabla, seleccionar, actualizar y eliminar registros
+---
+outline: deep
+---
 
-## Crear tabla
+# Comandos para crear, seleccionar, actualizar y eliminar columnas y registros
+
+
+## Agregar una columna
 
 ```sql
-CREATE TABLE USERS(
-	NAME VARCHAR(10) UNIQUE
-);
+ALTER TABLE PRODUCTS
+ADD COLUMN description TEXT;
 ```
+
+
+## Renombrar una columna
+
+```sql
+ALTER TABLE USERS
+RENAME COLUMN FONO TO TELEFONO;
+```
+
+
+## Eliminar una columna
+
+```sql
+ALTER TABLE PRODUCTS
+DROP COLUMN description;
+```
+
+Los datos que había en la columna desaparecen. Las *constraints* de tabla que afectan a la columna también desaparecen. Sin embargo, si la columna está referenciada por una *constraint* de clave foranea de otra tabla, PostgreSQL no eliminará silenciosamente esa *constraint*. Puede autorizar la eliminación de todo lo que dependa de la columna añadiendo **CASCADE**
+
+```sql
+ALTER TABLE PRODUCTS
+DROP COLUMN description CASCADE;
+```
+
+
 
 ## Insertar registros
 
@@ -26,9 +55,7 @@ SELECT * FROM USERS;
 | ------------- |
 | Verónica      |
 | Felipe        |
-| Virginia      |
 | Esteban       |
-| Antonio       |
 
 
 
@@ -49,15 +76,6 @@ SELECT * FROM USERS WHERE NAME LIKE '% Esteban';
 SELECT * FROM USERS WHERE NAME LIKE '%a'; -- que termine con la letra a
 ```
 
-
-## Ordenar los registros
-
-```sql
-SELECT * FROM USERS ORDER BY id DESC;
-SELECT * FROM USERS ORDER BY id ASC;
-```
-
-
 ## Seleccionar con LIMIT/OFFSET
 
 :::tip
@@ -77,6 +95,14 @@ SELECT * FROM USERS LIMIT 3 OFFSET 2;
 | Antonio       |
 
 
+## Ordenar los registros
+
+```sql
+SELECT * FROM USERS ORDER BY id DESC;
+SELECT * FROM USERS ORDER BY id ASC;
+```
+
+
 ## Actualizar un registro
 
 :::tip IMPORTANTE
@@ -87,8 +113,7 @@ SELECT * FROM USERS LIMIT 3 OFFSET 2;
 UPDATE USERS SET NAME = 'Pepito' WHERE ID = 1;
 ```
 
-
-## Borrar un registro
+## Eliminar un registro
 
 :::tip IMPORTANTE
 **NUNCA** olvidar agregar el WHERE
@@ -99,7 +124,7 @@ DELETE FROM USERS WHERE ID = 15;
 ```
 
 
-## Borrar mediante subconsulta
+## Eliminar mediante subconsulta
 
 ```sql
 DELETE FROM USERS
@@ -107,14 +132,14 @@ WHERE ID = (SELECT MAX(ID) FROM USERS);
 ```
 
 
-## Borrar usando LIKE
+## Eliminar usando LIKE
 
 ```sql
 DELETE FROM USERS WHERE NAME LIKE 'Ant%';   
 ```
 
 
-## Eliminar los registros de una tabla
+## Eliminar todos los registros
 
 :::tip IMPORTANTE
 Este comando elimina **TODOS** los registros de la tabla.
@@ -122,29 +147,4 @@ Este comando elimina **TODOS** los registros de la tabla.
 
 ```sql
 TRUNCATE TABLE USERS;
-```
-
-
-## Eliminar una tabla
-
-```sql
-DROP TABLE USERS;
-```
-
-## Actualizar una tabla
-
-:::tip Ejemplo: Agregar el nuevo campo *ESTADO* a la tabla
-:::
-
-```sql
-ALTER TABLE USERS
-ADD ESTADO smallint;
-```
-
-:::tip Ejemplo: Establecer una restricción para permitir solo valores 0 ó 1
-:::
-
-```sql
-ALTER TABLE USERS
-ADD CONSTRAINT CHK_ESTADO CHECK (ESTADO IN (0, 1));
 ```

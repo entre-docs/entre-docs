@@ -246,7 +246,13 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
                 { text: 'Conceptos', link: '/postgresql/conceptos' },
                 { text: 'Buenas Prácticas', link: '/postgresql/buenas_practicas' },
                 { text: 'Diagramas Entidad-Relación', link: '/postgresql/software_diagramas' },
-                { text: 'Tablas y Registros', link: '/postgresql/tablas_y_registros' },
+                { text: 'Tablas y Registros',
+                    collapsed: true,
+                    items: [
+                        { text: 'Tablas', link: '/postgresql/tablas/tablas' },
+                        { text: 'Columnas y Registros', link: '/postgresql/tablas/columnas_y_registros' },
+                    ]
+                },
                 { text: 'Operadores String y Funciones', link: '/postgresql/operadores_string_funciones' },
                 { text: 'Funciones de grupo', link: '/postgresql/funciones_grupo' },
                 { text: 'Llaves', link: '/postgresql/llaves' },
