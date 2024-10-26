@@ -26,6 +26,17 @@ DROP SEQUENCE nombre_secuencia;
 ```
 
 
+## Reiniciar una secuencia autoincremental
+
+::: tip
+Debemos buscar como se llama el campo de secuencia id
+:::
+
+```sql
+ALTER SEQUENCE campo_id_sequencia RESTART WITH 1;
+```
+
+
 ## Obtener el valor de una secuencia
 
 ```sql

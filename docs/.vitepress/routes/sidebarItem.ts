@@ -262,8 +262,6 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
                 { text: 'Fechas', link: '/postgresql/fechas' },
                 { text: 'Funciones de PostgreSQL', link: '/postgresql/funciones_unicas' },
                 { text: 'Funciones personalizadas', link: '/postgresql/funciones_personalizadas' },
-
-                { text: 'Pistas Importantes', link: '/postgresql/pistas' },
             ]
         },
         {
