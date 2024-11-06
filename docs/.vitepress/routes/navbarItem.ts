@@ -3,6 +3,7 @@ import { type DefaultTheme } from 'vitepress';
 
 export function navbar(): DefaultTheme.NavItem[] {
     return [
+        { text: 'VSC', link: '/vsc/' },
         {
             text: 'Lenguajes',
             items: [

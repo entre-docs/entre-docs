@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Conceptos
 
 ## Base de datos
