@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Funciones de grupo
 
 ## Count

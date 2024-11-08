@@ -10,7 +10,7 @@ Controla si el editor tiene habilitada la edición vinculada. Dependiendo del id
 1. Ingresar a:  *Manage* --> *Settings*
 
 <p align="center">
-  <img src="/public/vsc.png" width="800" alt="editar_etiquetas1"/>
+  <img src="/vsc.png" width="800" alt="editar_etiquetas1"/>
 </p>
 
 <br>
@@ -18,5 +18,5 @@ Controla si el editor tiene habilitada la edición vinculada. Dependiendo del id
 2. Buscar **editor.linked** y marcar la casilla.
 
 <p align="center">
-  <img src="/public/vsc_editar_etiquetas.png" width="800" alt="editar_etiquetas2"/>
+  <img src="/vsc_editar_etiquetas.png" width="800" alt="editar_etiquetas2"/>
 </p>

@@ -3,7 +3,7 @@ import {
     navbar, sidebarNode ,sidebarDocker, sidebarAngular, sidebarGit, sidebarOracle,
     sidebarPostgresql, sidebarJavascript
 } from './routes'
-import { sidebarLinux, sidebarNext, sidebarPython, sidebarReact, sidebarTypeScript, sidebarVSC, sidebarWindows } from './routes/sidebarItem'
+import { sidebarJava, sidebarLinux, sidebarNext, sidebarPython, sidebarReact, sidebarTypeScript, sidebarVSC, sidebarWindows } from './routes/sidebarItem'
 
 
 export default defineConfig({
@@ -38,6 +38,7 @@ export default defineConfig({
             '/os/windows/': sidebarWindows(),
             '/next/': sidebarNext(),
             '/vsc/': sidebarVSC(),
+            '/java/': sidebarJava(),
             
 
         },

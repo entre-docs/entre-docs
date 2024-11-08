@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Comandos para realizar consultas a la base de datos en Oracle
 
 ## Seleccionar campos

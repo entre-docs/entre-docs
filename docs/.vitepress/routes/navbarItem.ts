@@ -7,10 +7,10 @@ export function navbar(): DefaultTheme.NavItem[] {
         {
             text: 'Lenguajes',
             items: [
+                { text: 'Java', link: '/java/' },
                 { text: 'JavaScript', link: '/javascript/' },
-                { text: 'TypeScript', link: '/typescript/' },
                 { text: 'Python', link: '/python/' },
-
+                { text: 'TypeScript', link: '/typescript/' },
 
             ]
         },

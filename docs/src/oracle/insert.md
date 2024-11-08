@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Comandos para la inserción de datos en Oracle
 
 ## Insertar una fila

@@ -478,3 +478,19 @@ export const sidebarVSC = (): DefaultTheme.SidebarItem[] => {
         }
     ]
 }
+
+export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
+    return [
+        {
+            text: 'Programación Orientada a Objetos',
+            collapsed: false,
+            items: [
+                { text: 'Clases y Objetos', link: '/java/clases_objetos' },
+                { text: 'Encapsulamiento', link: '/java/encapsulamiento' },
+                { text: 'Abstracción', link: '/java/abstraccion' },
+                { text: 'Herencia', link: '/java/herencia' },
+                { text: 'Polimorfismo', link: '/java/polimorfismo' },
+            ]
+        }
+    ]
+}

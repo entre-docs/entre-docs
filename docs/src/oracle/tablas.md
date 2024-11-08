@@ -1,3 +1,7 @@
+---
+outline: deep
+---
+
 # Comandos para la creación de tablas en Oracle
 
 ## Crear tabla
