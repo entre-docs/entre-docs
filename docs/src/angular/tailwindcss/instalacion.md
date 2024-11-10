@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-Instalación y Configuraciones
+# Instalación y Configuraciones
 
 * Tailwindcss
 ```bash

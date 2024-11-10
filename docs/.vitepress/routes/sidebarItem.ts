@@ -112,6 +112,13 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'RxJS',
+            collapsed: true,
+            items: [
+                {text: 'switchMap', link:'/angular//rxjs/switchMap'},
+            ]
+        },
+        {
             text: 'Angular Material',
             collapsed: true,
             items: [
