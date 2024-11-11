@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Métodos en Java
+# Métodos de una Clase en Java
 
 ## Constructor
 
@@ -156,3 +156,4 @@ public boolean preparar(char encendido){}
 - nombre: preparar
 - parámetros: encendido -> char
 ```
+

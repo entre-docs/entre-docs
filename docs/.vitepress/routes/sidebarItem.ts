@@ -496,10 +496,10 @@ export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
             items: [
                 { text: 'Tipos de Datos', link: '/java/tipos_de_datos' },
                 { text: 'Clases y Objetos', link: '/java/clases_objetos' },
-                { text: 'Métodos', link: '/java/metodos' },
+                { text: 'Métodos de una Clase', link: '/java/metodos_de_clase' },
                 { text: 'Encapsulamiento', link: '/java/encapsulamiento' },
                 { text: 'Abstracción', link: '/java/abstraccion' },
-                { text: 'Herencia', link: '/java/herencia' },
+                { text: 'Herencia e Interface', link: '/java/herencia_interface' },
                 { text: 'Polimorfismo', link: '/java/polimorfismo' },
             ]
         },
