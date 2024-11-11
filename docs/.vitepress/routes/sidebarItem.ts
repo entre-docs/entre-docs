@@ -58,12 +58,13 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                     text: 'Inyección de Dependencias',
                     collapsed: true,
                     items: [
-                        {text: 'Global', link: '/angular/core/di/di'},
-                        {text: 'Módulos', link: '/angular/core/di/di-modules'}
+                        { text: 'Global', link: '/angular/core/di/di' },
+                        { text: 'Módulos', link: '/angular/core/di/di-modules' }
 
                     ]
                 },
-                { text: 'Signals',
+                {
+                    text: 'Signals',
                     collapsed: true,
                     items: [
                         { text: 'Operaciones basicas', link: '/angular/core/signals/' },
@@ -86,8 +87,8 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                     text: 'Simple routes',
                     collapsed: true,
                     items: [
-                        { text: 'Modules', link: '/angular/routing/simple-module-routing'},
-                        { text: 'Standalone', link: '/angular/routing/simple-salone-routing'},
+                        { text: 'Modules', link: '/angular/routing/simple-module-routing' },
+                        { text: 'Standalone', link: '/angular/routing/simple-salone-routing' },
 
                     ]
                 },
@@ -98,7 +99,7 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                         { text: 'Modules', link: '/angular/routing/lazyloading-m-routing' },
                         { text: 'Standalone', link: '/angular/routing/lazyloading-s-routing' },
 
-                        
+
                     ]
                 },
             ]
@@ -168,17 +169,17 @@ export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
         {
             text: 'React Core',
             collapsed: true,
-            items : [
-               { text: 'Interpolación de cadenas', link: '/react/string-interpolation'},
-               { text: 'Properties', link: '/react/props'}
+            items: [
+                { text: 'Interpolación de cadenas', link: '/react/string-interpolation' },
+                { text: 'Properties', link: '/react/props' }
             ]
         },
         {
             text: 'React Redux',
             collapsed: true,
-            items : [
-               { text: 'Redux', link: '/react/redux/redux'},
-               { text: 'Redux Toolkit', link: '/react/redux/redux-toolkit'},
+            items: [
+                { text: 'Redux', link: '/react/redux/redux' },
+                { text: 'Redux Toolkit', link: '/react/redux/redux-toolkit' },
 
 
             ]
@@ -186,9 +187,9 @@ export const sidebarReact = (): DefaultTheme.SidebarItem[] => {
         {
             text: 'Testing',
             collapsed: true,
-            items : [
-               { text: 'Vitest', link: '/react/tests/vitest-conf.md'}
-               
+            items: [
+                { text: 'Vitest', link: '/react/tests/vitest-conf.md' }
+
 
             ]
         }
@@ -253,7 +254,8 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
                 { text: 'Conceptos', link: '/postgresql/conceptos' },
                 { text: 'Buenas Prácticas', link: '/postgresql/buenas_practicas' },
                 { text: 'Diagramas Entidad-Relación', link: '/postgresql/software_diagramas' },
-                { text: 'Tablas y Registros',
+                {
+                    text: 'Tablas y Registros',
                     collapsed: true,
                     items: [
                         { text: 'Tablas', link: '/postgresql/tablas/tablas' },
@@ -331,8 +333,8 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
             text: 'DTO - Entity',
             collapsed: false,
             items: [
-               {text: 'DTO', link: '/node/dto/dto'},
-               {text: 'DTO Class Validator', link: '/node/dto/dto-classValidator'},
+                { text: 'DTO', link: '/node/dto/dto' },
+                { text: 'DTO Class Validator', link: '/node/dto/dto-classValidator' },
 
             ]
         },
@@ -345,7 +347,7 @@ export function sidebarNode(): DefaultTheme.SidebarItem[] {
 
             ]
         },
-        
+
     ]
 }
 
@@ -385,7 +387,7 @@ export function sidebarJavascript(): DefaultTheme.SidebarItem[] {
     ]
 }
 
-export const  sidebarTypeScript = () : DefaultTheme.SidebarItem[] => {
+export const sidebarTypeScript = (): DefaultTheme.SidebarItem[] => {
     return [
         {
             text: 'Interfaces',
@@ -420,17 +422,17 @@ export const  sidebarTypeScript = () : DefaultTheme.SidebarItem[] => {
     ]
 }
 
-export const sidebarPython = () : DefaultTheme.SidebarItem[] => {
+export const sidebarPython = (): DefaultTheme.SidebarItem[] => {
     return [
         {
             text: 'Python',
             collapsed: false,
             items: [
                 { text: 'Instalación', link: '/python/instalacion.md' },
-               
+
             ],
         },
-       
+
     ]
 }
 
@@ -492,12 +494,50 @@ export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
             text: 'Programación Orientada a Objetos',
             collapsed: false,
             items: [
+                { text: 'Tipos de Datos', link: '/java/tipos_de_datos' },
                 { text: 'Clases y Objetos', link: '/java/clases_objetos' },
+                { text: 'Métodos', link: '/java/metodos' },
                 { text: 'Encapsulamiento', link: '/java/encapsulamiento' },
                 { text: 'Abstracción', link: '/java/abstraccion' },
                 { text: 'Herencia', link: '/java/herencia' },
                 { text: 'Polimorfismo', link: '/java/polimorfismo' },
             ]
+        },
+        {
+            text: 'Estructuras de Control',
+            collapsed: true,
+            items: [
+                {
+                    text: 'Sentencias Condicionales',
+                    collapsed: true,
+                    items: [
+                        { text: 'if else', link: '/java/estructuras_control/if_else' },
+                        { text: 'switch', link: '/java/estructuras_control/switch' },
+                    ]
+                },
+                {
+                    text: 'Sentencias de Iteración',
+                    collapsed: true,
+                    items: [
+                        { text: 'for', link: '/java/estructuras_control/for' },
+                        { text: 'while', link: '/java/estructuras_control/while' },
+                        { text: 'do while', link: '/java/estructuras_control/do_while' },
+                    ]
+                }
+            ]
+        },
+        {
+            items: [
+                { text: 'Clase String y sus métodos', link: '/java/clase_string_metodos' },
+            ]
+        },
+        {
+            text: 'Colecciones',
+            collapsed: true,
+            items: [
+                { text: 'Tipo de colecciones', link: '/java/colecciones/tipo_colecciones' },
+            ]
         }
+
     ]
 }

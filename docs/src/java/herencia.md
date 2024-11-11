@@ -4,11 +4,11 @@ outline: deep
 
 # Herencia
 
-La herencia es uno de los principios fundamentales de la Programación Orientada a Objetos (POO) y en Java permite crear nuevas clases a partir de clases existentes. Esto ayuda a reutilizar código y a crear jerarquías de clases, lo que hace que el código sea más modular y fácil de mantener.
+La herencia es uno de los principios fundamentales de la Programación Orientada a Objetos (POO) y en Java permite crear nuevas clases a partir de clases existentes. Esto ayuda a **reutilizar código** y a crear jerarquías de clases, lo que hace que el código sea más modular y fácil de mantener.
 
 La herencia en Java se logra utilizando la palabra clave **extends**, y permite que una clase (subclase) herede atributos y métodos de otra clase (superclase). La subclase puede modificar (sobrescribir) los métodos heredados, o puede añadir nuevos métodos y atributos propios.
 
-Conceptos Clave de la Herencia en Java:
+## Superclase y Subclase
 
 * Superclase: Es la clase que se hereda. Contiene los atributos y métodos comunes que serán utilizados por las subclases.
 

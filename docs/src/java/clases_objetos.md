@@ -63,35 +63,3 @@ public class Main {
 
 * Una clase es como un plano que define cómo se construyen los objetos.
 * Un objeto es una instancia concreta de esa clase, con un estado específico.
-
-
-## Constructor
-
-Es un método especial dentro de la clase que se utiliza para inicializar los objetos cuando se crean.
-
-
-::: code-group
-```java [coche.class]
-public class Coche {
-    String marca;
-    String modelo;
-    int anio;
-
-    // Constructor
-    public Coche(String marca, String modelo, int anio) {
-        this.marca = marca;
-        this.modelo = modelo;
-        this.anio = anio;
-    }
-
-    public void arrancar() {
-        System.out.println("El coche está arrancando...");
-    }
-}
-
-```
-
-```java [miCoche.objeto]
-Coche miCoche = new Coche("Ford", "Fiesta", 2022);
-```
-:::
