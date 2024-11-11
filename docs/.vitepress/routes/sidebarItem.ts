@@ -498,7 +498,7 @@ export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
         },
         {
             text: 'Estructuras de Control',
-            collapsed: false,
+            collapsed: true,
             items: [
                 {
                     text: 'Sentencias Condicionales',
@@ -516,9 +516,12 @@ export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
                         { text: 'while', link: '/java/estructuras_control/while' },
                         { text: 'do while', link: '/java/estructuras_control/do_while' },
                     ]
-                },
+                }
+            ]
+        },
+        {
+            items: [
                 { text: 'Clase String y sus métodos', link: '/java/clase_string_metodos' },
-
             ]
         },
         {
