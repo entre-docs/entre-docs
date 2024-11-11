@@ -4,7 +4,10 @@ outline: deep
 
 # Encapsulamiento
 
-El encapsulamiento es uno de los pilares de la Programación Orientada a Objetos (POO) y se refiere a la práctica de ocultar los detalles internos de una clase y solo exponer lo que es necesario. En Java, esto se logra utilizando modificadores de acceso como **private**, **protected**, y **public** para controlar el acceso a los atributos y métodos.
+El encapsulamiento es uno de los pilares de la Programación Orientada a Objetos (POO) y se refiere a la práctica de ocultar los detalles internos de una clase y solo exponer lo que es necesario.
+
+
+## Modificadores de Acceso
 
 El encapsulamiento tiene dos objetivos principales:
 
@@ -12,6 +15,13 @@ El encapsulamiento tiene dos objetivos principales:
 2. Proteger la integridad de los datos permitiendo que solo ciertos métodos controlados puedan acceder y modificar los atributos.
 
 
+
+<p align="center">
+  <img src="/java_modificadores_acceso.png" width="800" alt="java_modificadores_acceso"/>
+</p>
+
+
+## Ejemplo de Encapsulamiento
 
 ```java
 public class CuentaBancaria {
