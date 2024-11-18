@@ -70,6 +70,8 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                         { text: 'Operaciones basicas', link: '/angular/core/signals/' },
                         { text: 'Effect', link: '/angular/core/signals/effect' },
                         { text: 'Signal Inputs', link: '/angular/core/signals/signal-inputs' },
+                        { text: 'linkedsignal', link: '/angular/core/signals/linkedSignal' },
+
 
 
                     ]
