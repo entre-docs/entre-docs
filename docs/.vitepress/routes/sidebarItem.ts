@@ -119,6 +119,8 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 {text: 'switchMap', link:'/angular//rxjs/switchMap'},
+                {text: 'switchMap', link:'/angular//rxjs/tap'},
+
             ]
         },
         {

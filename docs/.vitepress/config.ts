@@ -1,6 +1,7 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
+import { sidebarDocker } from './routes/sidebars';
 import {
-    navbar, sidebarNode ,sidebarDocker, sidebarAngular, sidebarGit, sidebarOracle,
+    navbar, sidebarNode, sidebarAngular, sidebarGit, sidebarOracle,
     sidebarPostgresql, sidebarJavascript
 } from './routes'
 import { sidebarJava, sidebarLinux, sidebarNext, sidebarPython, sidebarReact, sidebarTypeScript, sidebarVSC, sidebarWindows } from './routes/sidebarItem'
