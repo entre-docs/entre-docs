@@ -51,6 +51,15 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Vistas y Secuencias',
+            collapsed: true,
+            items: [
+                { text: 'Vistas', link: '/oracle/vistas' },
+                { text: 'Secuencias', link: '/oracle/secuencias' },
+
+            ]
+        },
+        {
             text: 'Programación PL/SQL',
             collapsed: true,
             items: [
