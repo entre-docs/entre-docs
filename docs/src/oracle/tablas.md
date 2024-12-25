@@ -6,7 +6,7 @@ outline: deep
 
 ## Crear tabla
 
-```bash
+```sql
 CREATE TABLE mi_tabla(
     atributo_1 NUMBER(2),
     atributo_2 VARCHAR2(14),
@@ -19,7 +19,7 @@ CREATE TABLE mi_tabla(
 
 ### Constraint Nivel Columna
 
-```bash
+```sql
 CREATE TABLE mi_tabla(
     id_tabla NUMBER(6) CONSTRAINT PK_mi_tabla_PRIMARY_KEY,
     atributo_1 VARCHAR2(20),
@@ -30,7 +30,7 @@ CREATE TABLE mi_tabla(
 
 ### Constraint Nivel Tabla
 
-```bash
+```sql
 CREATE TABLE mi_tabla(
     id_tabla NUMBER(6),
     atributo_1 VARCHAR2(20),
@@ -44,7 +44,7 @@ CREATE TABLE mi_tabla(
 Cuando la PK tiene más de un atributo, se usa Constraint a Nivel Tabla
 :::
 
-```bash
+```sql
 CREATE TABLE COMISION_MES(
     rut_vendedor NUMBER(8),
     nro_boleta NUMBER(8),
@@ -59,7 +59,7 @@ CREATE TABLE COMISION_MES(
 Not Null: el campo es requerido obligatoriamente
 :::
 
-```bash
+```sql
 CREATE TABLE mi_tabla(
     atributo_1 NUMBER(2),
     atributo_2 VARCHAR2(14),
@@ -72,7 +72,7 @@ CREATE TABLE mi_tabla(
 
 ### Constraint Nivel Columna
 
-```bash
+```sql
 CREATE TABLE tabla_1(
     id_tabla_1 NUMBER(6),
     atributo_a VARCHAR2(20),
@@ -83,7 +83,7 @@ CREATE TABLE tabla_1(
 
 * Un ejemplo:
 
-```bash
+```sql
 CREATE TABLE empleado(
     id_empleado NUMBER(6),
     primer_nombre VARCHAR2(20),
@@ -94,7 +94,7 @@ CREATE TABLE empleado(
 
 ### Constraint Nivel Tabla
 
-```bash
+```sql
 CREATE TABLE tabla_1(
     id_tabla_1 NUMBER(6),
     atributo_a VARCHAR2(20),
@@ -110,7 +110,7 @@ CREATE TABLE tabla_1(
 Con una key Primaria Foránea, se debe especificar en las CONSTRAINT, que dicha key es primary, luego indicar que es foranea haciendo REFERENCIA a la tabla de cual viene.
 :::
 
-```bash
+```sql
 CREATE TABLE tabla_1(
     id_tabla_1 NUMBER(6),
     atributo_a VARCHAR2(20),
@@ -129,7 +129,7 @@ Restricción para que los valores cumplan cierta condición
 
 * En el siguiente ejemplo, el atributo 'salario' debe ser mayor a cero.
 
-```bash
+```sql
 CREATE TABLE empleado(
     id_empleado NUMBER(6),
     primer_nombre VARCHAR2(20),
@@ -141,7 +141,7 @@ CREATE TABLE empleado(
 
 * En este ejemplo, el atributo 'edad' debe ser mayor a 18.
 
-```bash
+```sql
 CREATE TABLE empleados (
     id NUMBER PRIMARY KEY,
     nombre VARCHAR2(50),

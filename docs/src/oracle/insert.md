@@ -6,7 +6,7 @@ outline: deep
 
 ## Insertar una fila
 
-```bash
+```sql
 INSERT INTO tabla(atributo_1, atributo_2, atributo_3)
 VALUES (70, 'Albania', 'Musabeli');
 ```

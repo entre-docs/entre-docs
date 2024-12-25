@@ -6,7 +6,7 @@ outline: deep
 
 ## Count
 
-```bash
+```sql
 SELECT
     CARRERAID AS "ID DE CARRERA",
     COUNT(ALUMNOID) AS "TOTAL ALUMNOS MATRICULADOS"
@@ -25,7 +25,7 @@ ORDER BY COUNT(ALUMNOID) DESC, CARRERAID ASC
 
 ## Group by
 
-```bash
+```sql
 SELECT
     MIN(SALARIO),
     MAX(SALARIO),
@@ -43,7 +43,7 @@ GROUP BY TO_CHAR(DEPARTAMENTO_ID);
 - AVG: obtener el promedio
 :::
 
-```bash
+```sql
 SELECT
     ID_ESCOLARIDAD,
     COUNT(RUN_EMP) AS "TOTAL DE EMPLEADOS",

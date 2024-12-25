@@ -1,10 +1,9 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
-import { sidebarDocker, sidebarAngular } from './routes/sidebars';
-import {
-    navbar, sidebarNode, sidebarGit, sidebarOracle,
-    sidebarPostgresql, sidebarJavascript
-} from './routes'
-import { sidebarJava, sidebarLinux, sidebarNext, sidebarPython, sidebarReact, sidebarTypeScript, sidebarVSC, sidebarWindows } from './routes/sidebarItem'
+import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sidebarGit, sidebarJava,
+    sidebarReact, sidebarNode, sidebarJavascript, sidebarTypescript, sidebarPython, sidebarNext,
+    sidebarLinux, sidebarWindows, sidebarVSC
+ } from './routes/sidebars';
+import { navbar } from './routes'
 
 
 export default defineConfig({
@@ -33,7 +32,7 @@ export default defineConfig({
             '/postgresql/': sidebarPostgresql(),
             '/node/': sidebarNode(),
             '/javascript/': sidebarJavascript(),
-            '/typescript/': sidebarTypeScript(),
+            '/typescript/': sidebarTypescript(),
             '/python/': sidebarPython(),
             '/os/linux/': sidebarLinux(),
             '/os/windows/': sidebarWindows(),
