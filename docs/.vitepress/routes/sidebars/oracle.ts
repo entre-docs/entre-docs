@@ -8,15 +8,22 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'Tipos de datos', link: '' },
                 { text: 'Creación de Tablas', link: '/oracle/tablas' },
-                { text: 'Constraint', link: '' },
+                {
+                    text: 'Constraints',
+                    collapsed: true,
+                    items: [
+                                { text: 'primary key', link: '/oracle/constraints/primary_key' },
+                                { text: 'foreign key', link: '/oracle/constraints/foreign_key' },
+                                { text: 'primary foreign key', link: '/oracle/constraints/primary_foreign_key' },
+                            ]
+                },
+
+                { text: 'Not Null y Check', link: '/oracle/not_null_check' },
                 { text: 'Actualización de tabla', link: '' },
-                { text: 'Creación de Tablas', link: '' },
                 { text: 'Eliminación de tabla', link: '' },
                 { text: 'Insertar registros', link: '' },
                 { text: 'Actualizar registros', link: '' },
                 { text: 'Eliminar registros', link: '' },
-
-
             ]
         },
         {
