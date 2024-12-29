@@ -4,7 +4,7 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
     return [
         {
             text: 'DML',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: 'Tipos de datos', link: '' },
                 { text: 'Creación de Tablas', link: '/oracle/tablas' },
@@ -75,10 +75,15 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            items: [
+                { text: 'Privilegios y Roles', link: '/oracle/privilegios_roles' },
+            ]
+        },
+        {
             text: 'Programación PL/SQL',
             collapsed: true,
             items: [
-                { text: 'Creación de Tablas', link: '' },
+                { text: 'PL/SQL', link: '' },
             ]
         }
     ]
