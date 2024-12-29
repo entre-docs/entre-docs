@@ -2,7 +2,10 @@
 outline: deep
 ---
 
-# Funciones de grupo
+# Funciones de grupo en Oracle
+
+Las funciones de grupo en Oracle son funciones que operan sobre un conjunto de filas y retornan un único valor basado en el grupo de datos.
+
 
 ## Count
 
@@ -17,22 +20,12 @@ ORDER BY COUNT(ALUMNOID) DESC, CARRERAID ASC
 ```
 
 | ID DE CARRERA  | TOTAL ALUMNOS MATRICULADOS | 
-| -------------- | -------------------------- |
+|----------------|----------------------------|
 | 123            | 40                         |
 | 456            | 30                         |
 | 789            | 25                         |
 
 
-## Group by
-
-```sql
-SELECT
-    MIN(SALARIO),
-    MAX(SALARIO),
-    TO_CHAR(DEPARTAMENTO_ID)
-FROM EMPLEADOS
-GROUP BY TO_CHAR(DEPARTAMENTO_ID);
-```
 
 ## MAX() - MIN() - SUM() - AVG()
 
@@ -55,3 +48,31 @@ FROM EMPLEADO
 GROUP BY ID_ESCOLARIDAD
 ORDER BY "TOTAL DE EMPLEADOS" DESC;
 ```
+
+|ID_ESCOLARIDAD|TOTAL DE EMPLEADOS|SALARIO MÁXIMO|SALARIO MÍNIMO|SALARIO TOTAL|SALARIO PROMEDIO|
+|--------------|------------------|--------------|--------------|-------------|----------------|
+|1             |    150           | $25,000      |	$8,000      |	$3,500,000|	$12,000        |
+|2             |	120           |	$20,000      |	$9,000      |	$2,400,000|	$10,000        |
+|3             |	80            |	$18,000      |	$7,500      |	$1,400,000|	$11,250        |
+|4             |	50            |	$15,000      |	$6,000      |	$750,000  |	$10,000        |
+
+
+## Group by
+
+Estas funciones suelen utilizarse junto con GROUP BY para calcular resultados por grupos.
+
+```sql
+SELECT
+    TO_CHAR(DEPARTAMENTO_ID),
+    MIN(SALARIO),
+    MAX(SALARIO)
+FROM EMPLEADOS
+GROUP BY TO_CHAR(DEPARTAMENTO_ID);
+```
+
+|DEPARTAMENTO_ID|SALARIO MÍNIMO|SALARIO MÁXIMO|
+|---------------|--------------|--------------|
+|10             |3,000         |	10,000    |
+|20             |4,500         |	15,000    |
+|30             |2,500         |	8,000     |
+|40             |5,000         |	12,000    |

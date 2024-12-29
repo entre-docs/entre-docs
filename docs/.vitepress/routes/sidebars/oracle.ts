@@ -67,6 +67,14 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Sinónimos e Índices',
+            collapsed: true,
+            items: [
+                { text: 'Índices', link: '/oracle/indices' },
+                { text: 'Sinónimos', link: '/oracle/sinonimos' },
+            ]
+        },
+        {
             text: 'Programación PL/SQL',
             collapsed: true,
             items: [

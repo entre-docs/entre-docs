@@ -4,6 +4,14 @@ outline: deep
 
 # Uso de Operadores Set
 
+En Oracle, los operadores de conjuntos (Set Operators) se utilizan para combinar los resultados de dos o más consultas. Los principales operadores son:
+
+1. UNION
+2. UNION ALL
+3. INTERSECT
+4. MINUS
+
+
 Tenemos la siguiente tabla *employees* de ejemplo:
 
 |first_name	|department_id|
