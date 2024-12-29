@@ -80,6 +80,11 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            items: [
+                { text: 'Fases de Procesamiento - SQL Tuning', link: '/oracle/sql_tuning' },
+            ]
+        },
+        {
             text: 'Programación PL/SQL',
             collapsed: true,
             items: [
