@@ -7,7 +7,15 @@ export function sidebarGit(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 { text: 'Configuración', link: '/git/configuracion' },
-                { text: 'Versionamiento', link: '/git/versionamiento' },
+                {
+                    text: 'Versionamiento',
+                    collapsed: true,
+                    items: [
+                        { text: 'Inicio de proyecto', link: 'git/versionamiento/inicio_proyecto' },
+                        { text: 'Gestión de archivos', link: 'git/versionamiento/seguimiento' },
+                        { text: 'Commits', link: '/git/versionamiento/commits' },
+                    ]
+                },
                 { text: 'Ramas', link: '/git/ramas' },
                 { text: 'Stash', link: '/git/stash' },
                 { text: 'Tags', link: '/git/tags' },
