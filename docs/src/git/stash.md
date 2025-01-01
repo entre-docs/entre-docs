@@ -84,3 +84,19 @@ Tengo que estar en la rama X
 ```bash
 git rebase master
 ```
+
+### Ejemplo de uso
+
+* Estado inicial:
+
+    master tiene los commits: A → B → C.
+    Tu rama feature tiene los commits: A → B → C → D → E.
+
+master avanza con nuevos commits: A → B → C → F → G.
+
+* Al ejecutar git rebase master en la rama feature:
+
+    Git toma los commits D → E (de tu rama feature).
+    Los aplica sobre el último estado de master (F → G).
+
+El nuevo historial de la rama feature será: A → B → C → F → G → D → E.

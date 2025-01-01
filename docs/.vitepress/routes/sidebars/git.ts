@@ -14,6 +14,8 @@ export function sidebarGit(): DefaultTheme.SidebarItem[] {
                         { text: 'Inicio de proyecto', link: 'git/versionamiento/inicio_proyecto' },
                         { text: 'Gestión de archivos', link: 'git/versionamiento/seguimiento' },
                         { text: 'Commits', link: '/git/versionamiento/commits' },
+                        { text: 'Resolución de Conflictos', link: '/git/versionamiento/resolucion_conflictos' },
+                        { text: 'Gestión de Submódulos', link: '/git/versionamiento/gestion_submodulos' },
                     ]
                 },
                 { text: 'Ramas', link: '/git/ramas' },
