@@ -92,3 +92,40 @@ git log --one line
 git reflog
 ```
 
+
+## Sacar los commit de una rama X, adelantarlos a los commits de master y unirlos a master
+
+::: tip
+Tengo que estar en la rama X
+:::
+
+```bash
+git rebase master
+```
+
+### Ejemplo de uso
+
+::: tip Estado inicial
+
+* master tiene los commits: A → B → C.
+* Tu rama feature tiene los commits: A → B → C → D → E.
+
+* master avanza con nuevos commits: A → B → C → F → G.
+:::
+
+::: warning Al ejecutar git rebase master en la rama feature:
+
+* Git toma los commits D → E (de tu rama feature).
+* Los aplica sobre el último estado de master (F → G).
+
+El nuevo historial de la rama feature será: A → B → C → F → G → D → E.
+:::
+
+### Diferencias con merge
+
+|Característica |git merge|git rebase|
+|---------------|---------|----------|
+|Historial      |Preserva el historial original con bifurcaciones.|Reescribe el historial para hacerlo lineal.|
+|Conflictos     |Se resuelven durante el merge.|Se resuelven durante el rebase.|
+|Commit adicional|Crea un commit de merge.|No crea commits adicionales.|
+|Uso principal  |Fusionar ramas sin reescribir historial.|Mantener un historial limpio y lineal.|
