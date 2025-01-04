@@ -24,6 +24,8 @@ CREATE UNIQUE INDEX idx_empleado_email
 ON empleados (email);
 ```
 
+Este índice único se asegura de que no haya dos filas con el mismo valor en la columna email de la tabla empleados. Si intentas insertar un registro con un valor de email que ya existe en otra fila, la base de datos generará un error y no permitirá la inserción.
+
 ## Índice basado en funciones
 
 ```sql

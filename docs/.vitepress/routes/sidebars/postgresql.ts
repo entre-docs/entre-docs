@@ -13,8 +13,8 @@ export function sidebarPostgresql(): DefaultTheme.SidebarItem[] {
                     text: 'Tablas y Registros',
                     collapsed: true,
                     items: [
-                        { text: 'Tablas', link: '/postgresql/tablas/tablas' },
-                        { text: 'Columnas y Registros', link: '/postgresql/tablas/columnas_y_registros' },
+                        { text: 'Tablas y Columnas', link: '/postgresql/tablas/tablas_columnas' },
+                        { text: 'Registros', link: '/postgresql/tablas/registros' },
                     ]
                 },
                 { text: 'Operadores String y Funciones', link: '/postgresql/operadores_string_funciones' },

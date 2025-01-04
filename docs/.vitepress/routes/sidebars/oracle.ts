@@ -6,24 +6,26 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             text: 'DML',
             collapsed: true,
             items: [
-                { text: 'Tipos de datos', link: '' },
-                { text: 'Creación de Tablas', link: '/oracle/tablas' },
+                { text: 'Tipos de datos', link: '/oracle/tipo_datos_oracle' },
+                {
+                    text: 'Tablas y Registros',
+                    collapsed: true,
+                    items:[
+                        { text: 'Tablas y Columnas', link: '/oracle/tablas/tablas_columnas' },
+                        { text: 'Registros', link: 'oracle/tablas/registros' }
+                    ]
+                },
                 {
                     text: 'Constraints',
                     collapsed: true,
                     items: [
-                                { text: 'primary key', link: '/oracle/constraints/primary_key' },
-                                { text: 'foreign key', link: '/oracle/constraints/foreign_key' },
-                                { text: 'primary foreign key', link: '/oracle/constraints/primary_foreign_key' },
+                                { text: 'Primary Key', link: '/oracle/constraints/primary_key' },
+                                { text: 'Foreign Key', link: '/oracle/constraints/foreign_key' },
+                                { text: 'Primary Foreign Key', link: '/oracle/constraints/primary_foreign_key' },
                             ]
                 },
 
                 { text: 'Not Null y Check', link: '/oracle/not_null_check' },
-                { text: 'Actualización de tabla', link: '' },
-                { text: 'Eliminación de tabla', link: '' },
-                { text: 'Insertar registros', link: '' },
-                { text: 'Actualizar registros', link: '' },
-                { text: 'Eliminar registros', link: '' },
             ]
         },
         {
@@ -67,7 +69,7 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
-            text: 'Sinónimos e Índices',
+            text: 'Índices y Sinónimos',
             collapsed: true,
             items: [
                 { text: 'Índices', link: '/oracle/indices' },

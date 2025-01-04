@@ -5,38 +5,6 @@ outline: deep
 # Comandos para crear, seleccionar, actualizar y eliminar columnas y registros
 
 
-## Agregar una columna
-
-```sql
-ALTER TABLE PRODUCTS
-ADD COLUMN description TEXT;
-```
-
-
-## Renombrar una columna
-
-```sql
-ALTER TABLE USERS
-RENAME COLUMN FONO TO TELEFONO;
-```
-
-
-## Eliminar una columna
-
-```sql
-ALTER TABLE PRODUCTS
-DROP COLUMN description;
-```
-
-Los datos que había en la columna desaparecen. Las *constraints* de tabla que afectan a la columna también desaparecen. Sin embargo, si la columna está referenciada por una *constraint* de clave foranea de otra tabla, PostgreSQL no eliminará silenciosamente esa *constraint*. Puede autorizar la eliminación de todo lo que dependa de la columna añadiendo **CASCADE**
-
-```sql
-ALTER TABLE PRODUCTS
-DROP COLUMN description CASCADE;
-```
-
-
-
 ## Insertar registros
 
 ```sql
