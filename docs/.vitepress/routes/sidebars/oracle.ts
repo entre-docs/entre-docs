@@ -40,7 +40,11 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             text: 'Funciones de una Fila',
             collapsed: true,
             items: [
-                { text: 'Creación de Tablas', link: '' },
+                { text: '¿Que son la funciones de Fila?', link: '/oracle/funciones_fila/explicacion_func_fila' },
+                { text: 'Funciones con Caracteres', link: '/oracle/funciones_fila/funciones_caracteres' },
+                { text: 'Funciones con Números', link: '/oracle/funciones_fila/funciones_numeros' },
+                { text: 'Funciones con Fechas', link: '/oracle/funciones_fila/funciones_fechas' },
+
             ]
         },
         {

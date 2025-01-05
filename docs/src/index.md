@@ -10,10 +10,7 @@ hero:
   actions:
     - theme: brand
       text: Ver Apuntes
-      link: /git/
-    - theme: alt
-      text: Ver en GitHub
-      link: https://github.com/albaniamusabeli/entre-docs
+      link: /oracle/
 ---
 
 <!-- <style>
