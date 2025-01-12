@@ -44,6 +44,7 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
                 { text: 'Funciones con Caracteres', link: '/oracle/funciones_fila/funciones_caracteres' },
                 { text: 'Funciones con Números', link: '/oracle/funciones_fila/funciones_numeros' },
                 { text: 'Funciones con Fechas', link: '/oracle/funciones_fila/funciones_fechas' },
+                { text: 'Funciones de Conversión', link: '/oracle/funciones_fila/funciones_conversion' },
                 { text: 'Validar valores nulos', link: '/oracle/funciones_fila/validar_valores_nulos' },
                 { text: 'Funciones Anidadas', link: '/oracle/funciones_fila/funciones_anidadas' },
                 { text: 'Expresiones Condicionales', link: '/oracle/funciones_fila/expresiones_condicionales' },
