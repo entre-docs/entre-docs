@@ -50,10 +50,14 @@ FROM DUAL;
 
 Extrae una subcadena de una cadena dada, comenzando desde una posición específica.
 
-* Sintaxis: **SUBSTR(cadena, inicio, longitud)**
+::: info Sintaxis
+SUBSTR(cadena, inicio, longitud)
 
+
+* cadena: es la cadena de texto de la que se extraerá la subcadena.
 * inicio: posición inicial (1 para el primer carácter).
 * longitud: número de caracteres a extraer (opcional).
+:::
 
 ```sql
 SELECT SUBSTR('Oracle SQL', 8, 3) AS resultado
@@ -63,6 +67,76 @@ FROM DUAL;
 | resultado |
 |-----------|
 | SQL       |
+
+
+
+Supongamos que tenemos una tabla **products** con una columna *product_code* que contiene códigos como PROD-12345. 
+
+Queremos extraer el prefijo (PROD) y el número (12345).
+
+```sql
+SELECT 
+    product_code,
+    SUBSTR(product_code, 1, 4) AS prefix,
+    SUBSTR(product_code, 6) AS product_number -- Inicia desde la posición 6 hasta el final
+FROM products;
+```
+
+| product_code | prefix | product_number |
+| ----------   | ------ | -------------- |
+|  PROD-12345  | PROD   |       12345    |
+
+
+
+## Length
+
+Devuelve la longitud de una cadena (número de caracteres).
+
+```sql
+SELECT LENGTH('Oracle SQL') AS resultado FROM DUAL;
+```
+
+| resultado |
+|-----------|
+| 10        |
+
+
+## Concat
+
+Une dos cadenas en una sola.
+
+* Sintaxis: **CONCAT(cadena1, cadena2)**
+
+```sql
+SELECT CONCAT('Oracle', ' SQL') AS resultado
+FROM DUAL;
+```
+
+| resultado     |
+|---------------|
+| Oracle SQL    |
+
+
+```sql
+SELECT  RUT_EMP AS RUT_EMPLEADO,
+        CONCAT(NOMBRE_EMP, ' ', APPATERNO_EMP) AS NOMBRE_COMPLETO
+FROM EMPLEADO;
+```
+| RUT_EMPLEADO  | NOMBRE_COMPLETO   | 
+| ------------- | ----------------- |
+| 12345678-9    | ALBANIA MUSABELI  |
+
+
+### Uso de pipes
+
+```sql
+SELECT  RUT_EMP AS RUT_EMPLEADO,
+        NOMBRE_EMP ||' '|| APPATERNO_EMP AS NOMBRE_COMPLETO
+FROM EMPLEADO;
+```
+| RUT_EMPLEADO  | NOMBRE_COMPLETO     | 
+| ------------- | ------------------- |
+| 12345678-9    | WILLIAMS CABALLERO  |
 
 
 
@@ -96,36 +170,6 @@ FROM DUAL;
 | resultado_rtrim | resultado_ltrim |
 |-----------------|-----------------|
 | Oracle          | Oracle          |
-
-
-## Length
-
-Devuelve la longitud de una cadena (número de caracteres).
-
-```sql
-SELECT LENGTH('Oracle SQL') AS resultado FROM DUAL;
-```
-
-| resultado |
-|-----------|
-| 10        |
-
-
-## Concat
-
-Une dos cadenas en una sola.
-
-* Sintaxis: **CONCAT(cadena1, cadena2)**
-
-```sql
-SELECT CONCAT('Oracle', ' SQL') AS resultado
-FROM DUAL;
-```
-
-| resultado     |
-|---------------|
-| Oracle SQL    |
-
 
 
 ## Replace

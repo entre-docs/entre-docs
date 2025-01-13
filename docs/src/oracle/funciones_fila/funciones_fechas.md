@@ -31,6 +31,17 @@ FROM dual;
 
 Extrae una parte específica de una fecha (año, mes, día, hora, etc.).
 
+Dichos valores los retorna de tipo **número entero** (NUMBER).
+
+```sql
+EXTRACT(parte FROM fecha)
+```
+
+::: info
+* **parte**: Puede ser YEAR, MONTH, DAY, HOUR, MINUTE, SECOND, entre otros.
+* **fecha**: Es una columna de tipo fecha o un valor de tipo DATE o TIMESTAMP.
+:::
+
 ```sql
 SELECT EXTRACT(YEAR FROM SYSDATE) AS current_year FROM dual;
 ```
@@ -38,6 +49,21 @@ SELECT EXTRACT(YEAR FROM SYSDATE) AS current_year FROM dual;
 |CURRENT_YEAR   |
 |---------------|
 |2025           |
+
+
+Supongamos que tenemos una tabla **orders** con una columna *order_date* de tipo DATE. Queremos obtener el año y el mes de cada pedido. Dichos valores los retorna de tipo **número entero** (NUMBER).
+
+```sql
+SELECT 
+    order_id,
+    EXTRACT(YEAR FROM order_date) AS order_year,
+    EXTRACT(MONTH FROM order_date) AS order_month
+FROM orders;
+```
+
+| order_id | order_year | order_month |
+| -------- | ---------- | ----------- |
+|   1234   |  2024      |   12        |
 
 
 

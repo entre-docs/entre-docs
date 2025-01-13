@@ -3,9 +3,10 @@ import { DefaultTheme } from "vitepress";
 export function sidebarOracle(): DefaultTheme.SidebarItem[] {
     return [
         {
-            text: 'DML',
+            text: 'DDL/DML',
             collapsed: true,
             items: [
+                { text: 'Conceptos', link:'/oracle/conceptos_oracle' },
                 { text: 'Tipos de datos', link: '/oracle/tipo_datos_oracle' },
                 {
                     text: 'Tablas y Registros',
@@ -29,11 +30,8 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
-            text: 'Consultas',
-            collapsed: true,
             items: [
-                { text: 'Seleccionar Datos', link: '/oracle/consultas' },
-                { text: 'Operadores String', link: '/oracle/operadores_string' },
+                { text: 'Variables de Sustitución (&-&&)', link: '/oracle/variables_sustitucion' },
             ]
         },
         {

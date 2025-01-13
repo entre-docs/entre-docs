@@ -42,6 +42,36 @@ SELECT * FROM Usuarios;
 |5  |   Juan Correa     |juan.correa@gmail.com  |   07/12/2024  |
 
 
+
+## Seleccionar campos
+
+```sql
+SELECT NOMBRE_EMP, APPATERNO_EMP, APMATERNO_EMP, FECHA_NAC_EMP
+FROM EMPLEADO;
+```
+
+| NOMBRE_EMP | APPATERNO_EMP | APMATERNO_EMP | FECHA_NAC_EMP |
+|------------|---------------|---------------|---------------|
+| Juan       | López         | Pino          | 07/09/89      |
+
+
+
+## Agregar alias
+
+```sql
+SELECT NOMBRE_EMP AS NOMBRE,
+       APPATERNO_EMP AS "APELLIDO PATERNO",
+       APMATERNO_EMP AS APELLIDO_MATERNO,
+       FECHA_NAC_EMP AS NACIMIENTO
+FROM EMPLEADO;
+```
+
+| NOMBRE  | APELLIDO PATERNO | APELLIDO_MATERNO | NACIMIENTO |
+| ------- | ---------------- | ---------------- | ---------- |
+| Albania | Musabeli         | Aguilera         | 07/09/89   |
+
+
+
 ## Seleccionar usando WHERE
 
 ```sql

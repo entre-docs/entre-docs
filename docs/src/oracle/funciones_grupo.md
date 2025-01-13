@@ -76,3 +76,77 @@ GROUP BY TO_CHAR(DEPARTAMENTO_ID);
 |20             |4,500         |	15,000    |
 |30             |2,500         |	8,000     |
 |40             |5,000         |	12,000    |
+
+
+## Distinct
+
+Elimina valores duplicados de los resultados de una consulta, mostrando solo valores únicos en las columnas seleccionadas.
+
+```sql
+SELECT DISTINCT departamento_id
+FROM empleados;
+```
+
+|DEPARTAMENTO_ID|
+|---------------|
+|10             |
+|20             |
+|30             |
+
+
+
+## Having
+
+Se utiliza para filtrar los resultados después de aplicar una función de agregación (como SUM, AVG, COUNT, etc.). Funciona junto con GROUP BY.
+
+Ejemplo: Si quieres ver qué departamentos tienen más de 5 empleados.
+
+```sql
+SELECT departamento_id, COUNT(*)
+FROM empleados
+GROUP BY departamento_id
+HAVING COUNT(*) > 5;
+```
+
+|DEPARTAMENTO_ID| EMPLEADOS|
+|---------------|----------|
+|10             | 7        |
+|20             | 9        |
+
+
+
+## Between
+
+Se utiliza para filtrar registros basados en un rango de valores. Es inclusivo, lo que significa que incluye los valores extremos del rango.
+
+Ejemplo: Si quieres listar a los empleados con un salario entre 2000 y 5000
+
+```sql
+SELECT nombre, salario
+FROM empleados
+WHERE salario BETWEEN 2000 AND 5000;
+```
+
+|NOMBRE |SALARIO|
+|-------|-------|
+|Juan   | 2500  |
+|Ana    | 3000  |
+|Luis   | 4500  |
+
+
+## Ejemplo Combinado
+
+Imaginemos que queremos saber qué departamentos tienen más de 3 empleados cuyos salarios estén entre 3000 y 7000.
+
+```sql
+SELECT departamento_id, COUNT(*)
+FROM empleados
+WHERE salario BETWEEN 3000 AND 7000
+GROUP BY departamento_id
+HAVING COUNT(*) > 3;
+```
+
+| DEPARTAMENTO_ID | EMPLEADOS |
+|-----------------|-----------|
+| 30              | 4         |
+| 40              | 5         |
