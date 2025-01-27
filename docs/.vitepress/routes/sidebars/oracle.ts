@@ -92,6 +92,11 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            items: [
+                { text: 'Ejemplos prácticos de Consultas', link: '/oracle/actividades_ejemplos' },
+            ]
+        },
+        {
             text: 'Programación PL/SQL',
             collapsed: true,
             items: [

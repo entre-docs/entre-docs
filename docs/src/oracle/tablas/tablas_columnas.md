@@ -47,6 +47,36 @@ RENAME USUARIOS TO CLIENTES;
 DROP TABLE CLIENTES;
 ```
 
+## Eliminar una tabla y dependencias
+
+```sql
+DROP TABLE CLIENTES PURGE;
+```
+
+En Oracle, el comando **PURGE** en **DROP TABLE USERS PURGE;** sirve para eliminar una tabla y sus datos de manera
+permanente e irreversible, omitiendo la funcionalidad de la papelera de reciclaje (Recycle Bin) de Oracle.
+
+::: info SIN PURGE
+
+* Cuando ejecutas un DROP TABLE USERS; sin PURGE, Oracle envía la tabla al Recycle Bin (si está habilitada). Esto permite recuperar la tabla usando el comando **FLASHBACK TABLE** en caso de que la eliminación haya sido accidental.
+* La tabla permanece en el Recycle Bin hasta que se elimine manualmente o se necesite espacio en el sistema.
+:::
+
+::: warning CON PURGE
+
+* La tabla se elimina completamente, sin pasar por el Recycle Bin.
+* Esto libera espacio inmediatamente y no deja posibilidad de recuperación con **FLASHBACK TABLE**.
+:::
+
+::: tip ¿Cuándo usar PURGE?
+
+* Cuando no necesitas recuperar la tabla: Por ejemplo, al eliminar tablas temporales, redundantes o de pruebas que sabes que no se usarán más.
+
+* Para liberar espacio inmediatamente: Si deseas asegurar la liberación inmediata del espacio ocupado por la tabla.
+
+* En ambientes de producción controlados: Donde las tablas eliminadas no necesitan recuperación futura.
+:::
+
 ## Agregar una columna
 
 ```sql
