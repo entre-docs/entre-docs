@@ -207,6 +207,24 @@ FROM DUAL;
 | ****Oracle      | Oracle----      |
 
 
+### Rut con cero y puntos
+
+```sql
+SELECT
+  LPAD(TO_CHAR(CLI.NUMRUN,'FM99G999G999'),'10','0')||'-'||CLI.DVRUN "RUN CLIENTE",
+  (CLI.PNOMBRE||' '||CLI.SNOMBRE||' '||CLI.APPATERNO||' '||CLI.APMATERNO) "NOMBRE CLIENTE"
+FROM CLIENTE CLI;
+```
+
+| RUN CLIENTE   | NOMBRE CLIENTE                    |
+|---------------|-----------------------------------|
+| 06.175.302-8  | MARTA ANDREA AGUILAR BAQUEDANO    |
+| 07.471.610-5  | FERNANDO LUIS CASTILLO CONTRERAS  |
+| 14.463.578-6  | JULIAN DAVID BERMUDEZ DUARTE      |
+
+
+
+
 ## Instr
 
 Devuelve la posición de la primera ocurrencia de un texto dentro de una cadena.
