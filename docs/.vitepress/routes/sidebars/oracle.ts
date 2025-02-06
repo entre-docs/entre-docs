@@ -56,12 +56,8 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
-            text: 'Join y Operadores Set',
-            collapsed: true,
             items: [
-                { text: 'Joins', link: '/oracle/join' },
-                { text: 'Operadores Set', link: '/oracle/operadores_set' },
-
+                { text: 'Cláusula Join', link: '/oracle/join' },
             ]
         },
         {
@@ -71,6 +67,11 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
                 { text: 'Subconsultas en cláusulas', link: '/oracle/subconsultas/subconsultas' },
                 { text: 'Subconsultas para crear tablas', link: '/oracle/subconsultas/subconsultas_crear_tablas' },
 
+            ]
+        },
+        {
+            items: [
+                { text: 'Operadores Set', link: '/oracle/operadores_set' },
             ]
         },
         {

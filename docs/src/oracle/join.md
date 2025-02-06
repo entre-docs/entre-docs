@@ -4,13 +4,6 @@ outline: deep
 
 # Uso de Join Simples y Complejos
 
-::: info ¿Cuándo usar un OUTER JOIN?
-
-* LEFT JOIN: Cuando quieres todas las filas de la tabla izquierda, independientemente de si tienen coincidencias.
-* RIGHT JOIN: Cuando quieres todas las filas de la tabla derecha, independientemente de si tienen coincidencias.
-* FULL JOIN: Cuando necesitas todas las filas de ambas tablas, incluso las que no tienen coincidencias en la otra tabla.
-:::
-
 ## Inner Join
 
 Un INNER JOIN es un tipo de operación en SQL que **combina filas de dos o más tablas con base en una condición** que especifica cómo se relacionan los datos entre ellas. **Solo devuelve las filas en las que hay coincidencias en ambas tablas** según los criterios especificados en la cláusula *ON*.
@@ -35,6 +28,12 @@ ON e.ID_DEPARTAMENTO = d.ID_DEPARTAMENTO;
 
 Un OUTER JOIN es un tipo de operación en SQL que combina filas de dos o más tablas, pero a diferencia del INNER JOIN, también **incluye filas que no tienen coincidencias** en una de las tablas.
 
+::: tip ¿Cuándo usar un OUTER JOIN?
+
+* LEFT JOIN: Cuando quieres todas las filas de la tabla izquierda, independientemente de si tienen coincidencias.
+* RIGHT JOIN: Cuando quieres todas las filas de la tabla derecha, independientemente de si tienen coincidencias.
+* FULL JOIN: Cuando necesitas todas las filas de ambas tablas, incluso las que no tienen coincidencias en la otra tabla.
+:::
 
 ### Left Outer Join
 
