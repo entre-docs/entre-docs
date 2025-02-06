@@ -32,3 +32,12 @@ Este índice único se asegura de que no haya dos filas con el mismo valor en la
 CREATE INDEX idx_upper_nombre
 ON empleados (UPPER(nombre));
 ```
+
+
+## Eliminar un índice
+
+```sql
+DROP INDEX idx_empleado_nombre;
+```
+
+No se puede eliminar un índice si está asociado a una restricción UNIQUE o PRIMARY KEY. En ese caso, primero se debe eliminar la restricción.
