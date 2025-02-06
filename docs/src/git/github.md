@@ -3,7 +3,7 @@
 ## Agregar el repositorio remoto (GitHub) al local
 
 ```bash
-git remote add origin direccion_http_repositorio.git
+git remote add origin url_repositorio.git
 ```
 
 ## Subir archivos del local a GitHub
@@ -31,7 +31,17 @@ git remote -v
 ## Clonar un repositorio de GitHub
 
 ```bash
-git clone link-repositorio-de-github
+git clone url_repositorio
+```
+
+## Clonar una rama específica
+
+::: tip **--single-branch**
+Evita que Git descargue otras ramas del repositorio.
+:::
+
+```bash
+git clone -b nombre-rama --single-branch url_repositorio
 ```
 
 ## Ver los cambios que están en el remoto (sin unirlos al local)
@@ -40,7 +50,7 @@ git clone link-repositorio-de-github
 git fetch
 ```
 
-## Traer ramas remotas de Github al repositorio local
+## Traer ramas remotas al repositorio local
 
 ```bash
 git branch -a
@@ -53,7 +63,7 @@ Hacerlo desde la rama Master
 :::
 
 ```bash
-git push origin :nombre-rama-remota
+git push origin :nombre_rama_remota
 ```
 
 ## Borrar remotos
