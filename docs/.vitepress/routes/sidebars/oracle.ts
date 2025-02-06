@@ -65,6 +65,15 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Subconsultas',
+            collapsed: true,
+            items: [
+                { text: 'Subconsultas en cláusulas', link: '/oracle/subconsultas/subconsultas' },
+                { text: 'Subconsultas para crear tablas', link: '/oracle/subconsultas/subconsultas_crear_tablas' },
+
+            ]
+        },
+        {
             text: 'Vistas y Secuencias',
             collapsed: true,
             items: [
