@@ -32,6 +32,11 @@ nvm ls-remote
 nvm install <version>
 ```
 
+* Configurar la versión global por defecto
+```bash
+nvm alias default <version>
+```
+
 * Usar una versión de Node
 ```bash
 nvm use <version>
