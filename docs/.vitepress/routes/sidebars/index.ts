@@ -13,3 +13,4 @@ export { sidebarNext } from './next';
 export { sidebarLinux } from './linux';
 export { sidebarWindows } from './windows';
 export { sidebarVSC } from './vsc';
+export { sidebarSpringboot } from './springboot';

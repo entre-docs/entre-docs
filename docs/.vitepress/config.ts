@@ -1,7 +1,8 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sidebarGit, sidebarJava,
     sidebarReact, sidebarNode, sidebarJavascript, sidebarTypescript, sidebarPython, sidebarNext,
-    sidebarLinux, sidebarWindows, sidebarVSC
+    sidebarLinux, sidebarWindows, sidebarVSC,
+    sidebarSpringboot
  } from './routes/sidebars';
 import { navbar } from './routes'
 
@@ -39,8 +40,8 @@ export default defineConfig({
             '/next/': sidebarNext(),
             '/vsc/': sidebarVSC(),
             '/java/': sidebarJava(),
+            '/springboot/': sidebarSpringboot(),
             
-
         },
 
         search: {

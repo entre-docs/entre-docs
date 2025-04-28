@@ -27,6 +27,7 @@ export function navbar(): DefaultTheme.NavItem[] {
                 { text: 'Angular', link: '/angular/' },
                 { text: 'Next.js', link: '/next/' },
                 { text: 'React', link: '/react/' },
+                { text: 'Springboot', link: '/springboot/' },
 
             ]
         },
