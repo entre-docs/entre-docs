@@ -31,7 +31,12 @@ export function navbar(): DefaultTheme.NavItem[] {
 
             ]
         },
-
+        {
+            text: 'Librerías y Estilos',
+            items: [
+                { text: 'Bootstrap 5', link: '/bootstrap5/' },
+            ]
+        },
         {
             text: 'Base de datos',
             items: [

@@ -5,6 +5,7 @@ import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sideba
     sidebarSpringboot
  } from './routes/sidebars';
 import { navbar } from './routes'
+import { sidebarBootstrap } from './routes/sidebars/bootstrap5';
 
 
 export default defineConfig({
@@ -41,6 +42,7 @@ export default defineConfig({
             '/vsc/': sidebarVSC(),
             '/java/': sidebarJava(),
             '/springboot/': sidebarSpringboot(),
+            '/bootstrap5/': sidebarBootstrap(),
             
         },
 
