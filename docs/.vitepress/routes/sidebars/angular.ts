@@ -60,6 +60,13 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Formularios',
+            collapsed: true,
+            items: [
+                { text: 'Formularios Reactivos', link: '/angular/formularios/form_reactivos' },
+            ]
+        },
+        {
             text: 'Routing',
             collapsed: true,
             items: [
