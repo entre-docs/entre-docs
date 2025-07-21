@@ -142,9 +142,8 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                 { text: 'Instalación', link: '/angular/tailwindcss/instalacion' },
             ]
         },
-        {
-            text: 'Pruebas Unitarias',
-            link: '/angular/pruebas_unitarias/pruebas_unitarias'
-        }
+        { text: 'Pruebas Unitarias', link: '/angular/pruebas_unitarias/pruebas_unitarias' },
+        { text: 'Documentación en Angular', link: '/angular/documentacion' },
+
     ]
 }
