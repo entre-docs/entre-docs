@@ -64,6 +64,7 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 { text: 'Formularios Reactivos', link: '/angular/formularios/form_reactivos' },
+                { text: 'Eventos', link: '/angular/formularios/eventos' },
             ]
         },
         {
