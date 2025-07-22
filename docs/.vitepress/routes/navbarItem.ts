@@ -63,7 +63,7 @@ export function navbar(): DefaultTheme.NavItem[] {
                 {
                     text: 'Cloud Computing',
                     items: [
-                        { text: 'Componentes de un PC', link: '/cloud_computing/componentes_pc/' },
+                        { text: 'Cloud Computing', link: '/cloud_computing/' },
                         //{ text: 'AWS', link: '/cloud/aws/' },
                         //{ text: 'Azure', link: '/cloud/azure/' },
                         //{ text: 'Google Cloud', link: '/cloud/gcp/' },

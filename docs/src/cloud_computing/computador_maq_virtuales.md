@@ -2,7 +2,7 @@
 outline: deep
 ---
 
-# Conceptos Básicos: Computador y Máquinas virtuales
+# Computador vs Máquinas virtuales
 
 ## Componentes de un PC
 

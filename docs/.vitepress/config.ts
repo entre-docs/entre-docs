@@ -1,11 +1,11 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
 import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sidebarGit, sidebarJava,
     sidebarReact, sidebarNode, sidebarJavascript, sidebarTypescript, sidebarPython, sidebarNext,
-    sidebarLinux, sidebarWindows, sidebarVSC,
-    sidebarSpringboot
+    sidebarLinux, sidebarWindows, sidebarVSC, sidebarSpringboot
  } from './routes/sidebars';
 import { navbar } from './routes'
 import { sidebarBootstrap } from './routes/sidebars/bootstrap5';
+import { sidebarCloudComputing } from './routes/sidebars/cloud_computing';
 
 
 export default defineConfig({
@@ -43,6 +43,7 @@ export default defineConfig({
             '/java/': sidebarJava(),
             '/springboot/': sidebarSpringboot(),
             '/bootstrap5/': sidebarBootstrap(),
+            '/cloud_computing/':sidebarCloudComputing(),
             
         },
 
