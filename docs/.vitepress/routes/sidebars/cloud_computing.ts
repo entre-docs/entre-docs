@@ -23,15 +23,24 @@ export function sidebarCloudComputing(): DefaultTheme.SidebarItem[] {
                 { text: 'Modelo de Responsabilidad Compartida', link: '/cloud_computing/modelo_responsab_compartida' },
             ]
         },
-        /* {
-            text: 'Productos de AWS',
+        {
+            text: 'Recursos en la nube',
             collapsed: true,
             items: [
                 { text: 'Productos de AWS', link: '/cloud_computing/productos_de_aws' },
+                { text: 'Regiones y Zonas de Disponibilidad', link:'/cloud_computing/regiones_zonas' },
             ]
-        }, */
-        { text: 'Productos de AWS', link: '/cloud_computing/productos_de_aws' },
-        { text: 'Regiones y Zonas de Disponibilidad', link:'/cloud_computing/regiones_zonas' },
+        },
+        {
+            text: 'Comandos Linux',
+            collapsed: true,
+            items: [
+                { text: 'Comandos básicos', link: '/cloud_computing/comandos_basicos' },
+                { text: 'Comandos avanzados', link: '/cloud_computing/comandos_avanzados' },
+                { text: 'Usuarios y Permisos', link: '/cloud_computing/comandos_usuarios_y_permisos' },
+                { text: 'Comandos Cron y Rsync', link: '/cloud_computing/comandos_cron_y_rsync' },
+            ]
+        }
 
     ]
 }
