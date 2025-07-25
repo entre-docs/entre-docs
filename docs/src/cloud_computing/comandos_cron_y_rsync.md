@@ -65,8 +65,6 @@ crontab -l
 sudo crontab -u juan -e
 ```
 
-ELIMINAR EL CRON ????????
-
 
 ## Sincronizar archivos y directorios
 

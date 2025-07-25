@@ -7,6 +7,11 @@ outline: deep
 Los productos de AWS son una poderosa herramienta que puede ayudar a las empresas a mejorar su eficiencia, reducir sus costos y aumentar su capacidad de innovación.
 
 
+<p align="center">
+  <img src="/cloud_productos.png" width="800" alt="aws_productos"/>
+</p>
+
+
 ## Compute - EC2
 
 Proporciona instancias de servidor virtual escalables bajo demanda (máquinas virtuales) que se pueden iniciar, detener y ajustar según sea necesario. Es una opción popular para aplicaciones web, móviles y cargas de trabajo de análisis.

@@ -31,6 +31,7 @@ export function sidebarCloudComputing(): DefaultTheme.SidebarItem[] {
                 { text: 'Regiones y Zonas de Disponibilidad', link:'/cloud_computing/regiones_zonas' },
             ]
         },
+        { text: 'Elastic File System (EFS)', link: '/cloud_computing/elastic_file_system' },
         {
             text: 'Comandos Linux',
             collapsed: true,
@@ -41,6 +42,5 @@ export function sidebarCloudComputing(): DefaultTheme.SidebarItem[] {
                 { text: 'Comandos Cron y Rsync', link: '/cloud_computing/comandos_cron_y_rsync' },
             ]
         }
-
     ]
 }
