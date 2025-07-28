@@ -9,7 +9,7 @@ export function sidebarCloudComputing(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'Computador vs Máquinas Virtuales', link: '/cloud_computing/computador_maq_virtuales' },
                 { text: 'Máquinas Virtuales', link: '/cloud_computing/maquinas_virtuales' },
-                { text: 'Lanzamiento de instancia', link: '/cloud_computing/lanzamiento_instancia' },
+                { text: 'Lanzamiento de instancia EC2', link: '/cloud_computing/lanzamiento_instancia_ec2' },
             ]
         },
         {
