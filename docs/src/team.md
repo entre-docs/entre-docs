@@ -18,11 +18,11 @@ const members = [
     ]
   },
   {
-    avatar: 'https://www.github.com/willknight27.png',
+    avatar: 'https://www.github.com/willArayaKnight22a.png',
     name: 'Williams Caballero',
     title: 'Creador',
     links: [
-      { icon: 'github', link: 'https://github.com/willknight27' }
+      { icon: 'github', link: 'https://github.com/willArayaKnight22a' }
     ]
   }
 ]

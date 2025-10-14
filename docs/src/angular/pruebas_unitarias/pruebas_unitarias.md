@@ -43,21 +43,23 @@ describe('PruebasUnitariasComponent', () => {
 
 ## Explicación de las funciones
 
-* **describe**: Define un conjunto de pruebas relacionadas. En este caso, pruebas para el componente PruebasUnitariasComponent
+::: info 📘 **Flujo general de pruebas unitarias en Angular**
+Esta tabla resume las principales funciones usadas al probar un componente con **Jasmine** y **TestBed**.
+:::
 
-* **configureTestingModule**: Configura el módulo de pruebas. Aquí, se indica que importe el módulo PruebasUnitariasComponent. Si el componente tiene dependencias, también se debería proporcionar stubs o mocks para esas dependencias.
+| 🧩 Función / Método | 📝 Descripción |
+|---------------------|----------------|
+| **`describe`** | Agrupa un conjunto de pruebas relacionadas. En este caso, las pruebas del componente `PruebasUnitariasComponent`. |
+| **`configureTestingModule`** | Configura el módulo de pruebas. Importa el componente a probar y define *stubs* o *mocks* para sus dependencias si es necesario. |
+| **`compileComponents`** | Compila los componentes del módulo de pruebas de forma asíncrona antes de ejecutarlas. |
+| **`TestBed.createComponent`** | Crea una instancia del componente `PruebasUnitariasComponent`. |
+| **`fixture.componentInstance`** | Accede directamente a la instancia del componente creado. |
+| **`fixture.detectChanges()`** | Detecta los cambios y actualiza la vista del componente. |
+| **`it`** | Define una prueba individual (caso de prueba). En este caso, verifica que el componente se cree correctamente. |
+| **`expect`** | Realiza la verificación: comprueba que el componente exista (`toBeTruthy()`), indicando que se creó con éxito. |
 
-* **compileComponents**: Compila los componentes del módulo de pruebas. Angular generalmente compila los componentes de manera asíncrona, por lo que este método se utiliza para esperar a que se completen las operaciones de compilación antes de continuar.
 
-* **TestBed.createComponent**: Crea una instancia del componente PruebasUnitariasComponent.
 
-* **fixture.componentInstance**: Accede a la instancia del componente que se ha creado.
-
-* **fixture.detectChanges()**: Detecta los cambios en el componente y actualiza la vista.
-
-* **it**: Esta prueba verifica si el componente se ha creado correctamente. 
-
-* **expect**: Verifica si component es verdad (**toBeTruthy()**), lo que significa que el componente se ha creado con éxito.
 
 
 ## Ejecución de pruebas unitarias
