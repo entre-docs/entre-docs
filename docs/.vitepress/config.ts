@@ -5,9 +5,10 @@ import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sideba
  } from './routes/sidebars';
 import { navbar } from './routes'
 import { sidebarBootstrap } from './routes/sidebars/bootstrap5';
-import { sidebarAWS } from './routes/sidebars/cloud_computing';
+import { sidebarAWS } from './routes/sidebars/aws';
 import { sidebarPatrones } from './routes/sidebars/patrones';
 import { sidebarAzure } from './routes/sidebars/azure';
+import { sidebarKotlin } from './routes/sidebars/kotlin';
 
 
 export default defineConfig({
@@ -28,26 +29,27 @@ export default defineConfig({
 
         // SIDEBAR
         sidebar: {
-            '/docker/': sidebarDocker(),
             '/angular/': sidebarAngular(),
-            '/react': sidebarReact(),
-            '/git/': sidebarGit(),
-            '/oracle/': sidebarOracle(),
-            '/postgresql/': sidebarPostgresql(),
-            '/node/': sidebarNode(),
-            '/javascript/': sidebarJavascript(),
-            '/typescript/': sidebarTypescript(),
-            '/python/': sidebarPython(),
-            '/os/linux/': sidebarLinux(),
-            '/os/windows/': sidebarWindows(),
-            '/next/': sidebarNext(),
-            '/vsc/': sidebarVSC(),
-            '/java/': sidebarJava(),
-            '/springboot/': sidebarSpringboot(),
-            '/bootstrap5/': sidebarBootstrap(),
             '/aws/':sidebarAWS(),
             '/azure/':sidebarAzure(),
+            '/bootstrap5/': sidebarBootstrap(),
+            '/docker/': sidebarDocker(),
+            '/git/': sidebarGit(),
+            '/java/': sidebarJava(),
+            '/javascript/': sidebarJavascript(),
+            '/kotlin/': sidebarKotlin(),
+            '/next/': sidebarNext(),
+            '/node/': sidebarNode(),
+            '/oracle/': sidebarOracle(),
+            '/os/linux/': sidebarLinux(),
+            '/os/windows/': sidebarWindows(),
             '/patrones/': sidebarPatrones(),
+            '/postgresql/': sidebarPostgresql(),
+            '/python/': sidebarPython(),
+            '/react': sidebarReact(),
+            '/springboot/': sidebarSpringboot(),
+            '/typescript/': sidebarTypescript(),
+            '/vsc/': sidebarVSC(),
             
         },
 

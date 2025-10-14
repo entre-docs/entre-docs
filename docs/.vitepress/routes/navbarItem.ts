@@ -31,14 +31,14 @@ export function navbar(): DefaultTheme.NavItem[] {
                         { text: 'Springboot', link: '/springboot/' },
                     ]
                 },
-                /* {
+                {
                     text: 'Apps móviles',
                     items: [
-                        { text: 'Flutter', link: '/mobile/flutter/' },
-                        { text: 'React Native', link: '/mobile/react-native/' },
-                        { text: 'Kotlin', link: '/mobile/kotlin/' },
+                        //{ text: 'Flutter', link: '/flutter/' },
+                        //{ text: 'React Native', link: '/react-native/' },
+                        { text: 'Kotlin', link: '/kotlin/' },
                     ]
-                }, */
+                }
             ]
         },
         {

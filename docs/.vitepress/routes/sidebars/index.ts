@@ -14,4 +14,5 @@ export { sidebarLinux } from './linux';
 export { sidebarWindows } from './windows';
 export { sidebarVSC } from './vsc';
 export { sidebarSpringboot } from './springboot';
-export { sidebarCloudComputing } from './cloud_computing';
+export { sidebarAWS } from './aws';
+export { sidebarKotlin } from './kotlin';
