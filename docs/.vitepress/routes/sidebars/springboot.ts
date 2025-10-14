@@ -9,7 +9,7 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'Initializr', link: '/springboot/initializr' },
                 {
                     text: 'Arquitectura del Proyecto',
-                    collapsed: true,
+                    collapsed: false,
                     items: [
                         { text: 'Estructura del Proyecto', link: '/springboot/estructura_proyecto' },
                         { text: 'Entity', link: '/springboot/entity' },
@@ -20,7 +20,15 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                         { text: 'Controller', link: '/springboot/controller' },
                     ]
                 },
-
+                {
+                    text: 'Pruebas Unitarias',
+                    collapsed: false,
+                    items: [
+                        { text: 'Beneficios y Características', link: '/springboot/pruebas_unitarias/benef_caract' },
+                        { text: 'Pruebas Unitarias', link: '/springboot/pruebas_unitarias/pruebas_unitarias' },
+                        { text: 'Librería HATEOAS', link: '/springboot/pruebas_unitarias/hateoas' },
+                    ]
+                },
             ]
         }
     ]
