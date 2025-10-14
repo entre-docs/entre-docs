@@ -5,7 +5,9 @@ import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sideba
  } from './routes/sidebars';
 import { navbar } from './routes'
 import { sidebarBootstrap } from './routes/sidebars/bootstrap5';
-import { sidebarCloudComputing } from './routes/sidebars/cloud_computing';
+import { sidebarAWS } from './routes/sidebars/cloud_computing';
+import { sidebarPatrones } from './routes/sidebars/patrones';
+import { sidebarAzure } from './routes/sidebars/azure';
 
 
 export default defineConfig({
@@ -43,7 +45,9 @@ export default defineConfig({
             '/java/': sidebarJava(),
             '/springboot/': sidebarSpringboot(),
             '/bootstrap5/': sidebarBootstrap(),
-            '/cloud_computing/':sidebarCloudComputing(),
+            '/aws/':sidebarAWS(),
+            '/azure/':sidebarAzure(),
+            '/patrones/': sidebarPatrones(),
             
         },
 

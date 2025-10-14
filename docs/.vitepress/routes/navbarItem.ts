@@ -11,7 +11,7 @@ export function navbar(): DefaultTheme.NavItem[] {
             ]
         },
         {
-            text: 'Lenguajes y Frameworks',
+            text: 'Lenguajes/ Frameworks',
             items: [
                 {
                     text: 'Lenguajes',
@@ -45,30 +45,25 @@ export function navbar(): DefaultTheme.NavItem[] {
             text: 'Estilos',
             items: [
                 { text: 'Bootstrap 5', link: '/bootstrap5/' },
-                // Aquí podrías agregar Tailwind, Material UI, etc.
             ]
         },
         {
             text: 'Infraestructura',
             items: [
-                {
-                    text: 'DevOps',
-                    items: [
-                        // { text: 'Introducción a DevOps', link: '/devops/' },
-                        { text: 'Docker', link: '/docker/' },
-                        //{ text: 'CI/CD', link: '/devops/ci-cd/' },
-                        //{ text: 'Jenkins', link: '/devops/jenkins/' },
-                    ]
-                },
-                {
-                    text: 'Cloud Computing',
-                    items: [
-                        { text: 'Cloud Computing', link: '/cloud_computing/' },
-                        //{ text: 'AWS', link: '/cloud/aws/' },
-                        //{ text: 'Azure', link: '/cloud/azure/' },
-                        //{ text: 'Google Cloud', link: '/cloud/gcp/' },
-                    ]
-                }
+                { text: 'AWS', link: '/aws/' },
+                { text: 'Azure', link: '/azure/' },
+                { text: 'Docker', link: '/docker/' },
+                //{ text: 'Introducción a DevOps', link: '/devops/' },
+                //{ text: 'CI/CD', link: '/devops/ci-cd/' },
+                //{ text: 'Jenkins', link: '/devops/jenkins/' },
+            ]
+        },
+        {
+            text: 'Arquitectura/ Diseño',
+            items: [
+                //{ text: 'SOLID', link: '/arquitectura/solid/' },
+                { text: 'Patrones de Diseño', link: '/patrones/' },
+                //{ text: 'Clean Architecture', link: '/arquitectura/clean-architecture/' },
             ]
         },
         {

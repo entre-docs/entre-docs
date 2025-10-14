@@ -1,5 +1,5 @@
 <div align="center">
-<h1>Apuntes de Cloud Computing</h1>
+<h1>Apuntes de AWS</h1>
 </div>
 
 <p align="center" style="margin-top: 1.9rem">
