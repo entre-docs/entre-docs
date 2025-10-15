@@ -17,7 +17,10 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
             collapsed: false,
             items: [
                 { text: 'Azure Container Registry (ACR)', link: '/azure/acr' },
-                { text: 'Creación de ACR', link: '/azure/creacion_acr' },
+                { text: 'Creación de un ACR', link: '/azure/creacion_acr' },
+                { text: 'Orquestación de contenedores (AKS)', link: '/azure/aks'},
+                { text: 'Creación de un clúster AKS', link: '/azure/creacion_aks' },
+
             ]
         },
     ]

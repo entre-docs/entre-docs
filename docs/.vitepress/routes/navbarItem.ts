@@ -5,9 +5,10 @@ export function navbar(): DefaultTheme.NavItem[] {
         {
             text: 'Herramientas',
             items: [
-                { text: 'VSC', link: '/vsc/' },
+                { text: 'Bootstrap 5', link: '/bootstrap5/' },
                 { text: 'Git/GitHub', link: '/git/' },
                 { text: 'Node.js', link: '/node/' },
+                { text: 'VSC', link: '/vsc/' },
             ]
         },
         {
@@ -41,12 +42,12 @@ export function navbar(): DefaultTheme.NavItem[] {
                 }
             ]
         },
-        {
+        /* {
             text: 'Estilos',
             items: [
                 { text: 'Bootstrap 5', link: '/bootstrap5/' },
             ]
-        },
+        }, */
         {
             text: 'Infraestructura',
             items: [
