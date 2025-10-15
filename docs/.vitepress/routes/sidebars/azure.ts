@@ -12,5 +12,13 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
                 { text: 'Servicios de Azure DevOps', link: '/azure/servicios_azure'},
             ]
         },
+        {
+            text: 'Azure',
+            collapsed: false,
+            items: [
+                { text: 'Azure Container Registry (ACR)', link: '/azure/acr' },
+                { text: 'Creación de ACR', link: '/azure/creacion_acr' },
+            ]
+        },
     ]
 }
