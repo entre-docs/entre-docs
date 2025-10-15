@@ -102,4 +102,4 @@ outline: deep
 
 ### Instrucciones para Creación de un AKS
 
-Consultar esta guía: <a href="https://drive.google.com/file/d/1YdMylTS1FnffqImHnHVm_7u86i42vKAi/view?usp=drive_link" target="_blank">Creación de AKS</a>
+Consultar esta guía: <a href="https://drive.google.com/file/d/1YdMylTS1FnffqImHnHVm_7u86i42vKAi/view?usp=drive_link" target="_blank">Creación de AKS</a> 
