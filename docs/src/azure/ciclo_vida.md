@@ -19,3 +19,8 @@ La entrega implica el despliegue continuo y fiable de aplicaciones en entornos d
 ## Uso
 
 La fase de uso se enfoca en el mantenimiento, monitoreo y abordaje de problemas en entornos de producción. Los equipos de DevOps trabajan para garantizar la fiabilidad, alta disponibilidad y cero tiempo de inactividad, fortaleciendo la seguridad y el cumplimiento normativo. La identificación proactiva de problemas, junto con telemetría exhaustiva y alertas, es esencial para tomar medidas rápidas y mantener la visibilidad completa del sistema.
+
+
+<p align="center">
+  <img src="/az_ciclo_vida_app_devops.png" width="800" alt="ciclo vida app devops"/>
+</p>

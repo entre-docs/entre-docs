@@ -11,18 +11,13 @@ outline: deep
 La **orquestación de contenedores** automatiza la gestión de aplicaciones contenedorizadas en entornos escalables, como arquitecturas de **microservicios**. Un orquestador simplifica tareas esenciales para garantizar despliegues **eficientes** y **confiables** en clústeres.
 
 
-### 🔑 Funciones Principales de un Orquestador
 
-- 🕒 **Programación**: Asigna contenedores a máquinas según recursos disponibles.
-- ⚖️ **Afinidad/Antiafinidad**: Optimiza la ubicación de contenedores para mejorar el **rendimiento** o la **disponibilidad**.
-- 👀 **Supervisión**: Detecta errores y reprograma contenedores automáticamente.
-- 🔄 **Conmutación por error**: Transfiere contenedores de nodos defectuosos a nodos funcionales.
-- 📈 **Escalabilidad**: Ajusta el número de contenedores según la demanda.
-- 🌐 **Redes**: Gestiona la comunicación entre contenedores y hosts.
-- 🔍 **Detección de servicios**: Permite que los contenedores se descubran entre sí.
-- 🔄 **Actualizaciones coordinadas**: Administra actualizaciones con **mínimo tiempo de inactividad**.
+<p align="center">
+  <img src="/aks_func_ppal_orquestador.png" width="800" alt="azure aks"/>
+</p>
 
----
+
+
 
 ## 🛠️ Herramientas de Orquestación
 
@@ -30,7 +25,7 @@ La **orquestación de contenedores** automatiza la gestión de aplicaciones cont
 - **Docker Swarm** 🐳: Solución integrada de Docker, perfecta para entornos más simples.
 - **Apache Mesos** 🖥️: Abstrae recursos del centro de datos, pero requiere complementos adicionales.
 
----
+
 
 ## 🚀 Kubernetes
 
@@ -78,13 +73,13 @@ Un clúster de **Kubernetes** está compuesto por:
 
 ---
 
-## 🏛️ Estructura de Kubernetes
+## Estructura de Kubernetes
 
-- **Contenedores** 🛢️: Ejecutan aplicaciones dentro de pods, compartiendo recursos si es necesario.
-- **Pods** 📦: Instancias de aplicaciones que contienen uno o más contenedores.
-- **Nodos** 💻: Máquinas (virtuales o físicas) que ejecutan pods, gestionadas por el plano de control.
+<p align="center">
+  <img src="/az_estructura_k8s.png" width="800" alt="estructura k8s"/>
+</p>
 
----
+
 
 ## 💾 Gestión de Almacenamiento y Redes en Kubernetes
 

@@ -37,23 +37,14 @@ Con **ACR Tasks**, se envía el contexto del código (como un repositorio GIT o 
 
 
 
-## Flujo de trabajo
+## Ciclo de despliegue
 
 ::: tip
 Implementar en Azure Container App desde Azure Container Registry mediante CI/CD Azure Devops Pipeline y Azure CLI
 :::
 
-<br>
-
-1. **Desarrolladores** 💻: El desarrollador crea la imagen.
-2. **Azure Repo** 🗂️: Un repositorio seguro que alberga el código.
-3. **Azure Pipeline** ⚙️: Mecanismo estratégico que construye y despliega con fluidez.
-4. **Azure Container Registry** ☁️: Un registro en la nube que guarda imágenes de contenedores.
-5. **Azure Container App** 📦: Plataforma que implementa contenedores en producción.
-6. **Log Analytics** 📊: Herramienta de monitoreo y análisis detallados para optimizar el rendimiento en tiempo real.
-7. **Ciclo Continuo** 🔄: Retorno al repositorio para mejoras continuas.
-
 
 <p align="center">
-  <img src="/azure_acr.png" width="800" alt="azure acr"/>
+  <img src="/az_despliegue_contenedores.png" width="800" alt="azure acr"/>
 </p>
+

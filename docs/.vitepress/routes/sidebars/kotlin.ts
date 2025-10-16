@@ -14,5 +14,13 @@ export function sidebarKotlin(): DefaultTheme.SidebarItem[] {
                 { text: 'Colecciones', link: '/kotlin/colecciones' },
             ]
         },
+        {
+            text: 'Introducción a Android Studio',
+            collapsed: true,
+            items: [
+                { text: 'Estructura e Inicio del proyecto', link: '/kotlin/estructura_proyecto' },
+                { text: 'Jetpack Compose', link: '/kotlin/jetpack_compose' },
+            ]
+        }
     ]
 }
