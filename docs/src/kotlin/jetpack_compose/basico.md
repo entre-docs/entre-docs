@@ -7,9 +7,20 @@ outline: deep
 Jetpack Compose es un kit de herramientas moderno para construir interfaces declarativas en Kotlin, optimizando el desarrollo de apps Android eficientes y atractivas.
 
 
+## Main Activity
+
+Una Activity en Android es responsable de manejar la interacción del usuario en una pantalla específica, como mostrar un formulario, un menú o una lista.
+
+En el contexto de Jetpack Compose, la Activity principal (como MainActivity) inicializa la UI mediante setContent(), que define los elementos visuales usando funciones composables.
+
+Las Activities tienen un ciclo de vida que incluye métodos como onCreate(), onStart(), onResume(), onPause(), onStop(), y onDestroy(), que controlan su comportamiento desde la creación hasta la destrucción.
+
+
+
 ## Composable Functions
 
 Las Composable Functions son funciones marcadas con `@Composable` que definen elementos de la UI. Son la base de la programación declarativa en Compose.
+
 
 
 ### Ciclo de Vida y Entrada
@@ -25,8 +36,6 @@ En Android, el punto de entrada de una app es `onCreate()`, que inicializa la ac
 | `setContent()` | Define el diseño de la interfaz mediante funciones *composables*.   | —   | Dentro de `onCreate()` |
 | `Greeting()` | Genera un saludo personalizado en pantalla. | `@Composable` | Archivo principal o módulo UI  |
 | `DefaultPreview()` | Permite previsualizar la interfaz sin compilar la app completa. | `@Preview`  | Archivo principal o de vista previa |
-
-
 
 
 
