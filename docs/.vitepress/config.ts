@@ -1,8 +1,9 @@
 import { defineConfig, type DefaultTheme } from 'vitepress'
-import { sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sidebarGit, sidebarJava,
+import {
+    sidebarDocker, sidebarAngular, sidebarOracle, sidebarPostgresql, sidebarGit, sidebarJava,
     sidebarReact, sidebarNode, sidebarJavascript, sidebarTypescript, sidebarPython, sidebarNext,
     sidebarLinux, sidebarWindows, sidebarVSC, sidebarSpringboot
- } from './routes/sidebars';
+} from './routes/sidebars';
 import { navbar } from './routes'
 import { sidebarBootstrap } from './routes/sidebars/bootstrap5';
 import { sidebarAWS } from './routes/sidebars/aws';
@@ -22,6 +23,11 @@ export default defineConfig({
 
     lastUpdated: true,
 
+    head: [
+        // icono svg+xml especifica que el favicon es un svg para que el navegador lo interprete correctamente
+        ['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo-dev.svg'}]
+    ],
+
     themeConfig: {
 
         // NAVBAR
@@ -30,8 +36,8 @@ export default defineConfig({
         // SIDEBAR
         sidebar: {
             '/angular/': sidebarAngular(),
-            '/aws/':sidebarAWS(),
-            '/azure/':sidebarAzure(),
+            '/aws/': sidebarAWS(),
+            '/azure/': sidebarAzure(),
             '/bootstrap5/': sidebarBootstrap(),
             '/docker/': sidebarDocker(),
             '/git/': sidebarGit(),
@@ -50,7 +56,7 @@ export default defineConfig({
             '/springboot/': sidebarSpringboot(),
             '/typescript/': sidebarTypescript(),
             '/vsc/': sidebarVSC(),
-            
+
         },
 
         search: {
@@ -72,7 +78,7 @@ export default defineConfig({
                     }
                 }
             }
-          }
+        }
     }
 
 })
