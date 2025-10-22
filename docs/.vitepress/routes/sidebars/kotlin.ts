@@ -32,11 +32,16 @@ export function sidebarKotlin(): DefaultTheme.SidebarItem[] {
                 { text: 'Componentes Frontend en Kotlin', link: '/kotlin/componentes_frontend'}
             ]
         },
-     /*    {
+        {
+            text: 'Implementación de Base de datos',
+            collapsed: true,
             items: [
-                { text: 'Implementación de Base de datos', link: '/kotlin/bbdd'}
+                { text: 'Persistencia de datos', link: '/kotlin/persistencia'},
+                { text: 'Persistencia en memoria', link: '/kotlin/persistencia_memoria' },
+                { text: 'Persistencia en archivos', link: '/kotlin/persistencia_archivos' },
+                { text: 'Persistencia en base de datos', link: '/kotlin/persistencia_bbdd' },
             ]
         },
- */
+
     ]
 }
