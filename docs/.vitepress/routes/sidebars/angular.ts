@@ -97,7 +97,8 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 { text: 'HTTP Client', link: '/angular//http/http' },
-                { text: 'Peticiones', link: '/angular/http/http-requests' }
+                { text: 'Peticiones', link: '/angular/http/http-requests' },
+                { text: 'JSON y Observables', link: '/angular/http/json-observables' },
             ]
         },
         {
@@ -106,7 +107,6 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
             items: [
                 {text: 'switchMap', link:'/angular//rxjs/switchMap'},
                 {text: 'tap', link:'/angular//rxjs/tap'},
-
             ]
         },
         {
