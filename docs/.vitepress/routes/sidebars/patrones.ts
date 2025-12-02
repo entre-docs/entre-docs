@@ -7,8 +7,8 @@ export function sidebarPatrones(): DefaultTheme.SidebarItem[] {
             text: 'Patrones Creacionales',
             collapsed: false,
             items: [
-                { text: 'Builder', link: '/patrones/creacionales/builder' },
-                { text: 'Factory Method', link: '/patrones/creacionales/factory_method' },
+                { text: 'Builder', link: '/patrones/builder' },
+                { text: 'Factory Method', link: '/patrones/factory_method' },
 
             ]
         },
@@ -16,14 +16,16 @@ export function sidebarPatrones(): DefaultTheme.SidebarItem[] {
             text: 'Patrones Estructurales',
             collapsed: false,
             items: [
-                //{ text: 'Versionamiento Remoto', link: '/git/github' }
+                //{ text: 'Builder', link: '/patrones/builder' },
+
             ]
         },
         {
             text: 'Patrones de Comportamiento',
             collapsed: false,
             items: [
-                //{ text: 'SSH Windows', link: '/git/windows-ssh.md' },
+                //{ text: 'Builder', link: '/patrones/builder' },
+            
             ]
         }
     ]
