@@ -7,6 +7,26 @@ outline: deep
 SpringBoot utiliza frameworks como Mockito para crear objetos simulados (mocks) de dependencias y así aislar las unidades de código durante las pruebas.
 
 
+## Tipos de pruebas de software
+
+| Tipo de prueba | Descripción     |
+|----------------|-----------------|
+| **Pruebas unitarias**       | Son pruebas que se realizan a la menor unidad de software, que podría ser una función o un método. El objetivo es validar que cada unidad funcione como se espera. |
+| **Pruebas de integración**  | Estas pruebas verifican la interacción entre diferentes unidades o módulos de software. El objetivo es detectar fallos en las interfaces y la comunicación entre componentes. |
+| **Pruebas de sistema**      | Se realizan sobre el software completamente integrado para verificar que el sistema en su conjunto cumple con los requisitos funcionales y no funcionales especificados. |
+| **Pruebas de aceptación**   | También conocidas como pruebas de usuario final (UAT). Verifican si el sistema satisface los requisitos del negocio y si está listo para su entrega y uso en producción. |
+| **Pruebas de regresión**    | Se ejecutan después de realizar cambios o correcciones en el software para asegurar que las funcionalidades existentes siguen funcionando correctamente y no se han introducido nuevos errores. |
+| **Pruebas de rendimiento**  | Evalúan la velocidad, capacidad de respuesta, escalabilidad y estabilidad del software bajo diferentes condiciones de carga y estrés. |
+| **Pruebas de seguridad**    | Tienen como objetivo identificar vulnerabilidades y debilidades del sistema, verificando que esté protegido contra amenazas y ataques externos e internos. |
+
+
+## Las 3A de las pruebas unitarias
+
+| Arrange | Act | Assert |
+|---------|-----|--------|
+|Es el primer paso de las pruebas unitarias. En esta parte se definen los requisitos que debe cumplir el código.|Es el paso intermedio de las pruebas, el momento de ejecutar el test que dará lugar a los resultados que deberás analizar.|En el último paso, es el momento de comprobar si los resultados obtenidos son los que se esperaban. Si es así, se valida y se sigue adelante. Si no, se corrige el error hasta que desaparezca.|
+
+
 ## Prueba de un Repositorio
 
 **`@DataJpaTest`**: Anotación que configura automáticamente un entorno para pruebas JPA.

@@ -142,7 +142,14 @@ export function sidebarAngular(): DefaultTheme.SidebarItem[] {
                 { text: 'Instalación', link: '/angular/tailwindcss/instalacion' },
             ]
         },
-        { text: 'Pruebas Unitarias', link: '/angular/pruebas_unitarias/pruebas_unitarias' },
+        {
+            text: 'Pruebas y cobertura',
+            collapsed: true,
+            items: [
+                { text: 'Pruebas unitarias', link: '/angular/pruebas_unitarias/pruebas_unitarias' },
+                { text: 'Cobertura de pruebas unitarias (Istanbul)', link: '/angular/pruebas_unitarias/cobertura_pruebas' },
+            ]
+        },
         { text: 'Documentación en Angular', link: '/angular/documentacion' },
 
     ]

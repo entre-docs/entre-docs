@@ -25,11 +25,12 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
-            text: 'Pruebas Unitarias',
+            text: 'Pruebas y Cobertura',
             collapsed: true,
             items: [
                 { text: 'Beneficios y Características', link: '/springboot/pruebas_unitarias/benef_caract' },
                 { text: 'Pruebas Unitarias', link: '/springboot/pruebas_unitarias/pruebas_unitarias' },
+                { text: 'Cobertura de pruebas unitarias (JaCoCo)', link: '/springboot/pruebas_unitarias/cobertura_pruebas' },
                 { text: 'Librería HATEOAS', link: '/springboot/pruebas_unitarias/hateoas' },
             ]
         },
@@ -40,6 +41,13 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'Arquetipos y su creación', link: '/springboot/arquetipos' },
                 { text: 'Arquetipos vs Patrones', link: '/springboot/arquetipos_vs_patrones'},
             ]
-        }
+        },
+        {
+            text: 'Autenticación y Seguridad',
+            collapsed: true,
+            items: [
+                { text: 'Autenticación', link: '/springboot/autenticacion' },
+            ]
+        },
     ]
 }
