@@ -15,7 +15,7 @@ export const sidebarTypescript = (): DefaultTheme.SidebarItem[] => {
             text: 'Types',
             collapsed: true,
             items: [
-                { text: 'Definicion', link: '/typescript/types' },
+                { text: 'Definición', link: '/typescript/types' },
             ]
         },
         {
