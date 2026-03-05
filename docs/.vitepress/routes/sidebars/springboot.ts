@@ -18,6 +18,7 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'Estructura del Proyecto', link: '/springboot/estructura_proyecto' },
                 { text: 'Entity', link: '/springboot/entity' },
                 { text: 'DTO', link: '/springboot/dto' },
+                { text: 'Mapper', link: '/springboot/mapper' },
                 { text: 'Repository', link: '/springboot/repositories' },
                 { text: 'Service', link: '/springboot/services' },
                 { text: 'Service Implements', link: '/springboot/service_imp' },
