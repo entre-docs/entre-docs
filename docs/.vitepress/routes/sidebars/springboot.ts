@@ -9,6 +9,7 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
             items: [
                 { text: 'Conceptos Básicos', link: '/springboot/conceptos' },
                 { text: 'Initializr', link: '/springboot/initializr' },
+                { text: 'Inyección de Dependencias', link: '/springboot/inyeccion_dependencias' },
             ]
         },
         {
