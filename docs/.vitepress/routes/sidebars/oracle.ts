@@ -69,6 +69,7 @@ export function sidebarOracle(): DefaultTheme.SidebarItem[] {
             text: 'Administración Oracle',
             collapsed: true,
             items: [
+                { text: 'Gestión de Usuarios', link: '/oracle/gestion_usuarios' },
                 { text: 'Privilegios y Roles', link: '/oracle/privilegios_roles' },
                 { text: 'Fases de Procesamiento - SQL Tuning', link: '/oracle/sql_tuning' },
             ]
