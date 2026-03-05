@@ -1,12 +1,12 @@
 # Configuración de Git
 
-## Establecer nombre de usuario
+## Nombre de usuario
 
 ```bash
 git config --global user.name "Nombre Usuario"
 ```
 
-## Establecer correo de usuario
+## Correo de usuario
 
 ```bash
 git config --global user.email "correo@correo.com"
@@ -17,7 +17,7 @@ git config --global user.email "correo@correo.com"
 git config --global core.editor "code --wait"
 ```
 
-## Ver información, configuración y editar información del usuario
+## Ver y editar configuración
 
 ```bash
 git config --global -e

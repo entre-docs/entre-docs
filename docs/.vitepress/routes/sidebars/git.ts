@@ -12,7 +12,7 @@ export function sidebarGit(): DefaultTheme.SidebarItem[] {
                     collapsed: true,
                     items: [
                         { text: 'Inicio de proyecto', link: 'git/versionamiento/inicio_proyecto' },
-                        { text: 'Gestión de archivos', link: 'git/versionamiento/seguimiento' },
+                        { text: 'Seguimiento de repositorios', link: 'git/versionamiento/seguimiento' },
                         { text: 'Commits', link: '/git/versionamiento/commits' },
                         { text: 'Resolución de Conflictos', link: '/git/versionamiento/resolucion_conflictos' },
                         { text: 'Gestión de Submódulos', link: '/git/versionamiento/gestion_submodulos' },
@@ -29,7 +29,7 @@ export function sidebarGit(): DefaultTheme.SidebarItem[] {
             text: 'GitHub',
             collapsed: false,
             items: [
-                { text: 'Versionamiento Remoto', link: '/git/github' }
+                { text: 'Versionamiento Remoto', link: '/git/versionamiento_remoto' }
             ]
         },
         {

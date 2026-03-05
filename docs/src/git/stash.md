@@ -4,25 +4,35 @@
 Lugar (rama) donde se puede guardar información de forma temporal, para después recuperarla.
 :::
 
-## Crear Stash
+## Crear stash
 
 ```bash
 git stash
 ```
 
-## Ver lista de stash
+## Ver stash
+
+### Lista
 
 ```bash
 git stash list
 ```
 
-## Ver información más detallada del stash
+### Lista detallada
 
 ```bash
 git stash list --stat
 ```
 
-## Hacer un merge de la rama falsa stash
+### Archivos cambiados
+
+```bash
+git stash show n°Stash
+```
+
+## Recuperar stash
+
+### El más reciente (pop)
 
 Recupera los cambios más recientes del stash y elimina el stash.
 
@@ -30,27 +40,7 @@ Recupera los cambios más recientes del stash y elimina el stash.
 git stash pop
 ```
 
-## Borrar un stash
-
-```bash
-git stash drop n°Stash
-```
-
-## Borrar el stash más reciente
-
-```bash
-git stash drop
-```
-
-## Borrar los stash definitivamente
-
-Borra todos los stash, si es que no se borraron cuando hacemos el git stash pop y resolvemos conflictos.
-
-```bash
-git stash clear
-```
-
-## Recuperar un stash específico de la lista de stash
+### Uno específico (apply)
 
 ```bash
 git stash apply n°Stash
@@ -63,13 +53,29 @@ git stash apply 0
 ```
 :::
 
-## Ver archivos cambiados en el stash
+## Borrar stash
+
+### Uno específico
 
 ```bash
-git stash show n°Stash
+git stash drop n°Stash
 ```
 
-## Renombrar el stash más reciente
+### El más reciente
+
+```bash
+git stash drop
+```
+
+### Todos (clear)
+
+Borra todos los stash, si es que no se borraron cuando hacemos el git stash pop y resolvemos conflictos.
+
+```bash
+git stash clear
+```
+
+## Renombrar stash
 
 ```bash
 git stash save "Mensaje para el stash"

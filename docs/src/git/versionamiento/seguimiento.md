@@ -4,19 +4,21 @@ outline: deep
 
 # Comandos para seguimiento de Repositorios
 
-## Agregar archivo a seguimiento
+## Agregar archivos (git add)
+
+### Archivos en seguimiento
 
 ```bash
 git add .
 ```
 
-## Agregar todos los archivos
+### Todos los archivos
 
 ```bash
 git add -A
 ```
 
-## Agregar archivos con una extensión
+### Por extensión
 
 ```bash
 git add *.html
@@ -26,19 +28,19 @@ git add *.html
 git add *.js
 ```
 
-## Agregar archivos de una carpeta con una extensión
+### Por carpeta y extensión
 
 ```bash
 git add js/*.js
 ```
 
-## Quitar un archivo del seguimiento
+## Quitar del seguimiento
 
 ```bash
 git reset nombreArchivo
 ```
 
-## Renombrar archivo mediante git
+## Renombrar archivo
 
 ::: tip
 El archivo vuelve a su estado inicial para hacer add o commit
@@ -48,7 +50,7 @@ El archivo vuelve a su estado inicial para hacer add o commit
 git mv nombre-actual-archivo nuevo-nombre-archivo
 ```
 
-## Eliminar un archivo mediante git
+## Eliminar archivo
 
 ::: tip
 Hacer un commit para registrar la eliminacion

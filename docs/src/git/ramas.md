@@ -42,7 +42,7 @@ git branch -d nombreRama
 git branch -m nombreActual nuevoNombre
 ```
 
-## Renombrar rama principal en configuración global
+## Renombrar rama principal
 
 ```bash
 git config --global init.defaultBranch nuevoNombreRama

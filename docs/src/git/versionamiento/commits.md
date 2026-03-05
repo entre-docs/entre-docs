@@ -12,7 +12,7 @@ outline: deep
 git commit -m "Primer commit"
 ```
 
-### Editar el título del último commit
+### Editar último commit
 
 ```bash
 git commit --amend
@@ -32,7 +32,7 @@ git commit -am "Mensaje del commit"
 
 ## Deshacer cambios
 
-### Regresar los archivos al estado del último commit (deshacer cambios)
+### Regresar al último commit
 
 * El archivo actual
 
@@ -68,35 +68,34 @@ Regresar al commit y dejar los archivos como estaban en ese punto (del hash)
 git reset --hard n°hash
 ```
 
-## Historial de Commits
+## Historial de commits
 
 ::: tip
 q : para cerrar el historial
 :::
 
-* Historial detallado
+### Detallado
 
 ```bash
 git log
 ```
 
-* Historial resumido
+### Resumido
 
 ```bash
 git log --one line
 ```
 
-* Historial completo en orden cronológico
+### Completo (reflog)
 
 ```bash
 git reflog
 ```
 
-
-## Sacar los commit de una rama X, adelantarlos a los commits de master y unirlos a master
+## Rebase
 
 ::: tip
-Tengo que estar en la rama X
+Debes estar en la rama que quieres reorganizar
 :::
 
 ```bash
@@ -129,3 +128,43 @@ El nuevo historial de la rama feature será: A → B → C → F → G → D →
 |Conflictos     |Se resuelven durante el merge.|Se resuelven durante el rebase.|
 |Commit adicional|Crea un commit de merge.|No crea commits adicionales.|
 |Uso principal  |Fusionar ramas sin reescribir historial.|Mantener un historial limpio y lineal.|
+
+## Cherry-pick
+
+Aplica un commit específico de otra rama a la rama actual, sin hacer un merge completo.
+
+::: tip
+Debes estar en la rama donde quieres aplicar el commit.
+:::
+
+```bash
+git cherry-pick <hash-del-commit>
+```
+
+### Ejemplo de uso
+
+::: tip Estado inicial
+
+* `main` tiene los commits: A → B → C.
+* La rama `develop` tiene los commits: A → B → C → D → E.
+* Solo necesitas el commit D en `main`.
+
+:::
+
+::: warning Al ejecutar git cherry-pick en main:
+
+```bash
+git checkout main
+git cherry-pick <hash-de-D>
+```
+
+El nuevo historial de `main` será: A → B → C → D'.
+
+> El commit D' es una copia del commit D con un nuevo hash.
+:::
+
+### Casos de uso comunes
+
+* Pasar un bug fix de `develop` a `main` sin traerse todos los demás cambios.
+* Recuperar un commit hecho en la rama equivocada.
+* Reutilizar un cambio puntual entre ramas.
