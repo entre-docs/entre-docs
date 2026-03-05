@@ -16,7 +16,49 @@ CREATE TABLE USUARIOS (
 );
 ```
 
-## Mostrar la estructura de la tabla
+## Crear tabla desde un SELECT
+
+**CTAS** (Create Table As Select) permite crear una tabla nueva a partir del resultado de una consulta. Es útil para copiar tablas, crear respaldos o generar tablas de trabajo.
+
+```sql
+CREATE TABLE USUARIOS_BACKUP AS
+SELECT * FROM USUARIOS;
+```
+
+Esto crea `USUARIOS_BACKUP` con la misma estructura y datos que `USUARIOS`.
+
+### Solo estructura, sin datos
+
+Usando una condición que nunca se cumple, se obtiene la estructura sin copiar ninguna fila:
+
+```sql
+CREATE TABLE USUARIOS_BACKUP AS
+SELECT * FROM USUARIOS WHERE 1 = 0;
+```
+
+### Solo algunas columnas
+
+```sql
+CREATE TABLE USUARIOS_RESUMIDO AS
+SELECT ID, NOMBRE FROM USUARIOS;
+```
+
+### Con datos de múltiples tablas
+
+```sql
+CREATE TABLE REPORTE_PEDIDOS AS
+    SELECT u.NOMBRE, p.FECHA, p.TOTAL
+    FROM USUARIOS u
+    JOIN PEDIDOS p ON u.ID = p.USUARIO_ID;
+```
+
+::: warning Restricciones no se copian
+CTAS copia los datos y los tipos de columna, pero **no copia** restricciones como `PRIMARY KEY`, `FOREIGN KEY`, `NOT NULL` ni índices. Si los necesitas, debes agregarlos manualmente con `ALTER TABLE` después de crear la tabla.
+:::
+
+
+
+## Ver la estructura de la tabla
 
 ```sql
 DESCRIBE USUARIOS;
@@ -26,7 +68,7 @@ El resultado es:
 
 ```sql
 Name             Null?    Type
------------------ -------- ----------------------------
+----------------- -------- ---------------
 ID               NOT NULL NUMBER
 NOMBRE           YES      VARCHAR2(100)
 CORREO           YES      VARCHAR2(100)

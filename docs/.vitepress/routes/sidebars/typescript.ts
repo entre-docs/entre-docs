@@ -28,6 +28,13 @@ export const sidebarTypescript = (): DefaultTheme.SidebarItem[] => {
             ]
         },
         {
+            text: 'Arrays',
+            collapsed: true,
+            items: [
+                { text: 'Métodos de Arrays', link: '/typescript/arrays' },
+            ]
+        },
+        {
             items: [
                 { text: 'Enum', link: '/typescript/enum' },
             ]
