@@ -22,6 +22,8 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'Service', link: '/springboot/services' },
                 { text: 'Service Implements', link: '/springboot/service_imp' },
                 { text: 'Controller', link: '/springboot/controller' },
+                { text: 'Manejo de Excepciones', link: '/springboot/excepciones' },
+                { text: 'Logging', link: '/springboot/logging' },
             ]
         },
         {
