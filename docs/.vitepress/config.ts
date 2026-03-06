@@ -19,6 +19,22 @@ export default defineConfig({
 
     // Pagefind se genera después del build, no existe en tiempo de compilación
     vite: {
+        plugins: [
+            {
+                // En docs:dev sirve un stub vacío para que no falle la resolución
+                // En docs:build el módulo queda como external (no se bundlea)
+                name: 'pagefind-dev-stub',
+                resolveId(id) {
+                    if (id === '/pagefind/pagefind.js') return id
+                },
+                load(id) {
+                    if (id === '/pagefind/pagefind.js') {
+                        return `export async function init() {}
+export async function search() { return { results: [] } }`
+                    }
+                }
+            }
+        ],
         build: {
             rollupOptions: {
                 external: ['/pagefind/pagefind.js']

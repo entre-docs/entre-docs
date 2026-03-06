@@ -18,6 +18,32 @@
 }
 
 
+/* FEATURE CARDS: icono y título en la misma línea */
+.VPFeature .box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+}
+
+.VPFeature .box .icon {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+.VPFeature .box .title {
+  flex: 1;
+  margin: 0 !important;
+  padding: 0 !important;
+  font-size: 15px;
+}
+
+.VPFeature .box .details {
+  width: 100%;
+  margin-top: 6px;
+}
+
 /* ESTILOS DE CHIPS DE PATRONES DE DISEÑO */
 
 .design-patterns-grid {
