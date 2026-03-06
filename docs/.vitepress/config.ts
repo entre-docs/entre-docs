@@ -17,6 +17,15 @@ export default defineConfig({
     // Source Dir
     srcDir: './src',
 
+    // Pagefind se genera después del build, no existe en tiempo de compilación
+    vite: {
+        build: {
+            rollupOptions: {
+                external: ['/pagefind/pagefind.js']
+            }
+        }
+    },
+
     // site-level options
     title: 'Entre Docs',
     description: 'Documentación y apuntes',
@@ -59,26 +68,26 @@ export default defineConfig({
 
         },
 
-        search: {
-            provider: 'local',
-            options: {
-                translations: {
-                    button: {
-                        buttonText: 'Buscar'
-                    },
-                    modal: {
-                        displayDetails: "Ver detalles",
-                        noResultsText: 'No se encontraron coincidencias para: ',
-                        resetButtonTitle: 'Borrar',
-                        footer: {
-                            closeText: 'Cerrar',
-                            navigateText: 'Navegar',
-                            selectText: 'Seleccionar',
-                        }
-                    }
-                }
-            }
-        }
+        // search: {
+        //     provider: 'local',
+        //     options: {
+        //         translations: {
+        //             button: {
+        //                 buttonText: 'Buscar'
+        //             },
+        //             modal: {
+        //                 displayDetails: "Ver detalles",
+        //                 noResultsText: 'No se encontraron coincidencias para: ',
+        //                 resetButtonTitle: 'Borrar',
+        //                 footer: {
+        //                     closeText: 'Cerrar',
+        //                     navigateText: 'Navegar',
+        //                     selectText: 'Seleccionar',
+        //                 }
+        //             }
+        //         }
+        //     }
+        // }
     }
 
 })
