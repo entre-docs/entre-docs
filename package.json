@@ -14,11 +14,10 @@
   "author": "Albania Musabeli",
   "license": "ISC",
   "dependencies": {
-    "minisearch": "^6.3.0"
+    "pagefind": "^1.4.0"
   },
   "type": "module",
   "devDependencies": {
-    "pagefind": "^1.4.0",
     "vitepress": "^1.6.4"
   }
 }
