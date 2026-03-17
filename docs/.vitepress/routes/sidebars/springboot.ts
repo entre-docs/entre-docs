@@ -53,5 +53,24 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'Autenticación', link: '/springboot/autenticacion' },
             ]
         },
+        {
+            text: 'Mensajería y Arquitectura Asíncrona',
+            collapsed: true,
+            items: [
+                { text: 'RabbitMQ', link: '/springboot/rabbitmq' },
+                { text: 'Sistemas asíncronos', link: '/springboot/sistemas_asincronos' },
+                { text: 'Desarrollo de sistema asíncrono más cola', link: '/springboot/sistema_asincrono_cola' },
+                { 
+                    text: 'Apache Kafka', 
+                    collapsed: true,
+                    items: [
+                        { text: 'Introducción a Kafka', link: '/springboot/kafka_intro' },
+                        { text: 'Topics', link: '/springboot/kafka_topic' },
+                        { text: 'Integración Kafka Springboot', link: '/springboot/kafka_springboot' },
+                        { text: 'Configuraciones de Kafka', link: '/springboot/kafka_configuracion' },
+                    ]
+                },
+            ]
+        },
     ]
 }
