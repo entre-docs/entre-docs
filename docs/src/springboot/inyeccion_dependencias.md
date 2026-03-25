@@ -9,7 +9,7 @@ La **Inyección de Dependencias** (Dependency Injection o DI) es un principio de
 En lugar de hacer esto:
 
 ```java
-// ❌ Sin inyección de dependencias
+// Sin inyección de dependencias
 public class TaskServiceImpl {
     private TaskRepository taskRepository = new TaskRepository();
 }
@@ -18,7 +18,7 @@ public class TaskServiceImpl {
 Spring se encarga de crear y entregar la instancia:
 
 ```java
-// ✅ Con inyección de dependencias
+// Con inyección de dependencias
 public class TaskServiceImpl {
     @Autowired
     private TaskRepository taskRepository; // Spring lo inyecta
@@ -106,13 +106,14 @@ public class TaskServiceImpl implements TaskService {
 
 Así es como Spring conecta las capas de un proyecto típico:
 
-```
+``` md
 Spring IoC Container
-       │
-       ├── crea TaskRepository  (bean @Repository)
-       ├── crea TaskServiceImpl (bean @Service)  ← inyecta TaskRepository
-       └── crea TaskController  (bean @RestController) ← inyecta TaskService
+    │
+    ├── crea TaskRepository  (bean @Repository)
+    ├── crea TaskServiceImpl (bean @Service)  ← inyecta TaskRepository
+    └── crea TaskController  (bean @RestController) ← inyecta TaskService
 ```
+<br>
 
 ```java
 // Repository — creado por Spring
@@ -148,14 +149,14 @@ Spring construye todos los beans al arrancar la aplicación. Si en ese momento n
 Ocurre cuando la clase que intentas inyectar **no está anotada** con `@Service`, `@Repository`, `@Component`, etc. Spring no la conoce porque nunca la registró.
 
 ```java
-// ❌ Le falta @Service — Spring no sabe que existe
+// Le falta @Service — Spring no sabe que existe
 public class TaskServiceImpl implements TaskService {
     ...
 }
 
 // En el Controller, Spring no encuentra ningún bean de tipo TaskService
 @Autowired
-private TaskService taskService; // 💥 NoSuchBeanDefinitionException
+private TaskService taskService; // NoSuchBeanDefinitionException
 ```
 
 **Solución:** agregar la anotación correspondiente.
@@ -182,7 +183,7 @@ public class TaskServiceV2 implements TaskService { ... }
 
 // Spring tiene dos candidatos y no sabe cuál elegir
 @Autowired
-private TaskService taskService; // 💥 NoUniqueBeanDefinitionException
+private TaskService taskService; // NoUniqueBeanDefinitionException
 ```
 
 **Solución:** usar `@Qualifier` para indicarle a Spring exactamente cuál bean quieres:

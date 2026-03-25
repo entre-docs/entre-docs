@@ -4,7 +4,7 @@ outline: deep
 
 # Conceptos básicos de Springboot
 
-## 🌱 Spring Boot
+## Spring Boot
 
 Es un framework de Java que ayuda a crear aplicaciones web rápido y fácil.
 
@@ -16,14 +16,14 @@ Es un framework de Java que ayuda a crear aplicaciones web rápido y fácil.
 Ejemplo: hacer una app con Spring Boot, se empaqueta y se puede correr sola con java -jar.
 
 
-## 🧱 Archivo .war
+## Archivo .war
 
 - Es un archivo Java Web clásico (Web Application Archive).
 - Se usaba antes para desplegar aplicaciones dentro de un servidor como Tomcat o JBoss.
 - Hoy en día, con Spring Boot, ya se no necesita un .war. Se usa .jar (Java Archive), que se ejecuta directamente.
 
 
-## 🧩 Microservicios
+## Microservicios
 
 Son pequeñas aplicaciones independientes, cada una encargada de una sola cosa dentro de un sistema más grande.
 
@@ -40,7 +40,7 @@ Cada uno tiene:
 - Su propia infraestructura.
 
 
-## 🔁 Microservicios vs Monolito
+## Microservicios vs Monolito
 
 
 |Monolito |Microservcio |
@@ -52,35 +52,29 @@ Cada uno tiene:
 
 
 
-## 🚀 ¿Qué es escalar?
+## Escalar
 
-Es darle más recursos (como más CPU, RAM, instancias) a una aplicación para que pueda atender a más usuarios.
+Escalar es darle más recursos (CPU, RAM o instancias) a una aplicación para que pueda atender a más usuarios.
 
-* En un monolito: escalo toda la aplicación.
-* En microservicios: escalo solo el microservicio que lo necesita.
+* En un monolito: se escala toda la aplicación.
+* En microservicios: se escala solo el microservicio que lo necesita.
 
 
-## 🔗 ¿Cómo se comunican los microservicios?
+## Comunicación de los microservicios
 
 * Usan API REST con JSON como formato de intercambio de datos.
 * Esto permite que microservicios escritos en diferentes lenguajes (Java, .NET, Python) puedan hablar entre sí.
 
 
-## ✅ Ventajas de los Microservicios
+## Ventajas de los Microservicios
 
-🚀 Escalabilidad: cada parte puede crecer por separado.
+* `Escalabilidad`: cada parte puede crecer por separado.
+* `Fácil mantenimiento`: cambiar algo no afecta todo.
+* `Despliegue independiente`: puedes actualizar un solo servicio.
+* `Desacoplamiento`: cada uno funciona por su cuenta.
 
-🧰 Fácil mantenimiento: cambiar algo no afecta todo.
+## Desventajas
 
-🔄 Despliegue independiente: puedes actualizar un solo servicio.
-
-🔗 Desacoplamiento: cada uno funciona por su cuenta.
-
-
-## ⚠️ Desventajas
-
-📚 Más complejo: tienes que manejar muchos servicios.
-
-📡 Overhead de comunicación: todo pasa por red.
-
-🔐 Manejo de transacciones es más difícil (porque cada servicio tiene su base de datos).
+* `Más complejo`: tienes que manejar muchos servicios.
+* `Overhead de comunicación`: todo pasa por red.
+* `Manejo de transacciones`: es más difícil (porque cada servicio tiene su base de datos).
