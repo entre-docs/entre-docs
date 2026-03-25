@@ -14,7 +14,7 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
         },
         {
             text: 'Azure',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: 'Azure Container Registry (ACR)', link: '/azure/acr' },
                 { text: 'Creación de un ACR', link: '/azure/creacion_acr' },
@@ -25,7 +25,7 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
         },
         {
             text: 'Seguridad e Identidad',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: 'Identity as a Service (IDaaS)', link: '/azure/idaas' },
                 { text: 'Json Web Token (JWT)', link: '/azure/jwt' },
@@ -34,12 +34,19 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
         },
         {
             text: 'Integración Aplicaciones Cloud',
-            collapsed: false,
+            collapsed: true,
             items: [
                 { text: 'Frontend Angular con MSAL', link: '/azure/angular_msal' },
                 { text: 'Backend BFF con Spring Security', link: '/azure/bff_security' },
                 { text: 'Usuarios y Claims en Azure AD B2C', link: '/azure/adb2c' },
             ]
         },
+        {
+            text: 'Arquitectura Serverless',
+            collapsed: true,
+            items: [
+                { text: 'Function as a Service (FaaS)', link: '/azure/serverless_faas' },
+            ]
+        }
     ]
 }
