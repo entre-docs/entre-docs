@@ -88,7 +88,15 @@ Estando en la pantalla "Instancias", se debe hacer click al botón **CONECTAR** 
   <img src="/ec2/aws_15_instalacion_git_parte_1.png" width="800"  alt="ec2 10 - instalación de git 1"/>
 </p>
 
-10. Instalación de git. Con los comandos **sudo yum list git** y **sudo yum install git**
+10. Instalación de git.
+
+``` bash
+sudo yum list git
+```
+
+``` bash
+sudo yum install -y git
+```
 
 <br>
 
@@ -96,12 +104,57 @@ Estando en la pantalla "Instancias", se debe hacer click al botón **CONECTAR** 
   <img src="/ec2/aws_16_instalacion_git_parte_2.png" width="800"  alt="ec2 11 - instalación de git 2"/>
 </p>
 
+11. Git instalado en EC2.
+
+
+## Instalación de Docker
+
+``` bash
+sudo yum install docker
+```
+
+### Iniciar el servicio
+
+``` bash
+sudo service docker start
+```
+
+### Usar docker sin sudo
+
+``` bash
+sudo usermod -aG docker $USER
+```
+
+
+## Instalación de docker compose
+
+1. Crear carpeta de plugins
+``` bash
+mkdir -p ~/.docker/cli-plugins
+```
+
+2. Descargar docker compose compatible con Docker 25
+``` bash
+curl -SL https://github.com/docker/compose/releases/download/v2.24.6/docker-compose-linux-x86_64 \
+-o ~/.docker/cli-plugins/docker-compose
+```
+
+3. Dar permisos de ejecución
+``` bash
+chmod +x ~/.docker/cli-plugins/docker-compose
+```
+
+4. Verificar docker compose instalado
+``` bash
+docker compose version
+```
+
+
 <br>
 
 <p align="center">
   <img src="/ec2/aws_17_instancia_detenida.png" width="800"  alt="ec2 12 - instancia detenida"/>
 </p>
-
 
 11. Instancia detenida. En el botón **Estado de la instancia**, seleccionar "Detener". La IP pública se borra, por lo que al momento de subir nuevamente la instancia, la ip pública será otra.
 
@@ -182,3 +235,9 @@ Una IP elástica es una dirección IP pública estática que se puede asociar a 
 </p>
 
 19. Consola con la IP elástica.
+
+
+### Liberar IP Elástica
+
+1. Seleccionar la opción "Desasociar IP elástica"
+2. Seleccionar la opción "Liberar IP elástica"
