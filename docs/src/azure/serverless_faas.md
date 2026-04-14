@@ -7,22 +7,51 @@ outline: deep
 
 La arquitectura Serverless es un modelo de computación en la nube que ofrece a los desarrolladores una forma eficiente de construir y desplegar aplicaciones sin preocuparse por la infraestructura subyacente. Sus aspectos clave son:
 
-- **Gestión automatizada de recursos**: 
-En lugar de que los desarrolladores tengan que provisionar servidores o contenedores, los proveedores de servicios en la nube se encargan automáticamente de los recursos de infraestructura. Esto incluye servidores, almacenamiento y redes. Como resultado, los desarrolladores pueden concentrarse en escribir código y crear aplicaciones sin distraerse por la administración de la infraestructura. 
 
-- **Elasticidad y escalabilidad**: 
-En la arquitectura Serverless, las aplicaciones se ejecutan en función de la demanda. Cuando aumenta la carga de trabajo, los recursos se escalan automáticamente. Ejemplo: Una aplicación experimenta un aumento repentino en el tráfico, se asignarán más recursos para manejarlo. Esto permite una mayor eficiencia y flexibilidad en comparación con los modelos tradicionales.
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;">
 
-- **Funciones como Servicio (FaaS)**:
-La característica central de la arquitectura serverless es el uso de funciones como servicio. Las funciones son pequeños fragmentos de código que se ejecutan en respuesta a eventos específicos. Ejemplo: Cuando un usuario realiza una solicitud HTTP o se produce un cambio en una base de datos, una función puede activarse automáticamente. Lo notable es que los desarrolladores no necesitan preocuparse por la gestión de servidores o contenedores para estas funciones. Se ejecutan en entornos aislados y se escalan según la demanda.
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #0078d4; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">⚙️ Gestión automatizada de recursos</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      En lugar de que los desarrolladores tengan que provisionar servidores o contenedores, los proveedores de servicios en la nube se encargan automáticamente de los recursos de infraestructura. Esto incluye servidores, almacenamiento y redes. Como resultado, los desarrolladores pueden concentrarse en escribir código sin distraerse por la administración de la infraestructura.
+    </div>
+  </div>
 
-- **Costo y eficiencia**:
-Dado que los recursos se asignan dinámicamente según la carga de trabajo, los costos pueden ser más bajos en comparación con los modelos tradicionales. Los desarrolladores solo pagan por el tiempo de ejecución real de sus funciones, en lugar de mantener servidores en funcionamiento todo el tiempo.
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #107c41; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">📈 Elasticidad y escalabilidad</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      Las aplicaciones se ejecutan en función de la demanda. Cuando aumenta la carga de trabajo, los recursos se escalan automáticamente. Por ejemplo, ante un aumento repentino en el tráfico se asignan más recursos para manejarlo, lo que permite mayor eficiencia y flexibilidad en comparación con los modelos tradicionales.
+    </div>
+  </div>
+
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #8661c5; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">⚡ Funciones como Servicio (FaaS)</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      La característica central del modelo serverless es el uso de funciones como servicio. Son pequeños fragmentos de código que se ejecutan en respuesta a eventos específicos (solicitudes HTTP, cambios en base de datos, etc.). Se ejecutan en entornos aislados y se escalan según la demanda, sin que el desarrollador gestione servidores.
+    </div>
+  </div>
+
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #d83b01; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">💰 Costo y eficiencia</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      Dado que los recursos se asignan dinámicamente según la carga de trabajo, los costos pueden ser más bajos que en modelos tradicionales. Los desarrolladores solo pagan por el tiempo de ejecución real de sus funciones, en lugar de mantener servidores activos todo el tiempo.
+    </div>
+  </div>
+
+</div>
 
 
 ## Function as a Service (FaaS)
 
-FaaS, o Function as a Service, es un modelo de computación en la nube que permite ejecutar fragmentos de código de manera independiente, sin la necesidad de gestionar directamente los servidores subyacentes. En FaaS, las funciones son unidades de código que se ejecutan en respuesta a eventos específicos, como solicitudes HTTP, cambios en la base de datos o mensajes en una cola.
+`FaaS`, o `Function as a Service`, es un modelo de computación en la nube que permite ejecutar fragmentos de código de manera independiente, sin la necesidad de gestionar directamente los servidores subyacentes. En FaaS, las funciones son unidades de código que se ejecutan en respuesta a eventos específicos, como solicitudes HTTP, cambios en la base de datos o mensajes en una cola.
 
 En este modelo, el proveedor de la nube se encarga de aprovisionar, escalar y administrar la infraestructura necesaria para ejecutar las funciones, lo que permite a los desarrolladores centrarse en escribir código sin preocuparse por la gestión de servidores. Esto conlleva ventajas como una mayor flexibilidad, escalabilidad automática, y un modelo de facturación basado en el uso real de recursos. 
 

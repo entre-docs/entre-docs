@@ -46,6 +46,8 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 { text: 'Function as a Service (FaaS)', link: '/azure/serverless_faas' },
+                { text: 'REST vs GraphQL', link: '/azure/rest_y_graphql' },
+                { text: 'Buenas prácticas de diseño REST y GraphQL', link: '/azure/buenas_practicas_rest_graphql' },
             ]
         }
     ]
