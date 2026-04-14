@@ -25,6 +25,16 @@ GraphQL es un lenguaje de consulta para APIs y un entorno de ejecución para eje
 |`Subscriptions`|permiten a los clientes suscribirse a cambios en los datos en tiempo real.|
 
 
+
+## Arquitectura REST y GraphQL
+
+
+<p align="center">
+  <img src="/rest_vs_graphql/az_arquit_rest_graphql.png" width="800" alt="az_rest_vs_graphql"/>
+</p>
+
+
+
 ## Rest vs. GraphQL
 
 | Aspecto | REST | GraphQL |
