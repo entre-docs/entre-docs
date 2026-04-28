@@ -48,6 +48,15 @@ export function sidebarAzure(): DefaultTheme.SidebarItem[] {
                 { text: 'Function as a Service (FaaS)', link: '/azure/serverless_faas' },
                 { text: 'REST vs GraphQL', link: '/azure/rest_y_graphql' },
                 { text: 'Buenas prácticas de diseño REST y GraphQL', link: '/azure/buenas_practicas_rest_graphql' },
+                {
+                    text: 'Arquitectura basada en Eventos',
+                    collapsed: true,
+                    items: [
+                        { text: 'Event-Driven Architecture (EDA)', link: '/azure/event_driven_architecture' },
+                        { text: 'Construcción e Implementación de Eventos', link: '/azure/construccion_implementacion_eventos' },
+                        { text: 'Integración de Arquitectura basada en eventos', link: '/azure/integracion_arq_basada_eventos'},
+                    ]
+                },
             ]
         }
     ]

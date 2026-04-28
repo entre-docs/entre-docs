@@ -46,4 +46,4 @@ Docker ps.
 
 ### Instrucciones para Configuración y Optimización de Contenedores
 
-Consulta esta guía: <a href="https://drive.google.com/file/d/1yh1iA30x4eDQad0yutha0ApkOH9fK6VI/view?usp=drive_link" target="_blank">Máquina Virtual y ACR</a>
+Consulta esta guía: <a href="https://drive.google.com/file/d/14AAlSkHInU765FWkKC_H7BXdStc1uY1u/view?usp=drive_link" target="_blank">Máquina Virtual y ACR</a>
