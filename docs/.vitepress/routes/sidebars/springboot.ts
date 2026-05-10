@@ -51,6 +51,7 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 { text: 'Autenticación', link: '/springboot/autenticacion' },
+                { text: 'Spring Security', link: '/springboot/springsecurity' },
             ]
         },
         {

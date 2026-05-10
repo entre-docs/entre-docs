@@ -48,12 +48,12 @@ grant all on mydatabse.* to 'myuser'@'%';
 
 ## Implementación de JWT
 
-::: tip Buscar desde maven repository y agregar al pom:
+1. Agregar dependencias en `pom.xml` (buscar desde maven repository)
+2. Crear la clase `Constants.java` con constantes para la implementación de seguridad.
+3. Crear archivo `WebSecurityConfig.java` para definir rutas protegidas y publicas.
+4. Crear la clase `JWTAuthorizationFilter` que permite validar si la solicitud recibida tiene un token válido.
+5. Crear la clase que generará un token JWT (`JWTAuthenticationConfig.java`) para un usuario que se haya autenticado correctamente.
 
-* jjwt-api
-* jjwt-impl
-* jjwt-jackson
-:::
 
 ::: code-group
 ``` xml [pom]
@@ -149,129 +149,120 @@ class WebSecurityConfig{
 ``` java [JWTAuthorizationFilter.java]
 package com.aplicacion.backend;
 
-    import io.jsonwebtoken.*;
-    import jakarta.servlet.FilterChain;
-    import jakarta.servlet.ServletException;
-    import jakarta.servlet.http.HttpServletRequest;
-    import jakarta.servlet.http.HttpServletResponse;
-    import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
-    import org.springframework.security.core.authority.SimpleGrantedAuthority;
-    import org.springframework.security.core.context.SecurityContextHolder;
-    import org.springframework.stereotype.Component;
-    import org.springframework.web.filter.OncePerRequestFilter;
+import io.jsonwebtoken.*;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.stereotype.Component;
+import org.springframework.web.filter.OncePerRequestFilter;
+import java.io.IOException;
+import java.util.List;
+import java.util.stream.Collectors;
+import javax.crypto.SecretKey;
+import static com.aplicacion.backend.Constants.*;
 
-    import java.io.IOException;
-    import java.util.List;
-    import java.util.stream.Collectors;
+@Component
+public class JWTAuthorizationFilter extends OncePerRequestFilter {
+    
+    private Claims setSigningKey(HttpServletRequest request) {
+        String jwtToken = request.
+            getHeader(HEADER_AUTHORIZACION_KEY).
+            replace(TOKEN_BEARER_PREFIX, "");
 
-    import javax.crypto.SecretKey;
+            return Jwts.parser()
+            .verifyWith((SecretKey) getSigningKey(SUPER_SECRET_KEY))
+            .build()
+            .parseSignedClaims(jwtToken)
+            .getPayload();
+    }
+    
+    private void setAuthentication(Claims claims) {
+        List authorities = (List) claims.get("authorities");
+        
+        UsernamePasswordAuthenticationToken auth = 
+            new UsernamePasswordAuthenticationToken(claims.getSubject(), null,
+            authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
 
-    import static com.aplicacion.backend.Constants.*;
+        SecurityContextHolder.getContext().setAuthentication(auth);
+    }
 
-    @Component
-    public class JWTAuthorizationFilter extends OncePerRequestFilter {
+    private boolean isJWTValid(HttpServletRequest request, HttpServletResponse res) {
+        String authenticationHeader = request.getHeader(HEADER_AUTHORIZACION_KEY);
+        if (authenticationHeader == null || !authenticationHeader.startsWith(TOKEN_BEARER_PREFIX))
+            return false;
+        return true;
+    }
 
-        private Claims setSigningKey(HttpServletRequest request) {
-            String jwtToken = request.
-                    getHeader(HEADER_AUTHORIZACION_KEY).
-                    replace(TOKEN_BEARER_PREFIX, "");
-
-                    return Jwts.parser()
-                    .verifyWith((SecretKey) getSigningKey(SUPER_SECRET_KEY))
-                    .build()
-                    .parseSignedClaims(jwtToken)
-                    .getPayload();
-
-        }
-
-        private void setAuthentication(Claims claims) {
-
-            List authorities = (List) claims.get("authorities");
-
-            UsernamePasswordAuthenticationToken auth =
-                    new UsernamePasswordAuthenticationToken(claims.getSubject(), null,
-                    authorities.stream().map(SimpleGrantedAuthority::new).collect(Collectors.toList()));
-
-            SecurityContextHolder.getContext().setAuthentication(auth);
-
-        }
-
-        private boolean isJWTValid(HttpServletRequest request, HttpServletResponse res) {
-            String authenticationHeader = request.getHeader(HEADER_AUTHORIZACION_KEY);
-            if (authenticationHeader == null || !authenticationHeader.startsWith(TOKEN_BEARER_PREFIX))
-                return false;
-            return true;
-        }
-
-        @Override
-        protected void doFilterInternal(@SuppressWarnings("null") HttpServletRequest request, @SuppressWarnings("null") HttpServletResponse response, @SuppressWarnings("null") FilterChain filterChain) throws ServletException, IOException {
-            try {
-                if (isJWTValid(request, response)) {
-                    Claims claims = setSigningKey(request);
-                    if (claims.get("authorities") != null) {
-                        setAuthentication(claims);
-                    } else {
-                        SecurityContextHolder.clearContext();
-                    }
+    @Override
+    protected void doFilterInternal(@SuppressWarnings("null") HttpServletRequest request, @SuppressWarnings("null") HttpServletResponse response, @SuppressWarnings("null") FilterChain filterChain) throws ServletException, IOException {
+        try {
+            if (isJWTValid(request, response)) {
+                Claims claims = setSigningKey(request);
+                if (claims.get("authorities") != null) {
+                    setAuthentication(claims);
                 } else {
                     SecurityContextHolder.clearContext();
                 }
+            } else {
+                SecurityContextHolder.clearContext();
+                }
                 filterChain.doFilter(request, response);
-            } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
-                response.setStatus(HttpServletResponse.SC_FORBIDDEN);
-                response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
-                return;
             }
+        catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException e) {
+            response.setStatus(HttpServletResponse.SC_FORBIDDEN);
+            response.sendError(HttpServletResponse.SC_FORBIDDEN, e.getMessage());
+            return;
         }
-
     }
-
+}
 ```
 
 ``` java [JWTAuthenticationConfig.java]
 package com.aplicacion.backend;
 
-    import io.jsonwebtoken.Jwts;
-    import org.springframework.context.annotation.Configuration;
-    import org.springframework.security.core.GrantedAuthority;
-    import org.springframework.security.core.authority.AuthorityUtils;
+import io.jsonwebtoken.Jwts;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.AuthorityUtils;
 
-    import java.util.Date;
-    import java.util.HashMap;
-    import java.util.List;
-    import java.util.Map;
-    import java.util.stream.Collectors;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
-    import static com.aplicacion.backend.Constants.*;
+import static com.aplicacion.backend.Constants.*;
 
-    @Configuration
-    public class JWTAuthenticationConfig {
+@Configuration
+public class JWTAuthenticationConfig {
+    
+    public String getJWTToken(String username) {
+        List grantedAuthorities = AuthorityUtils
+            .commaSeparatedStringToAuthorityList("ROLE_USER");
 
-        public String getJWTToken(String username) {
-            List grantedAuthorities = AuthorityUtils
-                    .commaSeparatedStringToAuthorityList("ROLE_USER");
+        Map claims = new HashMap<>();
+        claims.put("authorities", grantedAuthorities.stream()
+            .map(GrantedAuthority::getAuthority)
+            .collect(Collectors.toList()));
 
 
-            Map claims = new HashMap<>();
-            claims.put("authorities", grantedAuthorities.stream()
-                    .map(GrantedAuthority::getAuthority)
-                    .collect(Collectors.toList()));
+        String token = Jwts.builder()
+            .claims()
+            .add(claims)
+            .subject(username)
+            .issuedAt(new Date(System.currentTimeMillis()))
+            .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 1440))
+            .and()
+            .signWith(getSigningKey(SUPER_SECRET_KEY))
+            .compact();
 
-            String token = Jwts.builder()
-                    .claims()
-                    .add(claims)
-                    .subject(username)
-                    .issuedAt(new Date(System.currentTimeMillis()))
-                    .expiration(new Date(System.currentTimeMillis() + 1000 * 60 * 1440))
-                    .and()
-                    .signWith(getSigningKey(SUPER_SECRET_KEY))
-                    .compact();
-
-            return "Bearer " + token;
-        }
-
+        return "Bearer " + token;
     }
-
+}
 ```
 :::
 
@@ -306,16 +297,18 @@ public class LoginController {
 
     @PostMapping("login")
     public String login(
-            @RequestParam("user") String username,
-            @RequestParam("encryptedPass") String encryptedPass) {
-
-        final UserDetails userDetails = userDetailsService.loadUserByUsername(username);
-
-        if (!userDetails.getPassword().equals(encryptedPass)) {
-            throw new RuntimeException("Invalid login");
-        }
-        String token = jwtAuthtenticationConfig.getJWTToken(username);
-        return token;
+        @RequestParam("user") String username,
+        @RequestParam("encryptedPass") String encryptedPass) {
+            
+            final UserDetails userDetails = userDetailsService
+                .loadUserByUsername(username);
+            
+            if (!userDetails.getPassword().equals(encryptedPass)) {
+                throw new RuntimeException("Invalid login");
+            }
+            
+            String token = jwtAuthtenticationConfig.getJWTToken(username);
+            return token;
     }
 }
 ```
