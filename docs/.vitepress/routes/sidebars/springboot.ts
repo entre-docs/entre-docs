@@ -36,6 +36,7 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'Pruebas Unitarias', link: '/springboot/pruebas_unitarias/pruebas_unitarias' },
                 { text: 'Cobertura de pruebas unitarias (JaCoCo)', link: '/springboot/pruebas_unitarias/cobertura_pruebas' },
                 { text: 'Librería HATEOAS', link: '/springboot/pruebas_unitarias/hateoas' },
+                { text: 'SonarQube', link: '/springboot/sonarqube' },
             ]
         },
         {
