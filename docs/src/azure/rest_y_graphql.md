@@ -13,10 +13,6 @@ A diferencia de los microservicios, por buena práctica, **en las funciones Azur
 
 GraphQL es un lenguaje de consulta para APIs y un entorno de ejecución para ejecutar esas consultas mediante datos existentes.
 
-
-
-`Schema` define la estructura de los datos disponibles, tipos de datos, y las relaciones entre ellos.
-
 |Concepto|Definición|
 |--------|----------|
 |`Queries`|permiten a los clientes solicitar exactamente los datos que necesitan.|
@@ -24,6 +20,14 @@ GraphQL es un lenguaje de consulta para APIs y un entorno de ejecución para eje
 |`Resolvers`|funciones que resuelven una consulta, mutación o suscripción y devuelven los datos solicitados.|
 |`Subscriptions`|permiten a los clientes suscribirse a cambios en los datos en tiempo real.|
 
+
+`Schema` define la estructura de los datos disponibles, tipos de datos, y las relaciones entre ellos.
+
+``` java
+type Query {
+    saludo(nombre: String): String
+}
+```
 
 
 ## Arquitectura REST y GraphQL
@@ -50,9 +54,16 @@ GraphQL es un lenguaje de consulta para APIs y un entorno de ejecución para eje
 
 ## Implementar GraphQL en función Azure
 
-1. Agregar dependencia
+### Explicación del flujo
 
-``` xml
+1. El cliente envía una consulta GraphQL al endpoint `/graphql`.
+2. Azure Function recibe la petición mediante HTTP Trigger.
+3. GraphQL interpreta la consulta usando el schema.
+4. El resolver (dataFetcher) ejecuta la lógica.
+5. La función devuelve únicamente los datos solicitados.
+
+::: code-group
+``` xml [pom]
 <dependencies>
     <!-- Azure Functions Dependency -->
     <dependency>
@@ -69,3 +80,104 @@ GraphQL es un lenguaje de consulta para APIs y un entorno de ejecución para eje
     </dependency>
 </dependencies>
 ```
+
+``` java [GraphQLFunction]
+package com.example.graphql;
+import com.microsoft.azure.functions.*;
+import com.microsoft.azure.functions.annotation.*;
+import graphql.ExecutionResult;
+import graphql.GraphQL;
+import graphql.schema.idl.*;
+
+import java.util.*;
+
+public class GraphQLFunction {
+
+    private final GraphQL graphQL;
+
+    // Define el esquema GraphQL. Indica que existe una query
+    // llamada "saludo"
+    public GraphQLFunction() {
+        String schema = """
+            type Query {
+                saludo(nombre: String): String
+            }
+        """;
+
+        // convierte el schema String a un objeto GraphQL
+        TypeDefinitionRegistry typeRegistry =
+                new SchemaParser().parse(schema);
+        
+        // Conecta las queries del schema con codigo java real
+        RuntimeWiring wiring = RuntimeWiring.newRuntimeWiring()
+            .type("Query", builder -> builder
+                .dataFetcher("saludo", env -> {
+                    String nombre = env.getArgument("nombre");
+
+                    if (nombre == null || nombre.isEmpty()) {
+                        return "Hola mundo";
+                    }
+                    return "Hola " + nombre;
+                })
+            )
+            .build(); // construye la configuración graphql
+
+        // genera el schema ejecutable de Graphql
+        GraphQLSchema graphQLSchema =
+                new SchemaGenerator()
+                    .makeExecutableSchema(typeRegistry, wiring);
+        
+        // instancia graphql
+        graphQL = GraphQL.newGraphQL(graphQLSchema).build();
+    }
+
+
+    // Define una azure function llamada graphql
+    @FunctionName("graphql")
+    public HttpResponseMessage run(
+        @HttpTrigger(
+            name = "req",
+            methods = {HttpMethod.POST},
+            authLevel = AuthorizationLevel.ANONYMOUS
+        )
+        HttpRequestMessage<Optional<String>> request,
+        final ExecutionContext context) {
+
+        String query = request.getBody().orElse("");
+        ExecutionResult result = graphQL.execute(query);
+
+        return request.createResponseBuilder(HttpStatus.OK)
+                .body(result.toSpecification())
+                .header("Content-Type", "application/json")
+                .build();
+    }
+}
+```
+:::
+
+
+## Realizar una consulta
+
+* Solicitud HTTP
+
+    POST: **/api/graphql**
+
+    Content-Type: **application/json**
+
+
+* Body
+``` json
+{
+  "query": "{ saludo(nombre:\"Juan\") }"
+}
+```
+
+* Respuesta
+``` json
+{
+  "data": {
+    "saludo": "Hola Juan"
+  }
+}
+```
+
