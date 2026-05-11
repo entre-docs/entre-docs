@@ -8,6 +8,10 @@ La Arquitectura Orientada a Eventos (Event-Driven Architecture, EDA) es un patr√
 
 Un evento es cualquier cambio de estado o actualizaci√≥n en un sistema que puede ser observado y actuado por otros componentes del sistema.
 
+<p align="center">
+  <img src="/az_arquitectura_eventos.png" width="800" alt="az_arquitectura_eventos"/>
+</p>
+
 
 ## Componentes del EDA
 

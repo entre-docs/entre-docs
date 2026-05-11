@@ -3,6 +3,7 @@ import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import DesignPatternChips from '../components/DesignPatternChips.vue'
 import PagefindSearch from '../components/PagefindSearch.vue'
+import CodeExplainer from '../components/CodeExplainer.vue'
 import './custom.css'
 
 export default {
@@ -17,5 +18,6 @@ export default {
 
   enhanceApp({ app }) {
     app.component('DesignPatternChips', DesignPatternChips)
+    app.component('CodeExplainer', CodeExplainer)
   }
 }

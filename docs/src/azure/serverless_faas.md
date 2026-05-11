@@ -2,84 +2,14 @@
 outline: deep
 ---
 
-
-# Arquitectura Serverless
-
-La arquitectura Serverless es un modelo de computación en la nube que ofrece a los desarrolladores una forma eficiente de construir y desplegar aplicaciones sin preocuparse por la infraestructura subyacente. Sus aspectos clave son:
-
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;">
-
-  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <div style="background: #0078d4; padding: 12px 16px;">
-      <strong style="color: #fff; font-size: 1rem;">⚙️ Gestión automatizada de recursos</strong>
-    </div>
-    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
-      En lugar de que los desarrolladores tengan que provisionar servidores o contenedores, los proveedores de servicios en la nube se encargan automáticamente de los recursos de infraestructura. Esto incluye servidores, almacenamiento y redes. Como resultado, los desarrolladores pueden concentrarse en escribir código sin distraerse por la administración de la infraestructura.
-    </div>
-  </div>
-
-  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <div style="background: #107c41; padding: 12px 16px;">
-      <strong style="color: #fff; font-size: 1rem;">📈 Elasticidad y escalabilidad</strong>
-    </div>
-    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
-      Las aplicaciones se ejecutan en función de la demanda. Cuando aumenta la carga de trabajo, los recursos se escalan automáticamente. Por ejemplo, ante un aumento repentino en el tráfico se asignan más recursos para manejarlo, lo que permite mayor eficiencia y flexibilidad en comparación con los modelos tradicionales.
-    </div>
-  </div>
-
-  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <div style="background: #8661c5; padding: 12px 16px;">
-      <strong style="color: #fff; font-size: 1rem;">⚡ Funciones como Servicio (FaaS)</strong>
-    </div>
-    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
-      La característica central del modelo serverless es el uso de funciones como servicio. Son pequeños fragmentos de código que se ejecutan en respuesta a eventos específicos (solicitudes HTTP, cambios en base de datos, etc.). Se ejecutan en entornos aislados y se escalan según la demanda, sin que el desarrollador gestione servidores.
-    </div>
-  </div>
-
-  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
-    <div style="background: #d83b01; padding: 12px 16px;">
-      <strong style="color: #fff; font-size: 1rem;">💰 Costo y eficiencia</strong>
-    </div>
-    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
-      Dado que los recursos se asignan dinámicamente según la carga de trabajo, los costos pueden ser más bajos que en modelos tradicionales. Los desarrolladores solo pagan por el tiempo de ejecución real de sus funciones, en lugar de mantener servidores activos todo el tiempo.
-    </div>
-  </div>
-
-</div>
-
-
-## Function as a Service (FaaS)
-
-`FaaS`, o `Function as a Service`, es un modelo de computación en la nube que permite ejecutar fragmentos de código de manera independiente, sin la necesidad de gestionar directamente los servidores subyacentes. En FaaS, las funciones son unidades de código que se ejecutan en respuesta a eventos específicos, como solicitudes HTTP, cambios en la base de datos o mensajes en una cola.
-
-En este modelo, el proveedor de la nube se encarga de aprovisionar, escalar y administrar la infraestructura necesaria para ejecutar las funciones, lo que permite a los desarrolladores centrarse en escribir código sin preocuparse por la gestión de servidores. Esto conlleva ventajas como una mayor flexibilidad, escalabilidad automática, y un modelo de facturación basado en el uso real de recursos. 
-
-
-<p align="center">
-  <img src="/az_arquitectura_serverless.png" width="800" alt="arquitectura serverless azure"/>
-</p>
-
-En la imagen se aprecia un ejemplo de una arquitectura cloud, puntos importantes a considerar:
-
-Cuenta con `2 nubes diferentes`, una de ellas sólo es usada para un servicio de identificación (IDaaS) que es consumido desde el frontend y desde el BFF.
-
-En el backend cuenta con 5 componentes diferentes:
-    
-* `BFF`: Encargado de ser la conexión entre las capas frontend y backend de un sistema, normalmente existe un BFF por cada tipo de frontend, por ejemplo, si tuviéramos un sistema que manejara 3 frontend distintos (frontend angular SPA, microfrontend y APP mobile) tendríamos 3 BFFs.
-
-* `Microservicio Spring Batch`: Componente que usa la tecnología Spring Batch del framework Spring. Son piezas encargadas de gestionar grandes cantidades de datos de manera asíncrona, por ejemplo: un microservicio que se ejecutase todos los días a determinada hora para cargar un archivo de 5 millones de líneas a la base de datos y luego llame a un procedimiento almacenado. 
-
-* `Microservicio Springboot`: Microservicio encargado de realizar una tarea específica, como por ejemplo ir a la base de datos a buscar datos de algún cliente. 
-
-* `Miniservicio Springboot`: Un miniservicio es similar a un microservicio, se construye con las mismas tecnologías y patrones arquitectónicos pero que contiene mayor cantidad y complejidad de lógica en sus endpoints.
-
-* `Función Serverless`: Es el único componente backend del diagrama, aparte de la base de datos, que no corre sobre un cluster de Kubernetes, esto debido a que las funciones corren sobre la misma nube, de ahí su denominación serverless: sin servidor. Una función puede tener la misma lógica que un microservicio, por ejemplo, ambos pudieran ir a buscar información de un cliente a la base de datos. 
-
-
-::: code-group
-```java [DatabaseConfig]
-package com.musabeli.config;
+<script setup>
+const codeExplainerTabs = [
+  {
+    label: 'DatabaseConfig',
+    color: '#0078d4',
+    lang: 'java',
+    description: 'Gestiona la conexión a Oracle DB. Lee credenciales desde variables de entorno (ORACLE_TNS_NAME, ORACLE_USERNAME, ORACLE_PASSWORD) y configura el wallet de Oracle. Si el wallet está empaquetado dentro del JAR (como ocurre en una Azure Function desplegada), lo extrae automáticamente a un directorio temporal para que el driver JDBC pueda encontrarlo.',
+    code: `package com.musabeli.config;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -90,7 +20,6 @@ import java.sql.DriverManager;
 public class DatabaseConfig {
 
     private static volatile String walletPath;
-
     private DatabaseConfig() {}
 
     public static Connection getConnection() throws Exception {
@@ -142,11 +71,14 @@ public class DatabaseConfig {
         }
         return tempDir.toString();
     }
-}
-```
-
-```java [GsonConfig]
-package com.musabeli.config;
+}`
+  },
+  {
+    label: 'GsonConfig',
+    color: '#107c41',
+    lang: 'java',
+    description: 'Configura Gson (librería de serialización JSON de Google) para manejar correctamente los tipos LocalDate y LocalDateTime de Java 8, que Gson no soporta de forma nativa. Sin este adaptador, las fechas se serializarían como objetos con campos day/month/year en vez de strings ISO-8601.',
+    code: `package com.musabeli.config;
 
 import com.google.gson.*;
 
@@ -173,11 +105,14 @@ public class GsonConfig {
                                 LocalDateTime.parse(json.getAsString()))
                 .create();
     }
-}
-```
-
-```java [Usuario Entity]
-package com.musabeli.entities;
+}`
+  },
+  {
+    label: 'UsuarioEntity',
+    color: '#8661c5',
+    lang: 'java',
+    description: 'POJO (clase sencilla sin restricciones ni dependencias) que representa la tabla USUARIOS en la base de datos. Usa anotaciones de Lombok (@Data, @Builder, @NoArgsConstructor, @AllArgsConstructor) para generar automáticamente getters, setters, constructores y el patrón Builder, eliminando código repetitivo (boilerplate).',
+    code: `package com.musabeli.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -195,11 +130,14 @@ public class Usuario {
     private String nombre;
     private String email;
     private LocalDateTime createdAt;
-}
-```
-
-```java [Usuario Repository]
-package com.musabeli.repository;
+}`
+  },
+  {
+    label: 'UsuarioRepository',
+    color: '#d83b01',
+    lang: 'java',
+    description: 'Capa de acceso a datos. Implementa las 5 operaciones CRUD contra Oracle usando JDBC puro: findAll (SELECT todos), findById (SELECT por ID), create (INSERT con retorno del ID generado), update (UPDATE por ID) y delete (DELETE por ID). Cada método abre y cierra su propia conexión usando try-with-resources.',
+    code: `package com.musabeli.repository;
 
 import com.musabeli.config.DatabaseConfig;
 import com.musabeli.entities.Usuario;
@@ -212,7 +150,8 @@ import java.util.Optional;
 public class UsuarioRepository {
 
     public List<Usuario> findAll() throws Exception {
-        String sql = "SELECT ID, NOMBRE, EMAIL, CREATED_AT FROM USUARIOS ORDER BY ID";
+        String sql = "SELECT ID, NOMBRE, EMAIL, CREATED_AT FROM USUARIOS 
+        ORDER BY ID";
         List<Usuario> result = new ArrayList<>();
         try (Connection conn = DatabaseConfig.getConnection();
              PreparedStatement ps = conn.prepareStatement(sql);
@@ -241,7 +180,8 @@ public class UsuarioRepository {
     public Usuario create(Usuario usuario) throws Exception {
         String sql = "INSERT INTO USUARIOS (NOMBRE, EMAIL) VALUES (?, ?)";
         try (Connection conn = DatabaseConfig.getConnection();
-             PreparedStatement ps = conn.prepareStatement(sql, new String[]{"ID"})) {
+             PreparedStatement ps = conn.prepareStatement(sql, 
+             new String[]{"ID"})) {
             ps.setString(1, usuario.getNombre());
             ps.setString(2, usuario.getEmail());
             ps.executeUpdate();
@@ -280,14 +220,18 @@ public class UsuarioRepository {
                 .id(rs.getLong("ID"))
                 .nombre(rs.getString("NOMBRE"))
                 .email(rs.getString("EMAIL"))
-                .createdAt(createdAt != null ? createdAt.toLocalDateTime() : null)
+                .createdAt(createdAt != null ? 
+                    createdAt.toLocalDateTime() : null)
                 .build();
     }
-}
-```
-
-```java [UsuariosFunction]
-package com.musabeli.functions;
+}`
+  },
+  {
+    label: 'UsuariosFunction',
+    color: '#00897b',
+    lang: 'java',
+    description: 'La Azure Function propiamente dicha. Define 5 endpoints HTTP con @FunctionName y @HttpTrigger: GET /usuarios (listar todos), GET /usuarios/{id} (buscar por ID), POST /usuarios (crear), PUT /usuarios/{id} (actualizar) y DELETE /usuarios/{id} (eliminar). Cada función maneja sus errores y devuelve las respuestas HTTP adecuadas.',
+    code: `package com.musabeli.functions;
 
 import com.google.gson.Gson;
 import com.microsoft.azure.functions.*;
@@ -397,16 +341,99 @@ public class UsuariosFunction {
             boolean deleted = usuarioRepo.delete(Long.parseLong(id));
             if (deleted) {
                 return request.createResponseBuilder(HttpStatus.OK)
-                        .body("Usuario eliminado").build();
+                    .body("Usuario eliminado").build();
             }
             return request.createResponseBuilder(HttpStatus.NOT_FOUND)
-                    .body("Usuario no encontrado").build();
+                .body("Usuario no encontrado").build();
         } catch (Exception e) {
             context.getLogger().severe("Error DeleteUsuario: " + e.getMessage());
             return request.createResponseBuilder(HttpStatus.INTERNAL_SERVER_ERROR)
-                    .body("Error al eliminar usuario").build();
+                .body("Error al eliminar usuario").build();
         }
     }
-}
-```
-:::
+}`
+  }
+]
+</script>
+
+# Arquitectura Serverless
+
+La arquitectura Serverless es un modelo de computación en la nube que ofrece a los desarrolladores una forma eficiente de construir y desplegar aplicaciones sin preocuparse por la infraestructura subyacente. Sus aspectos clave son:
+
+
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 24px 0;">
+
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #0078d4; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">⚙️ Gestión automatizada de recursos</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      En lugar de que los desarrolladores tengan que provisionar servidores o contenedores, los proveedores de servicios en la nube se encargan automáticamente de los recursos de infraestructura. Esto incluye servidores, almacenamiento y redes. Como resultado, los desarrolladores pueden concentrarse en escribir código sin distraerse por la administración de la infraestructura.
+    </div>
+  </div>
+
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #107c41; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">📈 Elasticidad y escalabilidad</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      Las aplicaciones se ejecutan en función de la demanda. Cuando aumenta la carga de trabajo, los recursos se escalan automáticamente. Por ejemplo, ante un aumento repentino en el tráfico se asignan más recursos para manejarlo, lo que permite mayor eficiencia y flexibilidad en comparación con los modelos tradicionales.
+    </div>
+  </div>
+
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #8661c5; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">⚡ Funciones como Servicio (FaaS)</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      La característica central del modelo serverless es el uso de funciones como servicio. Son pequeños fragmentos de código que se ejecutan en respuesta a eventos específicos (solicitudes HTTP, cambios en base de datos, etc.). Se ejecutan en entornos aislados y se escalan según la demanda, sin que el desarrollador gestione servidores.
+    </div>
+  </div>
+
+  <div style="border-radius: 10px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.15);">
+    <div style="background: #d83b01; padding: 12px 16px;">
+      <strong style="color: #fff; font-size: 1rem;">💰 Costo y eficiencia</strong>
+    </div>
+    <div style="background: var(--vp-c-bg-soft); padding: 14px 16px; font-size: 0.93rem; line-height: 1.6;">
+      Dado que los recursos se asignan dinámicamente según la carga de trabajo, los costos pueden ser más bajos que en modelos tradicionales. Los desarrolladores solo pagan por el tiempo de ejecución real de sus funciones, en lugar de mantener servidores activos todo el tiempo.
+    </div>
+  </div>
+
+</div>
+
+
+## Function as a Service (FaaS)
+
+`FaaS`, o `Function as a Service`, es un modelo de computación en la nube que permite ejecutar fragmentos de código de manera independiente, sin la necesidad de gestionar directamente los servidores subyacentes. En FaaS, las funciones son unidades de código que se ejecutan en respuesta a eventos específicos, como solicitudes HTTP, cambios en la base de datos o mensajes en una cola.
+
+En este modelo, el proveedor de la nube se encarga de aprovisionar, escalar y administrar la infraestructura necesaria para ejecutar las funciones, lo que permite a los desarrolladores centrarse en escribir código sin preocuparse por la gestión de servidores. Esto conlleva ventajas como una mayor flexibilidad, escalabilidad automática, y un modelo de facturación basado en el uso real de recursos. 
+
+
+<p align="center">
+  <img src="/az_arquitectura_serverless.png" width="800" alt="arquitectura serverless azure"/>
+</p>
+
+En la imagen se aprecia un ejemplo de una arquitectura cloud, puntos importantes a considerar:
+
+Cuenta con `2 nubes diferentes`, una de ellas sólo es usada para un servicio de identificación (IDaaS) que es consumido desde el frontend y desde el BFF.
+
+En el backend cuenta con 5 componentes diferentes:
+    
+* `BFF`: Encargado de ser la conexión entre las capas frontend y backend de un sistema, normalmente existe un BFF por cada tipo de frontend, por ejemplo, si tuviéramos un sistema que manejara 3 frontend distintos (frontend angular SPA, microfrontend y APP mobile) tendríamos 3 BFFs.
+
+* `Microservicio Spring Batch`: Componente que usa la tecnología Spring Batch del framework Spring. Son piezas encargadas de gestionar grandes cantidades de datos de manera asíncrona, por ejemplo: un microservicio que se ejecutase todos los días a determinada hora para cargar un archivo de 5 millones de líneas a la base de datos y luego llame a un procedimiento almacenado. 
+
+* `Microservicio Springboot`: Microservicio encargado de realizar una tarea específica, como por ejemplo ir a la base de datos a buscar datos de algún cliente. 
+
+* `Miniservicio Springboot`: Un miniservicio es similar a un microservicio, se construye con las mismas tecnologías y patrones arquitectónicos pero que contiene mayor cantidad y complejidad de lógica en sus endpoints.
+
+* `Función Serverless`: Es el único componente backend del diagrama, aparte de la base de datos, que no corre sobre un cluster de Kubernetes, esto debido a que las funciones corren sobre la misma nube, de ahí su denominación serverless: sin servidor. Una función puede tener la misma lógica que un microservicio, por ejemplo, ambos pudieran ir a buscar información de un cliente a la base de datos. 
+
+
+## Ejemplo de Azure Function con conexión a Oracle
+
+Es una Azure Function en Java que expone una API REST CRUD completa para una entidad Usuario, conectándose a una base de datos Oracle mediante autenticación por wallet.
+
+
+
+<CodeExplainer :tabs="codeExplainerTabs" />
