@@ -10,6 +10,7 @@ import { sidebarAWS } from './routes/sidebars/aws';
 import { sidebarPatrones } from './routes/sidebars/patrones';
 import { sidebarAzure } from './routes/sidebars/azure';
 import { sidebarKotlin } from './routes/sidebars/kotlin';
+import { sidebarHTML } from './routes/sidebars/html';
 
 
 export default defineConfig({
@@ -66,6 +67,7 @@ export async function search() { return { results: [] } }`
             '/bootstrap5/': sidebarBootstrap(),
             '/docker/': sidebarDocker(),
             '/git/': sidebarGit(),
+            '/html/': sidebarHTML(),
             '/java/': sidebarJava(),
             '/javascript/': sidebarJavascript(),
             '/kotlin/': sidebarKotlin(),

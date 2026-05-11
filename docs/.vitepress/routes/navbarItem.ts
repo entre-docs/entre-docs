@@ -17,6 +17,7 @@ export function navbar(): DefaultTheme.NavItem[] {
                 {
                     text: 'Lenguajes',
                     items: [
+                        { text: 'HTML', link: '/html/' },
                         { text: 'Java', link: '/java/' },
                         { text: 'JavaScript', link: '/javascript/' },
                         { text: 'Python', link: '/python/' },

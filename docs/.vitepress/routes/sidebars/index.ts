@@ -16,3 +16,4 @@ export { sidebarVSC } from './vsc';
 export { sidebarSpringboot } from './springboot';
 export { sidebarAWS } from './aws';
 export { sidebarKotlin } from './kotlin';
+export { sidebarHTML } from './html';
