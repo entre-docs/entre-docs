@@ -55,6 +55,7 @@ export function navbar(): DefaultTheme.NavItem[] {
                 { text: 'AWS', link: '/aws/' },
                 { text: 'Azure', link: '/azure/' },
                 { text: 'Docker', link: '/docker/' },
+                { text: 'Kubernetes', link: '/kubernetes/' },
                 //{ text: 'Introducción a DevOps', link: '/devops/' },
                 //{ text: 'CI/CD', link: '/devops/ci-cd/' },
                 //{ text: 'Jenkins', link: '/devops/jenkins/' },

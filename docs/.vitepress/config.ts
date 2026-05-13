@@ -11,6 +11,7 @@ import { sidebarPatrones } from './routes/sidebars/patrones';
 import { sidebarAzure } from './routes/sidebars/azure';
 import { sidebarKotlin } from './routes/sidebars/kotlin';
 import { sidebarHTML } from './routes/sidebars/html';
+import { sidebarKubernetes } from './routes/sidebars/kubernetes';
 
 
 export default defineConfig({
@@ -71,6 +72,7 @@ export async function search() { return { results: [] } }`
             '/java/': sidebarJava(),
             '/javascript/': sidebarJavascript(),
             '/kotlin/': sidebarKotlin(),
+            '/kubernetes/': sidebarKubernetes(),
             '/next/': sidebarNext(),
             '/node/': sidebarNode(),
             '/oracle/': sidebarOracle(),
