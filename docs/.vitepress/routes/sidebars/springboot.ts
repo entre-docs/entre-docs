@@ -29,6 +29,23 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
             ]
         },
         {
+            text: 'Persistencia y Base de Datos',
+            collapsed: false,
+            items: [
+                { text: 'Introducción a JPA', link: '/springboot/jpa_intro' },
+                { text: 'Conexión Oracle + Spring Boot', link: '/springboot/oracle_springboot' },
+                { text: 'Wallet Oracle Cloud', link: '/springboot/oracle_wallet' },
+                { text: 'Configuración application.yml', link: '/springboot/application_yml' },
+                { text: 'Hibernate y ddl-auto', link: '/springboot/hibernate_ddl' },
+                { text: 'CRUD con JPA', link: '/springboot/crud_jpa' },
+            ]
+        },
+        {
+            items: [
+                { text: 'Config. Springboot + Oracle Cloud', link: '/springboot/springboot_oracle' },
+            ]
+        },
+        {
             text: 'Pruebas y Cobertura',
             collapsed: true,
             items: [
@@ -44,7 +61,7 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
             collapsed: true,
             items: [
                 { text: 'Arquetipos y su creación', link: '/springboot/arquetipos' },
-                { text: 'Arquetipos vs Patrones', link: '/springboot/arquetipos_vs_patrones'},
+                { text: 'Arquetipos vs Patrones', link: '/springboot/arquetipos_vs_patrones' },
             ]
         },
         {
@@ -62,8 +79,8 @@ export function sidebarSpringboot(): DefaultTheme.SidebarItem[] {
                 { text: 'RabbitMQ', link: '/springboot/rabbitmq' },
                 { text: 'Sistemas asíncronos', link: '/springboot/sistemas_asincronos' },
                 { text: 'Desarrollo de sistema asíncrono más cola', link: '/springboot/sistema_asincrono_cola' },
-                { 
-                    text: 'Apache Kafka', 
+                {
+                    text: 'Apache Kafka',
                     collapsed: true,
                     items: [
                         { text: 'Introducción a Kafka', link: '/springboot/kafka_intro' },
