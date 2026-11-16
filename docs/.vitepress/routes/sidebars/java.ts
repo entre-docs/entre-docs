@@ -3,8 +3,16 @@ import { DefaultTheme } from "vitepress"
 export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
     return [
         {
-            text: 'Programación Orientada a Objetos',
+            text: 'Introducción a Java',
             collapsed: false,
+            items: [
+                { text: 'Descarga e Instalación de IntelliJ y JDK', link: '/java/intellij_y_jdk' },
+                { text: 'Fundamentos del lenguaje Java', link: '/java/fundamentos_java' },
+            ]
+        },
+        {
+            text: 'Programación Orientada a Objetos',
+            collapsed: true,
             items: [
                 { text: 'Tipos de Datos', link: '/java/tipos_de_datos' },
                 { text: 'Clases y Objetos', link: '/java/clases_objetos' },

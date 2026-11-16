@@ -10,9 +10,10 @@ Se crea un nuevo proyecto Spring Boot utilizando una herramienta de creación de
 
 ## Dependencias
 
-* Lombok
-* Spring Boot DevTools
-* Spring Web
+* `Lombok`
+* `Spring Boot DevTools`: Son la herramientas de desarrollo de springboot.
+Proporciona reinicios rápidos de las aplicaciones y configuraciones para mejorar la experiencia de desarrollo.
+* `Spring Web`: Brinda un entorno para desarrollar aplicaciones web que incluyen RESTful, MVC. Utiliza Apache Tomcat embebido de forma predeterminada.
 
 <br>
 <p align="center">
