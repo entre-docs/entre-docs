@@ -59,7 +59,11 @@ public class Main {
 ```
 
 
-## Relación entre clases y objetos:
+## Modificadores de Acceso
 
-* Una clase es como un plano que define cómo se construyen los objetos.
-* Un objeto es una instancia concreta de esa clase, con un estado específico.
+|TIPO |TIENE ACCESO A|
+|-----|-------------|
+|public |todas las clases|
+|protected |paquete y subclases|
+|default |protección de paquetes|
+|private |misma clase|

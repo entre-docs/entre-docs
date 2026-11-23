@@ -2,12 +2,17 @@
 outline: deep
 ---
 
-# Métodos de una Clase en Java
+# Métodos de Clase y Accesadores en Java
 
 ## Constructor
 
 Es un método especial dentro de la clase que se utiliza para inicializar los objetos cuando se crean.
 
+
+> [!IMPORTANT] Sobrecarga de Constructor
+> Informaciones cruciales necesarias par que los usuarios tengan éxito.
+
+<br>
 
 ::: code-group
 ```java [coche.class]
