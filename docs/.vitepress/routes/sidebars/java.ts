@@ -46,6 +46,8 @@ export const sidebarJava = (): DefaultTheme.SidebarItem[] => {
                 { text: 'Clase String', link: '/java/clase_string' },
                 { text: 'Atributo de Instancia vs Atributo static', link: '/java/atributo_instancia_vs_atributo_static' },
                 { text: 'Bloque static', link: '/java/bloque_static' },
+                { text: 'Método Main', link: '/java/metodo_main' },
+                { text: 'Dependencia entre clases', link: '/java/dependencia_entre_clases' }, 
             ]
         },
         {
