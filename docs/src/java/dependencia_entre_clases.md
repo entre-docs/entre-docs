@@ -170,6 +170,26 @@ public class Conductor {
     }
 }
 ```
+
+```java [clase Main]
+public class Main {
+
+    public static void main(String[] args) {
+        
+        Conductor conductor = new Conductor();
+
+        Vehiculo auto = new Automovil();
+        Vehiculo moto = new Motocicleta();
+
+        conductor.iniciarViaje(auto);
+        conductor.iniciarViaje(moto);
+    }
+}
+
+// Resultado en consola:
+// Conduciendo un automóvil
+// Conduciendo una motocicleta
+```
 :::
 
 
