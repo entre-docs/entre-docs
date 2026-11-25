@@ -133,14 +133,32 @@ Tenemos lo siguiente:
 
 
 Una sola variable para todos los objetos.
+<br>
+
+|         |objeto  |titular |saldo  |
+|---------|--------|--------|-------|
+|Instancia|cuenta1 |Juan    |100.000|
+|Instancia|cuenta2 |María   |200.000|
 
 
-cuenta1
-titular: Juan
-saldo: 100.000
-(Instancia)
+::: tip ¿CUANDO UTILIZAR CADA UNO?
 
-cuenta2
-titular: María
-saldo: 200.000
-(Instancia)
+- **Instancia**: cuando el dato es diferente para cada objeto. Ejemplo: nombre, edad, saldo, dirección.
+- **Estático**: cuando el dato es compartido por todos los objetos. Ejemplo: cantidad de objetos creados, una constante, configuración general.
+Un ejemplo muy habitual de atributo estático es un contador:
+:::
+
+
+``` java
+public class Persona {
+
+    static int contador = 0;
+
+    public Persona() {
+        contador++;
+    }
+}
+```
+
+Cada vez que creamos una persona, aumenta el contador compartido.
+
